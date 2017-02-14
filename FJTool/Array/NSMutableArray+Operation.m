@@ -1,5 +1,5 @@
 //
-//  NSArray+Operation.m
+//  NSMutableArray+Operation.m
 //  FJTool
 //
 //  Created by Jeff on 2017/2/14.
