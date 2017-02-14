@@ -15,6 +15,7 @@
 		1F00D50B1E52A5F80018791E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5031E52A5F80018791E /* main.m */; };
 		1F00D50C1E52A5F80018791E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5051E52A5F80018791E /* ViewController.m */; };
 		1F00D5101E52A7730018791E /* FJTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D50F1E52A7730018791E /* FJTimer.m */; };
+		1F00D5151E52BB150018791E /* NSMutableArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5141E52BB150018791E /* NSMutableArray+Operation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		1F00D5051E52A5F80018791E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1F00D50E1E52A7730018791E /* FJTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJTimer.h; sourceTree = "<group>"; };
 		1F00D50F1E52A7730018791E /* FJTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJTimer.m; sourceTree = "<group>"; };
+		1F00D5131E52BB150018791E /* NSMutableArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Operation.h"; sourceTree = "<group>"; };
+		1F00D5141E52BB150018791E /* NSMutableArray+Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Operation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,7 @@
 		1F00D4F91E52A5F80018791E /* FJTool */ = {
 			isa = PBXGroup;
 			children = (
+				1F00D5111E52BAFB0018791E /* Array */,
 				1F00D50D1E52A7730018791E /* FJTimer */,
 			);
 			path = FJTool;
@@ -91,6 +95,23 @@
 				1F00D50F1E52A7730018791E /* FJTimer.m */,
 			);
 			path = FJTimer;
+			sourceTree = "<group>";
+		};
+		1F00D5111E52BAFB0018791E /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				1F00D5121E52BAFB0018791E /* Extension */,
+			);
+			path = Array;
+			sourceTree = "<group>";
+		};
+		1F00D5121E52BAFB0018791E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1F00D5131E52BB150018791E /* NSMutableArray+Operation.h */,
+				1F00D5141E52BB150018791E /* NSMutableArray+Operation.m */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +188,7 @@
 			files = (
 				1F00D50C1E52A5F80018791E /* ViewController.m in Sources */,
 				1F00D5101E52A7730018791E /* FJTimer.m in Sources */,
+				1F00D5151E52BB150018791E /* NSMutableArray+Operation.m in Sources */,
 				1F00D50B1E52A5F80018791E /* main.m in Sources */,
 				1F00D5061E52A5F80018791E /* AppDelegate.m in Sources */,
 			);
