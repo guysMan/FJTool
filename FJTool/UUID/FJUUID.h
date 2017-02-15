@@ -10,4 +10,16 @@
 
 @interface FJUUID : NSObject
 
+// IDFA UUID
++ (NSString*)idfaUUID;
+
+// 设备的UUID
++ (NSString*)deviceUUID;
+
+// 随机UUID
++ (NSString*)randomUUID;
+
+// 随机UUID( + TimeStamp )
++ (NSString*)randomUUIDTimestamp;
+
 @end

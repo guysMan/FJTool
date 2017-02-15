@@ -32,6 +32,11 @@
 		1F00D55A1E5311300018791E /* FJDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5591E5311300018791E /* FJDate.m */; };
 		1F00D55D1E5325FA0018791E /* FJImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D55C1E5325FA0018791E /* FJImage.m */; };
 		1F00D5601E5331960018791E /* UIImage+Compress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D55F1E5331960018791E /* UIImage+Compress.m */; };
+		1F745E681E53F98100DC1993 /* FJNetworkMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F745E671E53F98100DC1993 /* FJNetworkMgr.m */; };
+		1F745E6C1E53FDB600DC1993 /* FJAppRedirect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F745E6B1E53FDB600DC1993 /* FJAppRedirect.m */; };
+		1F745E701E54086700DC1993 /* FJUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F745E6F1E54086700DC1993 /* FJUUID.m */; };
+		1F745E741E5409EA00DC1993 /* FJStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F745E731E5409EA00DC1993 /* FJStorage.m */; };
+		265D51C9414C0A90D22356C9 /* Pods_FJTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB311401340B1D99524D5F /* Pods_FJTool.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +88,17 @@
 		1F00D55C1E5325FA0018791E /* FJImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJImage.m; sourceTree = "<group>"; };
 		1F00D55E1E5331960018791E /* UIImage+Compress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compress.h"; sourceTree = "<group>"; };
 		1F00D55F1E5331960018791E /* UIImage+Compress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
+		1F745E661E53F98100DC1993 /* FJNetworkMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJNetworkMgr.h; sourceTree = "<group>"; };
+		1F745E671E53F98100DC1993 /* FJNetworkMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJNetworkMgr.m; sourceTree = "<group>"; };
+		1F745E6A1E53FDB600DC1993 /* FJAppRedirect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJAppRedirect.h; sourceTree = "<group>"; };
+		1F745E6B1E53FDB600DC1993 /* FJAppRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJAppRedirect.m; sourceTree = "<group>"; };
+		1F745E6E1E54086700DC1993 /* FJUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJUUID.h; sourceTree = "<group>"; };
+		1F745E6F1E54086700DC1993 /* FJUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJUUID.m; sourceTree = "<group>"; };
+		1F745E721E5409EA00DC1993 /* FJStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJStorage.h; sourceTree = "<group>"; };
+		1F745E731E5409EA00DC1993 /* FJStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJStorage.m; sourceTree = "<group>"; };
+		6FE46E74C651F6418C7FD9E1 /* Pods-FJTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.release.xcconfig"; sourceTree = "<group>"; };
+		D959BCA06DC61C39041F9D20 /* Pods-FJTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.debug.xcconfig"; sourceTree = "<group>"; };
+		E8DB311401340B1D99524D5F /* Pods_FJTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FJTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				265D51C9414C0A90D22356C9 /* Pods_FJTool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +119,8 @@
 				1F00D4F91E52A5F80018791E /* FJTool */,
 				1F00D4FA1E52A5F80018791E /* FJToolExample */,
 				1F00D4E01E52A4870018791E /* Products */,
+				680C332794E78DB9A0EE9E9B /* Pods */,
+				F2052961CCE969523BEE4C6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -116,6 +135,7 @@
 		1F00D4F91E52A5F80018791E /* FJTool */ = {
 			isa = PBXGroup;
 			children = (
+				1F745E691E53FD9200DC1993 /* Appstore */,
 				1F00D51E1E52D3BF0018791E /* Array */,
 				1F00D5501E53034C0018791E /* Block */,
 				1F00D5211E52D3BF0018791E /* Color */,
@@ -124,8 +144,11 @@
 				1F00D5311E52D7C70018791E /* Image */,
 				1F00D5381E52D8F20018791E /* ImageView */,
 				1F00D52D1E52D4F30018791E /* Font */,
+				1F745E651E53F96D00DC1993 /* Network */,
+				1F745E711E5409D500DC1993 /* Storage */,
 				1F00D53D1E52DC750018791E /* String */,
 				1F00D5451E52FC0A0018791E /* Translator */,
+				1F745E6D1E54084900DC1993 /* UUID */,
 				1F00D5491E5301190018791E /* View */,
 				1F00D5541E5308650018791E /* FJCache */,
 				1F00D50D1E52A7730018791E /* FJTimer */,
@@ -286,6 +309,59 @@
 			path = FJCache;
 			sourceTree = "<group>";
 		};
+		1F745E651E53F96D00DC1993 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1F745E661E53F98100DC1993 /* FJNetworkMgr.h */,
+				1F745E671E53F98100DC1993 /* FJNetworkMgr.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		1F745E691E53FD9200DC1993 /* Appstore */ = {
+			isa = PBXGroup;
+			children = (
+				1F745E6A1E53FDB600DC1993 /* FJAppRedirect.h */,
+				1F745E6B1E53FDB600DC1993 /* FJAppRedirect.m */,
+			);
+			path = Appstore;
+			sourceTree = "<group>";
+		};
+		1F745E6D1E54084900DC1993 /* UUID */ = {
+			isa = PBXGroup;
+			children = (
+				1F745E6E1E54086700DC1993 /* FJUUID.h */,
+				1F745E6F1E54086700DC1993 /* FJUUID.m */,
+			);
+			path = UUID;
+			sourceTree = "<group>";
+		};
+		1F745E711E5409D500DC1993 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				1F745E721E5409EA00DC1993 /* FJStorage.h */,
+				1F745E731E5409EA00DC1993 /* FJStorage.m */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		680C332794E78DB9A0EE9E9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D959BCA06DC61C39041F9D20 /* Pods-FJTool.debug.xcconfig */,
+				6FE46E74C651F6418C7FD9E1 /* Pods-FJTool.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2052961CCE969523BEE4C6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E8DB311401340B1D99524D5F /* Pods_FJTool.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,9 +369,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F00D4F61E52A4870018791E /* Build configuration list for PBXNativeTarget "FJTool" */;
 			buildPhases = (
+				763238C116EA44162D83B104 /* [CP] Check Pods Manifest.lock */,
 				1F00D4DB1E52A4870018791E /* Sources */,
 				1F00D4DC1E52A4870018791E /* Frameworks */,
 				1F00D4DD1E52A4870018791E /* Resources */,
+				CA673085FBF90407F79836BF /* [CP] Embed Pods Frameworks */,
+				3C4AA4C5E1F1B08E12B687B9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,6 +431,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C4AA4C5E1F1B08E12B687B9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FJTool/Pods-FJTool-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		763238C116EA44162D83B104 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CA673085FBF90407F79836BF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FJTool/Pods-FJTool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1F00D4DB1E52A4870018791E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -363,12 +490,15 @@
 				1F00D5101E52A7730018791E /* FJTimer.m in Sources */,
 				1F00D50B1E52A5F80018791E /* main.m in Sources */,
 				1F00D55D1E5325FA0018791E /* FJImage.m in Sources */,
+				1F745E681E53F98100DC1993 /* FJNetworkMgr.m in Sources */,
 				1F00D55A1E5311300018791E /* FJDate.m in Sources */,
+				1F745E701E54086700DC1993 /* FJUUID.m in Sources */,
 				1F00D52C1E52D3BF0018791E /* NSDate+Helper.m in Sources */,
 				1F00D5371E52D7DE0018791E /* UIImage+Text.m in Sources */,
 				1F00D5571E5308C90018791E /* FJCache.m in Sources */,
 				1F00D52B1E52D3BF0018791E /* UIColor+Hex.m in Sources */,
 				1F00D5061E52A5F80018791E /* AppDelegate.m in Sources */,
+				1F745E6C1E53FDB600DC1993 /* FJAppRedirect.m in Sources */,
 				1F00D5341E52D7D50018791E /* UIImage+Color.m in Sources */,
 				1F00D5301E52D4F30018791E /* UIFont+Utility.m in Sources */,
 				1F00D5531E53035D0018791E /* NSObject+Block.m in Sources */,
@@ -379,6 +509,7 @@
 				1F00D5601E5331960018791E /* UIImage+Compress.m in Sources */,
 				1F00D5481E52FC1A0018791E /* NSString+Translator.m in Sources */,
 				1F00D5291E52D3BF0018791E /* NSMutableArray+Operation.m in Sources */,
+				1F745E741E5409EA00DC1993 /* FJStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +627,7 @@
 		};
 		1F00D4F71E52A4870018791E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D959BCA06DC61C39041F9D20 /* Pods-FJTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FJToolExample/Info.plist;
@@ -507,6 +639,7 @@
 		};
 		1F00D4F81E52A4870018791E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FE46E74C651F6418C7FD9E1 /* Pods-FJTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FJToolExample/Info.plist;

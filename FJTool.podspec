@@ -9,5 +9,7 @@ Pod::Spec.new do |s|
     s.source       = {:git => 'https://github.com/jeffnjut/FJTool.git', :tag => s.version}
     s.source_files = 'FJTool/**/*.{h,m}'
     s.resources    = "FJTool/ImageView/images/*.png"
+    s.dependency   'AFNetworking', '~> 3.1.0'
+    s.dependency 'JSONModel', '~> 1.7.0'
     s.requires_arc = true
 end
