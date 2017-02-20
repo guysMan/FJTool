@@ -91,6 +91,8 @@
 		1F156D051E5ADF9100660F83 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
 		1F156D061E5AE0A400660F83 /* MacroColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroColor.h; sourceTree = "<group>"; };
 		1F156D0B1E5AE16800660F83 /* FJToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJToolHeader.h; sourceTree = "<group>"; };
+		1F156D0C1E5AE78700660F83 /* MacroDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroDevice.h; sourceTree = "<group>"; };
+		1F156D0D1E5AE83E00660F83 /* MacroFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroFont.h; sourceTree = "<group>"; };
 		1F745E661E53F98100DC1993 /* FJNetworkMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJNetworkMgr.h; sourceTree = "<group>"; };
 		1F745E671E53F98100DC1993 /* FJNetworkMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJNetworkMgr.m; sourceTree = "<group>"; };
 		1F745E6A1E53FDB600DC1993 /* FJAppRedirect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJAppRedirect.h; sourceTree = "<group>"; };
@@ -148,7 +150,6 @@
 				1F00D5311E52D7C70018791E /* Image */,
 				1F00D5381E52D8F20018791E /* ImageView */,
 				1F00D52D1E52D4F30018791E /* Font */,
-				1F156D041E5ADF8000660F83 /* Macro */,
 				1F745E651E53F96D00DC1993 /* Network */,
 				1F745E711E5409D500DC1993 /* Storage */,
 				1F00D53D1E52DC750018791E /* String */,
@@ -157,6 +158,7 @@
 				1F00D5491E5301190018791E /* View */,
 				1F00D5541E5308650018791E /* FJCache */,
 				1F00D50D1E52A7730018791E /* FJTimer */,
+				1F156D041E5ADF8000660F83 /* Macro */,
 			);
 			path = FJTool;
 			sourceTree = "<group>";
@@ -319,6 +321,8 @@
 			children = (
 				1F156D051E5ADF9100660F83 /* Macro.h */,
 				1F156D061E5AE0A400660F83 /* MacroColor.h */,
+				1F156D0C1E5AE78700660F83 /* MacroDevice.h */,
+				1F156D0D1E5AE83E00660F83 /* MacroFont.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";

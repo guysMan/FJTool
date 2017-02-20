@@ -52,7 +52,8 @@
 // Macro
 #import <FJTool/Macro.h>
 #import <FJTool/MacroColor.h>
-
+#import <FJTool/MacroDevice.h>
+#import <FJTool/MacroFont.h>
 
 
 #endif /* FJToolHeader_h */
