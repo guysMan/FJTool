@@ -88,6 +88,9 @@
 		1F00D55C1E5325FA0018791E /* FJImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJImage.m; sourceTree = "<group>"; };
 		1F00D55E1E5331960018791E /* UIImage+Compress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Compress.h"; sourceTree = "<group>"; };
 		1F00D55F1E5331960018791E /* UIImage+Compress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Compress.m"; sourceTree = "<group>"; };
+		1F156D051E5ADF9100660F83 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		1F156D061E5AE0A400660F83 /* MacroColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MacroColor.h; sourceTree = "<group>"; };
+		1F156D0B1E5AE16800660F83 /* FJToolHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FJToolHeader.h; sourceTree = "<group>"; };
 		1F745E661E53F98100DC1993 /* FJNetworkMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJNetworkMgr.h; sourceTree = "<group>"; };
 		1F745E671E53F98100DC1993 /* FJNetworkMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJNetworkMgr.m; sourceTree = "<group>"; };
 		1F745E6A1E53FDB600DC1993 /* FJAppRedirect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJAppRedirect.h; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 		1F00D4F91E52A5F80018791E /* FJTool */ = {
 			isa = PBXGroup;
 			children = (
+				1F156D0B1E5AE16800660F83 /* FJToolHeader.h */,
 				1F745E691E53FD9200DC1993 /* Appstore */,
 				1F00D51E1E52D3BF0018791E /* Array */,
 				1F00D5501E53034C0018791E /* Block */,
@@ -144,6 +148,7 @@
 				1F00D5311E52D7C70018791E /* Image */,
 				1F00D5381E52D8F20018791E /* ImageView */,
 				1F00D52D1E52D4F30018791E /* Font */,
+				1F156D041E5ADF8000660F83 /* Macro */,
 				1F745E651E53F96D00DC1993 /* Network */,
 				1F745E711E5409D500DC1993 /* Storage */,
 				1F00D53D1E52DC750018791E /* String */,
@@ -307,6 +312,15 @@
 				1F00D5561E5308C90018791E /* FJCache.m */,
 			);
 			path = FJCache;
+			sourceTree = "<group>";
+		};
+		1F156D041E5ADF8000660F83 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				1F156D051E5ADF9100660F83 /* Macro.h */,
+				1F156D061E5AE0A400660F83 /* MacroColor.h */,
+			);
+			path = Macro;
 			sourceTree = "<group>";
 		};
 		1F745E651E53F96D00DC1993 /* Network */ = {
