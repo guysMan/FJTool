@@ -1,112 +1,69 @@
 //
-//  NSMutableArray+Operation.m
+//  NSArray+Operation.m
 //  FJTool
 //
 //  Created by Jeff on 2017/2/14.
 //  Copyright © 2017年 Jeff. All rights reserved.
 //
 
-#import "NSMutableArray+Operation.h"
+#import "NSArray+Operation.h"
 
-@implementation NSMutableArray (Operation)
+@implementation NSArray (Operation)
 
 // Mutable Array
-- (void)removeFirstObject
-{
-    // 检查是否是MutableArray
-    if (![self isMemberOfClass:[NSMutableArray class]]) {
-        return;
-    }
-    
-    if ([self count])
-    {
-        [self removeObjectAtIndex:0];
+- (void)removeFirstObject {
+    if ([self count]) {
+        [(NSMutableArray*)self removeObjectAtIndex:0];
     }
 }
 
-- (void)shuffle
-{
-    // 检查是否是MutableArray
-    if (![self isMemberOfClass:[NSMutableArray class]]) {
-        return;
-    }
-    
-    for (NSInteger i = (NSInteger)[self count] - 1; i > 0; i--)
-    {
+- (void)shuffle {
+    for (NSInteger i = (NSInteger)[self count] - 1; i > 0; i--) {
         NSUInteger j = (NSUInteger)arc4random_uniform((uint32_t)i + 1);
-        [self exchangeObjectAtIndex:j withObjectAtIndex:(NSUInteger)i];
+        [(NSMutableArray*)self exchangeObjectAtIndex:j withObjectAtIndex:(NSUInteger)i];
     }
 }
 
-- (void)reverse
-{
-    // 检查是否是MutableArray
-    if (![self isMemberOfClass:[NSMutableArray class]]) {
-        return;
-    }
-    
-    [self setArray:[self reversedArray]];
+- (void)reverse {
+    [(NSMutableArray*)self setArray:[self reversedArray]];
 }
 
-- (void)mergeObjectsFromArray:(NSArray *)array
-{
-    // 检查是否是MutableArray
-    if (![self isMemberOfClass:[NSMutableArray class]]) {
-        return;
-    }
-    
+- (void)mergeObjectsFromArray:(NSArray *)array {
     NSSet *set = [NSSet setWithArray:self];
-    for (id object in array)
-    {
-        if (![set containsObject:object]) [self addObject:object];
+    for (id object in array) {
+        if (![set containsObject:object]) [(NSMutableArray*)self addObject:object];
     }
 }
 
-- (void)removeDuplicateObjects
-{
-    // 检查是否是MutableArray
-    if (![self isMemberOfClass:[NSMutableArray class]]) {
-        return;
-    }
-    
-    [self setArray:[self uniqueObjects]];
+- (void)removeDuplicateObjects {
+    [(NSMutableArray*)self setArray:[self uniqueObjects]];
 }
 
 - (void)subArrayTop:(NSInteger)top {
-    
-    // 检查是否是MutableArray
-    if (![self isMemberOfClass:[NSMutableArray class]]) {
-        return;
-    }
-    
     if ([self count] <= top) {
         return;
     }
     
     for (int i = (int)[self count] - 1; i >= top; i--) {
-        [self removeLastObject];
+        [(NSMutableArray*)self removeLastObject];
     }
 }
 
 // Mutable & non-mutable Array
-- (NSArray *)arrayByRemovingObject:(id)object
-{
+- (NSArray *)arrayByRemovingObject:(id)object {
     NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
     [copy removeObject:object];
     return copy;
 }
 
-- (NSArray *)arrayByRemovingObjectAtIndex:(NSUInteger)index
-{
+- (NSArray *)arrayByRemovingObjectAtIndex:(NSUInteger)index {
     NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
     [copy removeObjectAtIndex:index];
     return copy;
 }
 
-- (NSArray *)arrayByRemovingLastObject
-{
-    if ([self count])
-    {
+- (NSArray *)arrayByRemovingLastObject {
+    if ([self count]) {
         NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
         [copy removeObjectAtIndex:[self count] - 1];
         return copy;
@@ -114,10 +71,8 @@
     return [NSArray arrayWithArray:self];
 }
 
-- (NSArray *)arrayByRemovingFirstObject
-{
-    if ([self count])
-    {
+- (NSArray *)arrayByRemovingFirstObject {
+    if ([self count]) {
         NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
         [copy removeObjectAtIndex:0];
         return copy;
@@ -125,34 +80,28 @@
     return [NSArray arrayWithArray:self];
 }
 
-- (NSArray *)arrayByInsertingObject:(id)object atIndex:(NSUInteger)index
-{
+- (NSArray *)arrayByInsertingObject:(id)object atIndex:(NSUInteger)index {
     NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
     [copy insertObject:object atIndex:index];
     return copy;
 }
 
-- (NSArray *)arrayByReplacingObjectAtIndex:(NSUInteger)index withObject:(id)object
-{
+- (NSArray *)arrayByReplacingObjectAtIndex:(NSUInteger)index withObject:(id)object {
     NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
     copy[index] = object;
     return copy;
 }
 
-- (NSArray *)shuffledArray
-{
+- (NSArray *)shuffledArray {
     NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
     [copy shuffle];
     return copy;
 }
 
-- (NSArray *)mappedArrayUsingBlock:(id (^)(id object))block
-{
-    if (block)
-    {
+- (NSArray *)mappedArrayUsingBlock:(id (^)(id object))block {
+    if (block) {
         NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
-        for (id object in self)
-        {
+        for (id object in self) {
             id replacement = block(object);
             if (replacement) [array addObject:replacement];
         }
@@ -161,27 +110,23 @@
     return [NSArray arrayWithArray:self];
 }
 
-- (NSArray *)reversedArray
-{
+- (NSArray *)reversedArray {
     return [[self reverseObjectEnumerator] allObjects];
 }
 
-- (NSArray *)arrayByMergingObjectsFromArray:(NSArray *)array
-{
+- (NSArray *)arrayByMergingObjectsFromArray:(NSArray *)array {
     NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
     [copy mergeObjectsFromArray:array];
     return copy;
 }
 
-- (NSArray *)objectsInCommonWithArray:(NSArray *)array
-{
+- (NSArray *)objectsInCommonWithArray:(NSArray *)array {
     NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSetWithArray:self];
     [set intersectSet:[NSSet setWithArray:array]];
     return [set array];
 }
 
-- (NSArray *)uniqueObjects
-{
+- (NSArray *)uniqueObjects {
     return [[NSOrderedSet orderedSetWithArray:self] array];
 }
 

@@ -14,7 +14,7 @@
 		1F00D50B1E52A5F80018791E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5031E52A5F80018791E /* main.m */; };
 		1F00D50C1E52A5F80018791E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5051E52A5F80018791E /* ViewController.m */; };
 		1F2861BD1E6008D500862E18 /* FJAppRedirect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861791E6008D500862E18 /* FJAppRedirect.m */; };
-		1F2861BE1E6008D500862E18 /* NSMutableArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617C1E6008D500862E18 /* NSMutableArray+Operation.m */; };
+		1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617C1E6008D500862E18 /* NSArray+Operation.m */; };
 		1F2861BF1E6008D500862E18 /* NSObject+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617F1E6008D500862E18 /* NSObject+Block.m */; };
 		1F2861C01E6008D500862E18 /* FJCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861821E6008D500862E18 /* FJCache.m */; };
 		1F2861C11E6008D500862E18 /* UIColor+Equal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861851E6008D500862E18 /* UIColor+Equal.m */; };
@@ -52,8 +52,8 @@
 		1F00D5051E52A5F80018791E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1F2861781E6008D500862E18 /* FJAppRedirect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJAppRedirect.h; sourceTree = "<group>"; };
 		1F2861791E6008D500862E18 /* FJAppRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJAppRedirect.m; sourceTree = "<group>"; };
-		1F28617B1E6008D500862E18 /* NSMutableArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Operation.h"; sourceTree = "<group>"; };
-		1F28617C1E6008D500862E18 /* NSMutableArray+Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Operation.m"; sourceTree = "<group>"; };
+		1F28617B1E6008D500862E18 /* NSArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Operation.h"; sourceTree = "<group>"; };
+		1F28617C1E6008D500862E18 /* NSArray+Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Operation.m"; sourceTree = "<group>"; };
 		1F28617E1E6008D500862E18 /* NSObject+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Block.h"; sourceTree = "<group>"; };
 		1F28617F1E6008D500862E18 /* NSObject+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Block.m"; sourceTree = "<group>"; };
 		1F2861811E6008D500862E18 /* FJCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJCache.h; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 		1F28617A1E6008D500862E18 /* Array */ = {
 			isa = PBXGroup;
 			children = (
-				1F28617B1E6008D500862E18 /* NSMutableArray+Operation.h */,
-				1F28617C1E6008D500862E18 /* NSMutableArray+Operation.m */,
+				1F28617B1E6008D500862E18 /* NSArray+Operation.h */,
+				1F28617C1E6008D500862E18 /* NSArray+Operation.m */,
 			);
 			path = Array;
 			sourceTree = "<group>";
@@ -532,7 +532,7 @@
 				1F2861CB1E6008D500862E18 /* UIImageView+Loading.m in Sources */,
 				1F2861C81E6008D500862E18 /* UIImage+Color.m in Sources */,
 				1F2861CC1E6008D500862E18 /* FJNetworkMgr.m in Sources */,
-				1F2861BE1E6008D500862E18 /* NSMutableArray+Operation.m in Sources */,
+				1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */,
 				1F2861BF1E6008D500862E18 /* NSObject+Block.m in Sources */,
 				1F2861CA1E6008D500862E18 /* UIImage+Text.m in Sources */,
 				1F2861CE1E6008D500862E18 /* NSString+Helper.m in Sources */,

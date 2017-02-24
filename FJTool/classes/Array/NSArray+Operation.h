@@ -1,5 +1,5 @@
 //
-//  NSMutableArray+Operation.h
+//  NSArray+Operation.h
 //  FJTool
 //
 //  Created by Jeff on 2017/2/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSMutableArray (Operation)
+@interface NSArray (Operation)
 
 // Mutable Array
 - (void)removeFirstObject;
@@ -17,7 +17,6 @@
 - (void)mergeObjectsFromArray:(NSArray *)array;
 - (void)removeDuplicateObjects;
 - (void)subArrayTop:(NSInteger)top;
-
 
 // Mutable & non-mutable Array
 - (NSArray *)arrayByRemovingObject:(id)object;

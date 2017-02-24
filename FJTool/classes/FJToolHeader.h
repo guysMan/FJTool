@@ -12,7 +12,7 @@
 // Appstore
 #import <FJTool/FJAppRedirect.h>
 // Array
-#import <FJTool/NSMutableArray+Operation.h>
+#import <FJTool/NSArray+Operation.h>
 // Block
 #import <FJTool/NSObject+Block.h>
 // Color
