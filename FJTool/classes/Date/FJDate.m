@@ -10,8 +10,41 @@
 
 @implementation FJDate
 
+// 秒（now，by format）
++(long long)formattedTimeDigital:(NSString*)format
+{
+    NSString *currentTimeStr = [FJDate formattedTimeNow:format];
+    long long currentTime = [currentTimeStr longLongValue];
+    return currentTime;
+}
+
+// seconds(offset days)
++(long long)formattedTimeDigitalOffsetDays:(int)days format:(NSString*)format
+{
+    NSDate *currentDate = [NSDate date];
+    NSTimeInterval currentInterval = [currentDate timeIntervalSince1970];
+    currentInterval += 24*60*60 * days;
+    currentDate = [NSDate dateWithTimeIntervalSince1970:currentInterval];
+    NSString *currentDateStr = [FJDate stringOfDate:currentDate format:format];
+    long long ret = [currentDateStr longLongValue];
+    return ret;
+}
+
+// seconds(offset minutes)
++(long long)formattedTimeDigitalOffsetMinutes:(int)minutes format:(NSString*)format
+{
+    NSDate *currentDate = [NSDate date];
+    
+    NSTimeInterval currentInterval = [currentDate timeIntervalSince1970];
+    currentInterval += 60 * minutes;
+    currentDate = [NSDate dateWithTimeIntervalSince1970:currentInterval];
+    NSString *currentDateStr = [FJDate stringOfDate:currentDate format:format];
+    long long ret = [currentDateStr longLongValue];
+    return ret;
+}
+
 // 毫秒（now）
-+(long long)millisecondsNow
++(long long)timestampMillisecNow
 {
     NSDate *dateNow = [NSDate date];
     long long now = (long long)([dateNow timeIntervalSince1970] * 1000);
@@ -19,19 +52,11 @@
 }
 
 // 秒（now）
-+(long long)secondsNow
++(long long)timestampSecNow
 {
     NSDate *dateNow = [NSDate date];
     long long now = (long long)[dateNow timeIntervalSince1970];
     return now;
-}
-
-// 秒（now，by format）
-+(long long)nowTimestampSecByFormatter:(NSString*)format
-{
-    NSString *currentTimeStr = [FJDate formattedTimeNow:format];
-    long long currentTime = [currentTimeStr longLongValue];
-    return currentTime;
 }
 
 // 天数（this year）
@@ -77,7 +102,7 @@
 }
 
 // 月（of this year）
-+ (NSString*)monthOfThisYear {
++ (NSString*)thisMonth_Year {
     int y = [self thisYear];
     int mon = [self thisMonth];
     return [NSString stringWithFormat:@"%d-%d",y,mon];
@@ -108,7 +133,7 @@
 }
 
 // 天（of this week）
-+(int)dayOfThisWeek
++(DFWeek)dayOfThisWeek
 {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *date = [NSDate date];
@@ -151,9 +176,9 @@
 }
 
 // 天（of week, timestamp seconds）
-+(DFWeek)dayOfWeek:(long long)seconds
++(DFWeek)dayOfWeek:(long long)timestampSec
 {
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestampSec];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDateComponents *weekComp = [calendar components:NSCalendarUnitWeekday fromDate:date];
     NSInteger weekDayEnum = [weekComp weekday];
@@ -242,9 +267,9 @@
 }
 
 // AM/PM
-+(DFNoon)meridiem:(long long)seconds
++(DFNoon)meridiem:(long long)timestampSec
 {
-    NSDate *currentDate = [NSDate dateWithTimeIntervalSince1970:seconds];
+    NSDate *currentDate = [NSDate dateWithTimeIntervalSince1970:timestampSec];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     [dateFormatter setDateFormat:@"HH"];
@@ -372,31 +397,6 @@
     return arr;
 }
 
-// seconds(offset days)
-+(long long)secondsOffsetDays:(int)days format:(NSString*)format
-{
-    NSDate *currentDate = [NSDate date];
-    NSTimeInterval currentInterval = [currentDate timeIntervalSince1970];
-    currentInterval += 24*60*60 * days;
-    currentDate = [NSDate dateWithTimeIntervalSince1970:currentInterval];
-    NSString *currentDateStr = [FJDate stringOfDate:currentDate format:format];
-    long long ret = [currentDateStr longLongValue];
-    return ret;
-}
-
-// seconds(offset seconds)
-+(long long)secondsOffsetSeconds:(int)minutes format:(NSString*)format
-{
-    NSDate *currentDate = [NSDate date];
-    
-    NSTimeInterval currentInterval = [currentDate timeIntervalSince1970];
-    currentInterval += 60 * minutes;
-    currentDate = [NSDate dateWithTimeIntervalSince1970:currentInterval];
-    NSString *currentDateStr = [FJDate stringOfDate:currentDate format:format];
-    long long ret = [currentDateStr longLongValue];
-    return ret;
-}
-
 // 日期显示（now）
 +(NSString*)formattedTimeNow:(NSString*)format
 {
@@ -408,27 +408,25 @@
 }
 
 // 日期显示（timestamp second, format）
-+(NSString*)formattedTimeSeconds:(long long)seconds format:(NSString*)format
++(NSString*)formattedTime:(long long)timestampSec format:(NSString*)format
 {
-    NSString *dateStr = [NSString stringWithFormat:@"%lld",seconds];
-    NSDate *ndate = [FJDate dateOfString:dateStr format:format];
-    dateStr = [FJDate stringOfDate:ndate format:format];
+    NSDate *ndate = [NSDate dateWithTimeIntervalSince1970:timestampSec];
+    NSString *dateStr = [FJDate stringOfDate:ndate format:format];
     return dateStr;
 }
 
 // 日期显示（timestamp second, in/out format）
-+(NSString*)formattedTimeSeconds:(long long)seconds format:(NSString*)format toformat:(NSString*)toformat
++(NSString*)formattedTime:(NSString*)formattedDate informat:(NSString*)informat toformat:(NSString*)toformat
 {
-    NSString *dateStr = [NSString stringWithFormat:@"%lld",seconds];
-    NSDate *ndate = [FJDate dateOfString:dateStr format:format];
-    dateStr = [FJDate stringOfDate:ndate format:toformat];
+    NSDate *ndate = [FJDate dateOfString:formattedDate format:informat];
+    NSString *dateStr = [FJDate stringOfDate:ndate format:toformat];
     return dateStr;
 }
 
 // 日期显示（默认）
-+(NSString*)formattedTimeSecondsDefault:(long long)seconds
++(NSString*)formattedTimeSecondsDefault:(long long)timestampSec
 {
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:seconds];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestampSec];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
     // Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
