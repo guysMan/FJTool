@@ -8,9 +8,10 @@ Pod::Spec.new do |s|
     s.platform     = :ios, '8.0'
     s.source       = {:git => 'https://github.com/jeffnjut/FJTool.git', :tag => s.version}
     s.source_files = 'FJTool/classes/*.h'
-    s.resources    = "FJTool/ImageView/images/*.png"
+    s.resources    = "FJTool/resources/*"
     s.dependency   'AFNetworking'
     s.dependency   'JSONModel'
+    s.dependency   'SDWebImage'
     s.requires_arc = true
     s.subspec 'Appstore' do |ss|
       ss.source_files = 'FJTool/classes/Appstore/*.{h,m}'
@@ -65,5 +66,10 @@ Pod::Spec.new do |s|
     end
     s.subspec 'Macro' do |ss|
       ss.source_files = 'FJTool/classes/Macro/*.{h,m}'
+    end
+    s.subspec 'Encryption' do |ss|
+      s.requires_arc  = false
+      ss.source_files = 'FJTool/classes/Encryption/**/*.{h,m}'
+      s.requires_arc = ['FJTool/classes/Encryption/AES/*.m','FJTool/classes/Encryption/CRC32/*.m','FJTool/classes/Encryption/Hash/*.m']
     end
 end
