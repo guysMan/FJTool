@@ -7,8 +7,9 @@
 //
 
 #import "NSString+UpaiYun.h"
+#import <CocoaSecurity/CocoaSecurity.h>
 #import "NSString+Helper.h"
-#import "NSString+Hash.h"
+
 #define UPAIYUN_HOST @"upaiyun.com"
 #define HTTP         @"http://"
 #define HTTPS        @"https://"
@@ -28,7 +29,7 @@
     if (![self isUpaiyunUrl]) {
         
         // 原官网图片地址
-        NSString *md5Str = [self md5];
+        NSString *md5Str = [CocoaSecurity md5:self].hex;
         NSString *harfStr = [self _normalizeHost:[md5Str substringToIndex:md5Str.length/2]];
         NSString *thumbNail = [self upaiyunThumbnail:viewWidth quality:75 pictureMetaDataType:PictureMetaDataType_JPG];
         NSString *resultStr = [NSString stringWithFormat:@"%@%@.jpg%@", ST_PROD_PRODIMAGE_URL, harfStr, thumbNail];

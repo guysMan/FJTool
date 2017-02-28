@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
     s.dependency   'AFNetworking'
     s.dependency   'JSONModel'
     s.dependency   'SDWebImage'
+    s.dependency   'CocoaSecurity'
     s.requires_arc = true
     s.subspec 'Appstore' do |ss|
       ss.source_files = 'FJTool/classes/Appstore/*.{h,m}'
@@ -66,8 +67,5 @@ Pod::Spec.new do |s|
     end
     s.subspec 'Macro' do |ss|
       ss.source_files = 'FJTool/classes/Macro/*.{h,m}'
-    end
-    s.subspec 'Encryption' do |ss|
-      ss.source_files = 'FJTool/classes/Encrpytion/*.{h,m}'
     end
 end
