@@ -68,8 +68,8 @@ Pod::Spec.new do |s|
       ss.source_files = 'FJTool/classes/Macro/*.{h,m}'
     end
     s.subspec 'Encryption' do |ss|
-      s.requires_arc  = false
-      ss.source_files = 'FJTool/classes/Encryption/**/*.{h,m}'
-      s.requires_arc = ['FJTool/classes/Encryption/AES/*.m','FJTool/classes/Encryption/CRC32/*.m','FJTool/classes/Encryption/Hash/*.m']
+      ss.source_files  = 'FJTool/classes/Encryption/**/*.{h,m}'
+      ss.requires_arc  = false
+      ss.requires_arc  = ['FJTool/classes/Encryption/AES/*.m','FJTool/classes/Encryption/CRC32/*.m','FJTool/classes/Encryption/Hash/*.m']
     end
 end
