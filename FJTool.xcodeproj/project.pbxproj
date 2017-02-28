@@ -36,7 +36,6 @@
 		1F2861D11E6008D500862E18 /* FJUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861B71E6008D500862E18 /* FJUUID.m */; };
 		1F2861D21E6008D500862E18 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861BA1E6008D500862E18 /* UIView+Geometry.m */; };
 		1F2861D31E6008D500862E18 /* UIView+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861BC1E6008D500862E18 /* UIView+Layer.m */; };
-		1F5D31E51E65526F00ED12EE /* NSString+UpaiYun.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31E41E65526F00ED12EE /* NSString+UpaiYun.m */; };
 		1F5D31F71E6553DF00ED12EE /* AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31E91E6553DF00ED12EE /* AES128.m */; };
 		1F5D31F81E6553DF00ED12EE /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31EB1E6553DF00ED12EE /* NSData+AES.m */; };
 		1F5D31F91E6553DF00ED12EE /* NSData+CRC32.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31EE1E6553DF00ED12EE /* NSData+CRC32.m */; };
@@ -44,6 +43,7 @@
 		1F5D31FB1E6553DF00ED12EE /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31F51E6553DF00ED12EE /* NSString+Hash.m */; };
 		1F5D31FC1E6553DF00ED12EE /* README in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D31F61E6553DF00ED12EE /* README */; };
 		1F5D31FF1E6557E700ED12EE /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D31FE1E6557E700ED12EE /* images.xcassets */; };
+		1F5D32021E65619700ED12EE /* NSString+UpaiYun.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32011E65619700ED12EE /* NSString+UpaiYun.m */; };
 		265D51C9414C0A90D22356C9 /* Pods_FJTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB311401340B1D99524D5F /* Pods_FJTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,8 +109,6 @@
 		1F2861BA1E6008D500862E18 /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
 		1F2861BB1E6008D500862E18 /* UIView+Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layer.h"; sourceTree = "<group>"; };
 		1F2861BC1E6008D500862E18 /* UIView+Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layer.m"; sourceTree = "<group>"; };
-		1F5D31E31E65526F00ED12EE /* NSString+UpaiYun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+UpaiYun.h"; path = "../../../../../Gwzg_Trunk/55haitao/2.0A/Demo/Demo/Foundations/Utility/HTExtension/FJImageView/NSString+UpaiYun.h"; sourceTree = "<group>"; };
-		1F5D31E41E65526F00ED12EE /* NSString+UpaiYun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+UpaiYun.m"; path = "../../../../../Gwzg_Trunk/55haitao/2.0A/Demo/Demo/Foundations/Utility/HTExtension/FJImageView/NSString+UpaiYun.m"; sourceTree = "<group>"; };
 		1F5D31E81E6553DF00ED12EE /* AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES128.h; sourceTree = "<group>"; };
 		1F5D31E91E6553DF00ED12EE /* AES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES128.m; sourceTree = "<group>"; };
 		1F5D31EA1E6553DF00ED12EE /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
@@ -124,6 +122,8 @@
 		1F5D31F51E6553DF00ED12EE /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		1F5D31F61E6553DF00ED12EE /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		1F5D31FE1E6557E700ED12EE /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		1F5D32001E65619700ED12EE /* NSString+UpaiYun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UpaiYun.h"; sourceTree = "<group>"; };
+		1F5D32011E65619700ED12EE /* NSString+UpaiYun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UpaiYun.m"; sourceTree = "<group>"; };
 		6FE46E74C651F6418C7FD9E1 /* Pods-FJTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.release.xcconfig"; sourceTree = "<group>"; };
 		D959BCA06DC61C39041F9D20 /* Pods-FJTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.debug.xcconfig"; sourceTree = "<group>"; };
 		E8DB311401340B1D99524D5F /* Pods_FJTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FJTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,20 +306,12 @@
 		1F28619D1E6008D500862E18 /* ImageView */ = {
 			isa = PBXGroup;
 			children = (
-				1F28619E1E6008D500862E18 /* images */,
 				1F28619F1E6008D500862E18 /* UIImageView+Loading.h */,
 				1F2861A01E6008D500862E18 /* UIImageView+Loading.m */,
-				1F5D31E31E65526F00ED12EE /* NSString+UpaiYun.h */,
-				1F5D31E41E65526F00ED12EE /* NSString+UpaiYun.m */,
+				1F5D32001E65619700ED12EE /* NSString+UpaiYun.h */,
+				1F5D32011E65619700ED12EE /* NSString+UpaiYun.m */,
 			);
 			path = ImageView;
-			sourceTree = "<group>";
-		};
-		1F28619E1E6008D500862E18 /* images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = images;
 			sourceTree = "<group>";
 		};
 		1F2861A11E6008D500862E18 /* Macro */ = {
@@ -625,10 +617,10 @@
 				1F2861CB1E6008D500862E18 /* UIImageView+Loading.m in Sources */,
 				1F2861C81E6008D500862E18 /* UIImage+Color.m in Sources */,
 				1F2861CC1E6008D500862E18 /* FJNetworkMgr.m in Sources */,
+				1F5D32021E65619700ED12EE /* NSString+UpaiYun.m in Sources */,
 				1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */,
 				1F2861BF1E6008D500862E18 /* NSObject+Block.m in Sources */,
 				1F2861CA1E6008D500862E18 /* UIImage+Text.m in Sources */,
-				1F5D31E51E65526F00ED12EE /* NSString+UpaiYun.m in Sources */,
 				1F2861CE1E6008D500862E18 /* NSString+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
