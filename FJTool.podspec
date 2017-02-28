@@ -68,4 +68,7 @@ Pod::Spec.new do |s|
     s.subspec 'Macro' do |ss|
       ss.source_files = 'FJTool/classes/Macro/*.{h,m}'
     end
+    s.subspec 'Region' do |ss|
+      ss.source_files = 'FJTool/classes/Region/*.{h,m}'
+    end
 end
