@@ -54,6 +54,9 @@
 #import <FJTool/MacroColor.h>
 #import <FJTool/MacroDevice.h>
 #import <FJTool/MacroFont.h>
+// Region
+#import <FJTool/RegionModel.h>
+#import <FJTool/FJRegion.h>
 
 
 #endif /* FJToolHeader_h */

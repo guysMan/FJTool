@@ -39,6 +39,8 @@
 		1F5D31FF1E6557E700ED12EE /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D31FE1E6557E700ED12EE /* images.xcassets */; };
 		1F5D32021E65619700ED12EE /* NSString+UpaiYun.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32011E65619700ED12EE /* NSString+UpaiYun.m */; };
 		1F5D322D1E6593C800ED12EE /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D322C1E6593C800ED12EE /* address.json */; };
+		1F5D32311E659FCB00ED12EE /* FJRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32301E659FCB00ED12EE /* FJRegion.m */; };
+		1F5D32341E65A01F00ED12EE /* RegionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32331E65A01F00ED12EE /* RegionModel.m */; };
 		265D51C9414C0A90D22356C9 /* Pods_FJTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB311401340B1D99524D5F /* Pods_FJTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,10 @@
 		1F5D32001E65619700ED12EE /* NSString+UpaiYun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UpaiYun.h"; sourceTree = "<group>"; };
 		1F5D32011E65619700ED12EE /* NSString+UpaiYun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UpaiYun.m"; sourceTree = "<group>"; };
 		1F5D322C1E6593C800ED12EE /* address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = address.json; sourceTree = "<group>"; };
+		1F5D322F1E659FCB00ED12EE /* FJRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJRegion.h; sourceTree = "<group>"; };
+		1F5D32301E659FCB00ED12EE /* FJRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJRegion.m; sourceTree = "<group>"; };
+		1F5D32321E65A01F00ED12EE /* RegionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionModel.h; sourceTree = "<group>"; };
+		1F5D32331E65A01F00ED12EE /* RegionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionModel.m; sourceTree = "<group>"; };
 		6FE46E74C651F6418C7FD9E1 /* Pods-FJTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.release.xcconfig"; sourceTree = "<group>"; };
 		D959BCA06DC61C39041F9D20 /* Pods-FJTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.debug.xcconfig"; sourceTree = "<group>"; };
 		E8DB311401340B1D99524D5F /* Pods_FJTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FJTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +191,7 @@
 				1F28619D1E6008D500862E18 /* ImageView */,
 				1F2861A11E6008D500862E18 /* Macro */,
 				1F2861A61E6008D500862E18 /* Network */,
+				1F5D322E1E659FB200ED12EE /* Region */,
 				1F2861A91E6008D500862E18 /* Storage */,
 				1F2861AC1E6008D500862E18 /* String */,
 				1F2861AF1E6008D500862E18 /* Timer */,
@@ -382,6 +389,17 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		1F5D322E1E659FB200ED12EE /* Region */ = {
+			isa = PBXGroup;
+			children = (
+				1F5D322F1E659FCB00ED12EE /* FJRegion.h */,
+				1F5D32301E659FCB00ED12EE /* FJRegion.m */,
+				1F5D32321E65A01F00ED12EE /* RegionModel.h */,
+				1F5D32331E65A01F00ED12EE /* RegionModel.m */,
+			);
+			path = Region;
+			sourceTree = "<group>";
+		};
 		680C332794E78DB9A0EE9E9B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,12 +550,14 @@
 				1F2861C11E6008D500862E18 /* UIColor+Equal.m in Sources */,
 				1F2861C61E6008D500862E18 /* UIFont+Utility.m in Sources */,
 				1F2861C91E6008D500862E18 /* UIImage+Compress.m in Sources */,
+				1F5D32311E659FCB00ED12EE /* FJRegion.m in Sources */,
 				1F2861C71E6008D500862E18 /* FJImage.m in Sources */,
 				1F00D50B1E52A5F80018791E /* main.m in Sources */,
 				1F2861D11E6008D500862E18 /* FJUUID.m in Sources */,
 				1F2861C21E6008D500862E18 /* UIColor+Hex.m in Sources */,
 				1F2861C41E6008D500862E18 /* FJDate.m in Sources */,
 				1F2861D01E6008D500862E18 /* NSString+Translator.m in Sources */,
+				1F5D32341E65A01F00ED12EE /* RegionModel.m in Sources */,
 				1F00D5061E52A5F80018791E /* AppDelegate.m in Sources */,
 				1F2861C31E6008D500862E18 /* NSData+Helper.m in Sources */,
 				1F2861C01E6008D500862E18 /* FJCache.m in Sources */,
