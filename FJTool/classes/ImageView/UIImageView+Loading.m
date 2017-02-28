@@ -111,6 +111,9 @@ static NSMutableArray *errorUrls;
 - (void)setImage:(NSString*)url placeholderImageType:(PlaceholderImageType)placeholderImageType backgroudColor:(UIColor*)backgroudColor enableRound:(BOOL)enableRound borderWidth:(CGFloat)borderWidth borderColor:(UIColor*)borderColor enableUpaiyunTranslation:(BOOL)enableUpaiyunTranslation contentMode:(UIViewContentMode)contentMode completion:(SDExternalCompletionBlock)completion {
     
     __weak typeof(self) weakSelf = self;
+    if (url == nil || url.length == 0) {
+        return;
+    }
     
     // 停止动画
     // [self.layer removeAllAnimations];
