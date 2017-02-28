@@ -23,4 +23,22 @@ typedef NS_ENUM(NSInteger, FJNetworkStatus){
 
 @interface FJNetworkMgr : NSObject
 
+// 单例
++ (id)sharedInstance;
+
+// 开启监视网络
+- (void)startNetworkMonitoring;
+
+// 是否有网络(带block)
++ (void)networkAvailableSuccess:(void(^)(void))success failure:(void(^)(void))failure;
+
+// 是否有网络
++ (BOOL)networkAvailable;
+
+// 网络状态
++ (FJNetworkStatus)networkStatus;
+
+// 获取WIFI的名称
++ (NSString *)WiFiName;
+
 @end

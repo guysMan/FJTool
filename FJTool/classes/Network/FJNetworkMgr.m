@@ -79,6 +79,7 @@ static bool isFirstAccess = YES;
     return self;
 }
 
+// 开启监视网络
 - (void)startNetworkMonitoring {
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         switch (status) {
@@ -112,20 +113,18 @@ static bool isFirstAccess = YES;
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
 }
 
-+ (void)networkAvailableSuccess:(void(^)(void))success failed:(void(^)(void))failed;
+// 是否有网络(带block)
++ (void)networkAvailableSuccess:(void(^)(void))success failure:(void(^)(void))failure
 {
     BOOL ret = [FJNetworkMgr networkAvailable];
     if (ret) {
-        if (success) {
-            success();
-        }
+        success == nil ? : success();
     }else{
-        if (failed) {
-            failed();
-        }
+        failure == nil ? : failure();
     }
 }
 
+// 是否有网络
 + (BOOL)networkAvailable
 {
     FJNetworkMgr *instance = [FJNetworkMgr sharedInstance];
@@ -137,16 +136,17 @@ static bool isFirstAccess = YES;
     }else{
         return NO;
     }
-    //#endif
     return YES;
 }
 
+// 网络状态
 + (FJNetworkStatus)networkStatus
 {
     FJNetworkMgr *instance = [FJNetworkMgr sharedInstance];
     return instance.networkStatus;
 }
 
+// 获取WIFI的名称
 + (NSString *)WiFiName
 {
     NSString *wifiName = nil;

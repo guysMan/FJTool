@@ -38,7 +38,7 @@
 
 #define MF_EMPTY_STR_TO_DEFAULT(str, default) (str ? (str.length == 0 ? default : str ) : default)
 
-#define MF_NULL_STR_DEFAULT_TO_EMPTY(str) NULL_STR(str, @"")
+#define MF_NULL_STR_DEFAULT_TO_EMPTY(str) MF_EMPTY_STR_TO_DEFAULT(str, @"")
 
 #define MF_NULL_ARRAY_TO_DEFAULT(o, default) (o ? o : default)
 
@@ -68,21 +68,29 @@
 /**
  * Resource Helper
  */
-#define MF_PNG_FROM_MAINBUNDLE(name) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"png"]]
+#define MF_IMAGE_PNG_FILE(name)        [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"png"]]
 
-#define MF_JSON_FROM_MAINBUNDLE(name) [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"json"] encoding:NSUTF8StringEncoding error:nil]
+#define MF_IMAGE_JPG_FILE(name)        [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"jpg"]]
 
-#define MF_DOCUMENTS_FROM_MAINBUNDLE() [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Documents"]
+#define MF_IMAGE_JPEG_FILE(name)       [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"jpeg"]]
 
-#define MF_HTML_FROM_MAINBUNDLE(name) [[NSBundle mainBundle] URLForResource:name withExtension:@"html"]
+#define MF_TXT_JSON_FILE(name)         [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:name ofType:@"json"] encoding:NSUTF8StringEncoding error:nil]
 
-#define MF_DOCUMENTS_FOLDER() [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
+#define MF_NSURL_HTML_FILE(name)       [[NSBundle mainBundle] URLForResource:name withExtension:@"html"]
 
-#define MF_FILE_EXIST(fullPath) [[NSFileManager defaultManager] fileExistsAtPath:fullPath]
+#define MF_NSURL_HTM_FILE(name)        [[NSBundle mainBundle] URLForResource:name withExtension:@"htm"]
 
-#define MF_LOAD_NIB(x) [[[NSBundle mainBundle] loadNibNamed:x owner:nil options:nil] lastObject]
+#define MF_MAINBUNDLE_DOCUMENTS        [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Documents"]
 
-#define MF_LOAD_NIB_SELF(x) [[[NSBundle mainBundle] loadNibNamed:x owner:self options:nil] objectAtIndex:0]
+#define MF_MAINBUNDLE_DOCUMENTS_FOLDER [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]
+
+#define MF_FILE_EXIST(fullPath)        [[NSFileManager defaultManager] fileExistsAtPath:fullPath]
+
+#define MF_LOAD_NIB(x)                 [[[NSBundle mainBundle] loadNibNamed:x owner:nil options:nil] lastObject]
+
+#define MF_LOAD_NIB_SELF(x)            [[[NSBundle mainBundle] loadNibNamed:x owner:self options:nil] objectAtIndex:0]
+
+#define MF_LOAD_NIB_OBJECT(o,x)        [[[NSBundle mainBundle] loadNibNamed:x owner:o options:nil] objectAtIndex:0]
 
 /**
  * Notification Helper
@@ -115,21 +123,25 @@ _block();\
 /**
  * 判断iOS系统版本
  */
-#define MF_VERSION_OVER_OR_EQUAL(a) ([[[UIDevice currentDevice] systemVersion] floatValue] >= a)
+#define MF_VERSION_OVER_OR_EQUAL(a)   ([[[UIDevice currentDevice] systemVersion] floatValue] >= a)
 
-#define MF_VERSION_OVER(a) ([[[UIDevice currentDevice] systemVersion] floatValue] > a)
+#define MF_VERSION_OVER(a)            ([[[UIDevice currentDevice] systemVersion] floatValue] >  a)
+
+#define MF_VERSION_BELOW_OR_EQUAL(a)  ([[[UIDevice currentDevice] systemVersion] floatValue] <= a)
+
+#define MF_VERSION_BELOW(a)           ([[[UIDevice currentDevice] systemVersion] floatValue] <  a)
 
 
 /**
  * Logger Helper
  */
-#define MF_LOG_FUNC_ENTER  NSLog(@"CALL BEGIN:%s---%s\n",__func__,__FILE__);
+#define MF_LOG_FUNC_ENTER    NSLog(@"CALL BEGIN:%s---%s\n",__func__,__FILE__);
 
 #define MF_LOG_FUNC_LEAVE    NSLog(@"CALL END  :%s---%s\n",__func__,__FILE__);
 
-#define MF_LOG_FUNC_START  do{}while(0);
+#define MF_LOG_FUNC_START    do{}while(0);
 
-#define MF_LOG_FUNC_END    do{}while(0);
+#define MF_LOG_FUNC_END      do{}while(0);
 
 // Debug Log
 #ifdef DEBUG
