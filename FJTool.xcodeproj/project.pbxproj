@@ -36,14 +36,9 @@
 		1F2861D11E6008D500862E18 /* FJUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861B71E6008D500862E18 /* FJUUID.m */; };
 		1F2861D21E6008D500862E18 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861BA1E6008D500862E18 /* UIView+Geometry.m */; };
 		1F2861D31E6008D500862E18 /* UIView+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861BC1E6008D500862E18 /* UIView+Layer.m */; };
-		1F5D31F71E6553DF00ED12EE /* AES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31E91E6553DF00ED12EE /* AES128.m */; };
-		1F5D31F81E6553DF00ED12EE /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31EB1E6553DF00ED12EE /* NSData+AES.m */; };
-		1F5D31F91E6553DF00ED12EE /* NSData+CRC32.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31EE1E6553DF00ED12EE /* NSData+CRC32.m */; };
-		1F5D31FA1E6553DF00ED12EE /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31F11E6553DF00ED12EE /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1F5D31FB1E6553DF00ED12EE /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D31F51E6553DF00ED12EE /* NSString+Hash.m */; };
-		1F5D31FC1E6553DF00ED12EE /* README in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D31F61E6553DF00ED12EE /* README */; };
 		1F5D31FF1E6557E700ED12EE /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D31FE1E6557E700ED12EE /* images.xcassets */; };
 		1F5D32021E65619700ED12EE /* NSString+UpaiYun.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32011E65619700ED12EE /* NSString+UpaiYun.m */; };
+		1F5D32051E65683200ED12EE /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32041E65683200ED12EE /* NSString+Hash.m */; };
 		265D51C9414C0A90D22356C9 /* Pods_FJTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB311401340B1D99524D5F /* Pods_FJTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,21 +104,11 @@
 		1F2861BA1E6008D500862E18 /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
 		1F2861BB1E6008D500862E18 /* UIView+Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layer.h"; sourceTree = "<group>"; };
 		1F2861BC1E6008D500862E18 /* UIView+Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layer.m"; sourceTree = "<group>"; };
-		1F5D31E81E6553DF00ED12EE /* AES128.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AES128.h; sourceTree = "<group>"; };
-		1F5D31E91E6553DF00ED12EE /* AES128.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AES128.m; sourceTree = "<group>"; };
-		1F5D31EA1E6553DF00ED12EE /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
-		1F5D31EB1E6553DF00ED12EE /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
-		1F5D31ED1E6553DF00ED12EE /* NSData+CRC32.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CRC32.h"; sourceTree = "<group>"; };
-		1F5D31EE1E6553DF00ED12EE /* NSData+CRC32.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CRC32.m"; sourceTree = "<group>"; };
-		1F5D31F01E6553DF00ED12EE /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
-		1F5D31F11E6553DF00ED12EE /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
-		1F5D31F21E6553DF00ED12EE /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		1F5D31F41E6553DF00ED12EE /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
-		1F5D31F51E6553DF00ED12EE /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
-		1F5D31F61E6553DF00ED12EE /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		1F5D31FE1E6557E700ED12EE /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		1F5D32001E65619700ED12EE /* NSString+UpaiYun.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+UpaiYun.h"; sourceTree = "<group>"; };
 		1F5D32011E65619700ED12EE /* NSString+UpaiYun.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+UpaiYun.m"; sourceTree = "<group>"; };
+		1F5D32031E65683200ED12EE /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		1F5D32041E65683200ED12EE /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		6FE46E74C651F6418C7FD9E1 /* Pods-FJTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.release.xcconfig"; sourceTree = "<group>"; };
 		D959BCA06DC61C39041F9D20 /* Pods-FJTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.debug.xcconfig"; sourceTree = "<group>"; };
 		E8DB311401340B1D99524D5F /* Pods_FJTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FJTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,7 +181,6 @@
 				1F2861831E6008D500862E18 /* Color */,
 				1F2861881E6008D500862E18 /* Data */,
 				1F28618B1E6008D500862E18 /* Date */,
-				1F5D31E61E6553DF00ED12EE /* Encryption */,
 				1F2861911E6008D500862E18 /* Font */,
 				1F2861941E6008D500862E18 /* Image */,
 				1F28619D1E6008D500862E18 /* ImageView */,
@@ -310,6 +294,8 @@
 				1F2861A01E6008D500862E18 /* UIImageView+Loading.m */,
 				1F5D32001E65619700ED12EE /* NSString+UpaiYun.h */,
 				1F5D32011E65619700ED12EE /* NSString+UpaiYun.m */,
+				1F5D32031E65683200ED12EE /* NSString+Hash.h */,
+				1F5D32041E65683200ED12EE /* NSString+Hash.m */,
 			);
 			path = ImageView;
 			sourceTree = "<group>";
@@ -388,57 +374,6 @@
 				1F2861BC1E6008D500862E18 /* UIView+Layer.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1F5D31E61E6553DF00ED12EE /* Encryption */ = {
-			isa = PBXGroup;
-			children = (
-				1F5D31E71E6553DF00ED12EE /* AES */,
-				1F5D31EC1E6553DF00ED12EE /* CRC32 */,
-				1F5D31EF1E6553DF00ED12EE /* GTMBase64 */,
-				1F5D31F31E6553DF00ED12EE /* Hash */,
-				1F5D31F61E6553DF00ED12EE /* README */,
-			);
-			path = Encryption;
-			sourceTree = "<group>";
-		};
-		1F5D31E71E6553DF00ED12EE /* AES */ = {
-			isa = PBXGroup;
-			children = (
-				1F5D31E81E6553DF00ED12EE /* AES128.h */,
-				1F5D31E91E6553DF00ED12EE /* AES128.m */,
-				1F5D31EA1E6553DF00ED12EE /* NSData+AES.h */,
-				1F5D31EB1E6553DF00ED12EE /* NSData+AES.m */,
-			);
-			path = AES;
-			sourceTree = "<group>";
-		};
-		1F5D31EC1E6553DF00ED12EE /* CRC32 */ = {
-			isa = PBXGroup;
-			children = (
-				1F5D31ED1E6553DF00ED12EE /* NSData+CRC32.h */,
-				1F5D31EE1E6553DF00ED12EE /* NSData+CRC32.m */,
-			);
-			path = CRC32;
-			sourceTree = "<group>";
-		};
-		1F5D31EF1E6553DF00ED12EE /* GTMBase64 */ = {
-			isa = PBXGroup;
-			children = (
-				1F5D31F01E6553DF00ED12EE /* GTMBase64.h */,
-				1F5D31F11E6553DF00ED12EE /* GTMBase64.m */,
-				1F5D31F21E6553DF00ED12EE /* GTMDefines.h */,
-			);
-			path = GTMBase64;
-			sourceTree = "<group>";
-		};
-		1F5D31F31E6553DF00ED12EE /* Hash */ = {
-			isa = PBXGroup;
-			children = (
-				1F5D31F41E6553DF00ED12EE /* NSString+Hash.h */,
-				1F5D31F51E6553DF00ED12EE /* NSString+Hash.m */,
-			);
-			path = Hash;
 			sourceTree = "<group>";
 		};
 		1F5D31FD1E6556AF00ED12EE /* resources */ = {
@@ -527,7 +462,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F5D31FC1E6553DF00ED12EE /* README in Resources */,
 				1F00D5091E52A5F80018791E /* Main.storyboard in Resources */,
 				1F00D5071E52A5F80018791E /* Assets.xcassets in Resources */,
 				1F00D5081E52A5F80018791E /* LaunchScreen.storyboard in Resources */,
@@ -590,13 +524,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F5D31F91E6553DF00ED12EE /* NSData+CRC32.m in Sources */,
 				1F2861C51E6008D500862E18 /* NSDate+Helper.m in Sources */,
 				1F2861CF1E6008D500862E18 /* FJTimer.m in Sources */,
 				1F00D50C1E52A5F80018791E /* ViewController.m in Sources */,
 				1F2861BD1E6008D500862E18 /* FJAppRedirect.m in Sources */,
 				1F2861CD1E6008D500862E18 /* FJStorage.m in Sources */,
-				1F5D31F81E6553DF00ED12EE /* NSData+AES.m in Sources */,
 				1F2861D21E6008D500862E18 /* UIView+Geometry.m in Sources */,
 				1F2861C11E6008D500862E18 /* UIColor+Equal.m in Sources */,
 				1F2861C61E6008D500862E18 /* UIFont+Utility.m in Sources */,
@@ -607,14 +539,12 @@
 				1F2861C21E6008D500862E18 /* UIColor+Hex.m in Sources */,
 				1F2861C41E6008D500862E18 /* FJDate.m in Sources */,
 				1F2861D01E6008D500862E18 /* NSString+Translator.m in Sources */,
-				1F5D31FB1E6553DF00ED12EE /* NSString+Hash.m in Sources */,
 				1F00D5061E52A5F80018791E /* AppDelegate.m in Sources */,
-				1F5D31FA1E6553DF00ED12EE /* GTMBase64.m in Sources */,
 				1F2861C31E6008D500862E18 /* NSData+Helper.m in Sources */,
 				1F2861C01E6008D500862E18 /* FJCache.m in Sources */,
 				1F2861D31E6008D500862E18 /* UIView+Layer.m in Sources */,
-				1F5D31F71E6553DF00ED12EE /* AES128.m in Sources */,
 				1F2861CB1E6008D500862E18 /* UIImageView+Loading.m in Sources */,
+				1F5D32051E65683200ED12EE /* NSString+Hash.m in Sources */,
 				1F2861C81E6008D500862E18 /* UIImage+Color.m in Sources */,
 				1F2861CC1E6008D500862E18 /* FJNetworkMgr.m in Sources */,
 				1F5D32021E65619700ED12EE /* NSString+UpaiYun.m in Sources */,
