@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FJRegion.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    RegionModel *region = [FJRegion domesticDistricts];
+    NSLog(@"%@",region);
+    
     return YES;
 }
 
