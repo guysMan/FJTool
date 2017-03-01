@@ -8,6 +8,7 @@
 
 #import "FJRegion.h"
 #import "RegionModel.h"
+#import "PodHelper.h"
 
 @implementation FJRegion
 
@@ -129,7 +130,12 @@
 // 国内省市区对象
 + (RegionModel*)domesticDistricts {
     
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"address.json" ofType:nil];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"address" ofType:@"json"];
+    if (filePath == nil) {
+        // 兼容cocoapods
+        filePath = [PodHelper getOtherResourcePath:@"address" type:@"json" class:[self class]];
+    }
+    
     NSData *data = [NSData dataWithContentsOfFile:filePath];
     NSError *err;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];

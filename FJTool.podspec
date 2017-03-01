@@ -72,4 +72,7 @@ Pod::Spec.new do |s|
     s.subspec 'Region' do |ss|
       ss.source_files = 'FJTool/classes/Region/*.{h,m}'
     end
+    s.subspec 'Pod' do |ss|
+      ss.source_files = 'FJTool/classes/Pod/*.{h,m}'
+    end
 end

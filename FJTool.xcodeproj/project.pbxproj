@@ -13,6 +13,7 @@
 		1F00D5091E52A5F80018791E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F00D5001E52A5F80018791E /* Main.storyboard */; };
 		1F00D50B1E52A5F80018791E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5031E52A5F80018791E /* main.m */; };
 		1F00D50C1E52A5F80018791E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5051E52A5F80018791E /* ViewController.m */; };
+		1F154C2A1E666C7E00D94922 /* PodHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F154C291E666C7E00D94922 /* PodHelper.m */; };
 		1F2861BD1E6008D500862E18 /* FJAppRedirect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861791E6008D500862E18 /* FJAppRedirect.m */; };
 		1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617C1E6008D500862E18 /* NSArray+Operation.m */; };
 		1F2861BF1E6008D500862E18 /* NSObject+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617F1E6008D500862E18 /* NSObject+Block.m */; };
@@ -55,6 +56,8 @@
 		1F00D5031E52A5F80018791E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1F00D5041E52A5F80018791E /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1F00D5051E52A5F80018791E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1F154C281E666C7E00D94922 /* PodHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PodHelper.h; sourceTree = "<group>"; };
+		1F154C291E666C7E00D94922 /* PodHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PodHelper.m; sourceTree = "<group>"; };
 		1F2861781E6008D500862E18 /* FJAppRedirect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJAppRedirect.h; sourceTree = "<group>"; };
 		1F2861791E6008D500862E18 /* FJAppRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJAppRedirect.m; sourceTree = "<group>"; };
 		1F28617B1E6008D500862E18 /* NSArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Operation.h"; sourceTree = "<group>"; };
@@ -166,6 +169,15 @@
 			path = FJToolExample;
 			sourceTree = "<group>";
 		};
+		1F154C271E666C6100D94922 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				1F154C281E666C7E00D94922 /* PodHelper.h */,
+				1F154C291E666C7E00D94922 /* PodHelper.m */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
 		1F2861751E6008D500862E18 /* FJTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +203,7 @@
 				1F28619D1E6008D500862E18 /* ImageView */,
 				1F2861A11E6008D500862E18 /* Macro */,
 				1F2861A61E6008D500862E18 /* Network */,
+				1F154C271E666C6100D94922 /* Pod */,
 				1F5D322E1E659FB200ED12EE /* Region */,
 				1F2861A91E6008D500862E18 /* Storage */,
 				1F2861AC1E6008D500862E18 /* String */,
@@ -562,6 +575,7 @@
 				1F2861C31E6008D500862E18 /* NSData+Helper.m in Sources */,
 				1F2861C01E6008D500862E18 /* FJCache.m in Sources */,
 				1F2861D31E6008D500862E18 /* UIView+Layer.m in Sources */,
+				1F154C2A1E666C7E00D94922 /* PodHelper.m in Sources */,
 				1F2861CB1E6008D500862E18 /* UIImageView+Loading.m in Sources */,
 				1F2861C81E6008D500862E18 /* UIImage+Color.m in Sources */,
 				1F2861CC1E6008D500862E18 /* FJNetworkMgr.m in Sources */,
