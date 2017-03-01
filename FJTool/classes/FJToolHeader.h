@@ -57,6 +57,7 @@
 // Region
 #import <FJTool/RegionModel.h>
 #import <FJTool/FJRegion.h>
-
+// Podhelper
+#import <FJTool/PodHelper.h>
 
 #endif /* FJToolHeader_h */

@@ -11,10 +11,51 @@
 
 @implementation FJStorage
 
-// plist中删除某个key
-+ (void)clearObject:(NSString *)key {
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+// 存储JSONModel对象到plist
++ (void)save_jsonmodel:(id)object key:(NSString *)key {
+    if (key == nil) {
+        return;
+    }
+    
+    if (object == nil) {
+        
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
+        
+    }else{
+        
+        NSString *_data = [object toJSONString];
+        [[NSUserDefaults standardUserDefaults] setObject:_data forKey:key];
+        
+    }
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+// plist中加载JSONModel对象
++ (id)value_jsonmodel:(NSString *)objectClassName key:(NSString *)key {
+    
+    NSError *jserror;
+    id object;
+    NSString *_dataStr = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    if (!_dataStr) {
+        object = [[NSClassFromString(objectClassName) alloc] init];
+        return object;
+    }
+    object = [[NSClassFromString(objectClassName) alloc] initWithString:_dataStr error:&jserror];
+    if (!object) {
+        object = [[NSClassFromString(objectClassName) alloc] init];
+    }
+    return object;
+}
+
+// 存储NSString、NSNumber等对象到plist
++ (void)save_nsobject:(id)object key:(NSString*)key {
+    [[NSUserDefaults standardUserDefaults] setObject:object forKey:key];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+// plist中加载NSString、NSNumber等对象
++ (id)value_nsobject:(NSString*)key {
+    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
 }
 
 // plist是否存在某个key
@@ -27,67 +68,10 @@
     }
 }
 
-// 存储JSONModel对象到plist
-+ (void)saveJSONModel:(id)jsonModel key:(NSString *)key {
-    if (key == nil) {
-        return;
-    }
-    
-    if (jsonModel == nil) {
-        
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
-        
-    }else{
-        
-        NSString *_data = [jsonModel toJSONString];
-        [[NSUserDefaults standardUserDefaults] setObject:_data forKey:key];
-        
-    }
+// plist中删除某个key
++ (void)clearObject:(NSString *)key {
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:key];
     [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-// plist中加载JSONModel对象
-+ (id)loadJSONModel:(NSString *)jsonModelClassName key:(NSString *)key {
-    
-    NSError *jserror;
-    id object;
-    NSString *_dataStr = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-    if (!_dataStr) {
-        object = [[NSClassFromString(jsonModelClassName) alloc] init];
-        return object;
-    }
-    object = [[NSClassFromString(jsonModelClassName) alloc] initWithString:_dataStr error:&jserror];
-    if (!object) {
-        object = [[NSClassFromString(jsonModelClassName) alloc] init];
-    }
-    return object;
-}
-
-// 存储NSString、NSNumber等对象到plist
-+ (void)saveNSObject:(id)nsObject key:(NSString*)key {
-    [[NSUserDefaults standardUserDefaults] setObject:nsObject forKey:key];
-}
-
-// plist中加载NSString、NSNumber等对象
-+ (id)loadNSObject:(NSString*)key {
-    return [[NSUserDefaults standardUserDefaults] objectForKey:key];
-}
-
-// 存储NSData对象到文件
-+ (void)writeData:(NSData *)data filename:(NSString *)filename
-{
-    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,  NSUserDomainMask,YES)[0];
-    NSString *FileName=[documentPath stringByAppendingPathComponent:filename];
-    [data writeToFile:FileName atomically:YES];
-}
-
-// 获取文件的NSData
-+ (id)getDataFromFile:(NSString*)filename
-{
-    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,  NSUserDomainMask,YES)[0];
-    NSString *FileName=[documentPath stringByAppendingPathComponent:filename];
-    NSData *objData =[NSData dataWithContentsOfFile:FileName options:0 error:NULL];
-    return objData;
 }
 
 // 清空全部plist
@@ -112,6 +96,23 @@
             [userDefatluts synchronize];
         }
     }
+}
+
+// 存储NSData对象到文件
++ (void)writeData:(NSData *)data name:(NSString *)name
+{
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,  NSUserDomainMask,YES)[0];
+    NSString *fileName = [documentPath stringByAppendingPathComponent:name];
+    [data writeToFile:fileName atomically:YES];
+}
+
+// 获取文件的NSData
++ (id)readData:(NSString*)name
+{
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,  NSUserDomainMask,YES)[0];
+    NSString *fileName = [documentPath stringByAppendingPathComponent:name];
+    NSData *data = [NSData dataWithContentsOfFile:fileName options:0 error:NULL];
+    return data;
 }
 
 @end
