@@ -125,9 +125,9 @@ static NSMutableArray *errorUrls;
     if (enableRound) {
         
         if (borderWidth > 0) {
-            [self setRoundViewWidth:borderWidth color:borderColor];
+            [self roundWithBorderWidth:borderWidth borderColor:borderColor];
         }else{
-            [self setRoundView];
+            [self round];
         }
     }
     

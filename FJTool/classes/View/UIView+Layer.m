@@ -11,12 +11,12 @@
 @implementation UIView (Layer)
 
 // 设置圆形
-- (void)setRoundView {
-    [self setRoundViewWidth:0.0 color:nil];
+- (void)round {
+    [self roundWithBorderWidth:0.0 borderColor:nil];
 }
 
 // 设置圆形（边宽、颜色）
-- (void)setRoundViewWidth:(CGFloat)width color:(UIColor*)color {
+- (void)roundWithBorderWidth:(CGFloat)width borderColor:(UIColor*)color {
     CGFloat w = CGRectGetWidth(self.bounds);
     CGFloat h = CGRectGetHeight(self.bounds);
     CGFloat r = 0.0f;
@@ -25,16 +25,16 @@
     }else {
         r = h / 2.0f;
     }
-    [self setViewCornerRadius:r borderWidth:width boderColor:color];
+    [self cornerRadius:r borderWidth:width boderColor:color];
 }
 
 // 设置圆角（角度）
-- (void)setViewCornerRadius:(CGFloat)radius {
-    [self setViewCornerRadius:radius borderWidth:0.0 boderColor:nil];
+- (void)cornerRadius:(CGFloat)radius {
+    [self cornerRadius:radius borderWidth:0.0 boderColor:nil];
 }
 
 // 设置圆角（角度，边宽，颜色）
-- (void)setViewCornerRadius:(CGFloat)radius borderWidth:(CGFloat)width boderColor:(UIColor*)color {
+- (void)cornerRadius:(CGFloat)radius borderWidth:(CGFloat)width boderColor:(UIColor*)color {
     
     self.layer.cornerRadius = radius;
     self.layer.borderWidth = width;
@@ -43,8 +43,8 @@
 }
 
 // 设置边框（边宽，颜色）
-- (void)setViewBorderWidth:(CGFloat)width boderColor:(UIColor*)color {
-    [self setViewCornerRadius:0.0 borderWidth:width boderColor:color];
+- (void)borderWidth:(CGFloat)width boderColor:(UIColor*)color {
+    [self cornerRadius:0.0 borderWidth:width boderColor:color];
 }
 
 // Outter Shadow

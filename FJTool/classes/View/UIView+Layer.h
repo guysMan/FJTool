@@ -11,19 +11,19 @@
 @interface UIView (Layer)
 
 // 设置圆形
-- (void)setRoundView;
+- (void)round;
 
 // 设置圆形（边宽、颜色）
-- (void)setRoundViewWidth:(CGFloat)width color:(UIColor*)color;
+- (void)roundWithBorderWidth:(CGFloat)width borderColor:(UIColor*)color;
 
 // 设置圆角（角度）
-- (void)setViewCornerRadius:(CGFloat)radius;
+- (void)cornerRadius:(CGFloat)radius;
 
 // 设置圆角（角度，边宽，颜色）
-- (void)setViewCornerRadius:(CGFloat)radius borderWidth:(CGFloat)width boderColor:(UIColor*)color;
+- (void)cornerRadius:(CGFloat)radius borderWidth:(CGFloat)width boderColor:(UIColor*)color;
 
 // 设置边框（边宽，颜色）
-- (void)setViewBorderWidth:(CGFloat)width boderColor:(UIColor*)color;
+- (void)borderWidth:(CGFloat)width boderColor:(UIColor*)color;
 
 // Outter Shadow
 - (void)shadowOffset:(CGSize)offset color:(UIColor*)color opacity:(CGFloat)opacity radius:(CGFloat)radius;
