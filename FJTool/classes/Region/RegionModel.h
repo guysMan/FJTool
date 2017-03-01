@@ -27,6 +27,7 @@
 @end
 
 @protocol ProvinceModel
+
 @end
 
 
@@ -38,4 +39,5 @@
 @end
 
 @protocol CityModel
+
 @end

@@ -13,3 +13,11 @@
 @end
 
 
+@implementation ProvinceModel
+
+@end
+
+
+@implementation CityModel
+
+@end
