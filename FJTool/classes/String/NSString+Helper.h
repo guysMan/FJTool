@@ -27,10 +27,10 @@ typedef NS_ENUM(NSInteger, FJCompareResult) {
 
 @interface NSString (Helper)
 
-/** 
+/**
  * Basic
  */
- // 去除空格字符
+// 去除空格字符
 - (NSString*)trimString:(TrimType)trimType;
 
 // 是否包含相同的字符串（大小写敏感）
@@ -86,26 +86,20 @@ typedef NS_ENUM(NSInteger, FJCompareResult) {
 /**
  * String Height
  */
-// 计算宽高（字体）
-- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize;
+// 计算限宽行高（字体，宽度）
+- (CGFloat)heightWithLabelFont:(UIFont *)font withLabelWidth:(CGFloat)width enableCeil:(BOOL)enableCeil;
 
-// 计算宽高（字体、字间距）
-- (CGSize)sizeWithKern:(CGFloat)kern font:(UIFont *)font maxSize:(CGSize)maxSize;
+// 计算单行宽度（字体）
+- (CGFloat)singleWidthWithLabelFont:(UIFont *)font enableCeil:(BOOL)enableCeil;
 
-// 计算行高（字体、字间距、行间距）
-- (CGFloat)heightWithLineSpace:(CGFloat)lineSpace kern:(CGFloat)kernValue font:(UIFont*)font maxSize:(CGSize)maxSize;
-
-// 计算宽高（字体、字间距、限定行高）
-- (CGSize)textSizeWithFont:(UIFont*)font lineHeight:(CGFloat)lineHeight kern:(CGFloat)kern maxWidth:(CGFloat)maxWidth;
+// 计算单行行高（字体）
+- (CGFloat)singleHeightWithLabelFont:(UIFont *)font enableCeil:(BOOL)enableCeil;
 
 // 限制显示行数
-- (CGFloat)validHeightWithFont:(UIFont*)font maxLine:(int)lineCount lineHeight:(CGFloat)lineHeight kern:(CGFloat)kern maxWidth:(CGFloat)maxWidth;
+- (CGFloat)limitHeight:(UIFont*)font maxLineCount:(int)maxLineCount limitedlineHeight:(CGFloat)limitedlineHeight kern:(CGFloat)kern labelWidth:(CGFloat)labelWidth enableCeil:(BOOL)enableCeil;
 
-// 计算行高（字体，限宽）
-- (CGFloat)heightWithLabelFont:(UIFont *)font withLabelWidth:(CGFloat)width;
-
-// 计算宽度（字体）
-- (CGFloat)widthWithLabelFont:(UIFont *)font;
+// 计算字体渲染宽高（字体，行间距，字间距，换行模式）
+- (CGSize)sizeWithFont:(UIFont*)font kern:(CGFloat)kern space:(CGFloat)space linebreakmode:(NSLineBreakMode)linebreakmode limitedlineHeight:(CGFloat)limitedlineHeight renderSize:(CGSize)renderSize;
 
 
 @end

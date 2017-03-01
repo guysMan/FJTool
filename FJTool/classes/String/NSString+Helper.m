@@ -285,109 +285,86 @@
     return [pwd isEqualToString:anotherPwd];
 }
 
-// 计算宽高（字体）
-- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize {
-    NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, nil];
-    return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attr context:nil].size;
-}
-
-// 计算宽高（字体、字间距）
-- (CGSize)sizeWithKern:(CGFloat)kern font:(UIFont *)font maxSize:(CGSize)maxSize {
-    NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, [NSNumber numberWithFloat:kern], NSKernAttributeName, nil];
-    return [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attr context:nil].size;
-}
-
-// 计算行高（字体、字间距、行间距）
-- (CGFloat)heightWithLineSpace:(CGFloat)lineSpace kern:(CGFloat)kernValue font:(UIFont*)font maxSize:(CGSize)maxSize
-{
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineSpacing = lineSpace;
-    paragraphStyle.lineBreakMode = NSLineBreakByCharWrapping;
-    
-    NSDictionary *attr = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, paragraphStyle, NSParagraphStyleAttributeName,@(kernValue), NSKernAttributeName, nil];
-    CGSize size = [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attr context:nil].size;
-    
-    return size.height + lineSpace;
-}
-
-// 计算宽高（字体、字间距、限定行高）
-- (CGSize)textSizeWithFont:(UIFont*)font lineHeight:(CGFloat)lineHeight kern:(CGFloat)kern maxWidth:(CGFloat)maxWidth
-{
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    style.minimumLineHeight = lineHeight;
-    style.maximumLineHeight = lineHeight;
-    style.lineBreakMode = NSLineBreakByCharWrapping;
-    CGSize maxSize = CGSizeMake(maxWidth, MAXFLOAT);
-    NSDictionary *attrDict = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, style, NSParagraphStyleAttributeName, @(kern), NSKernAttributeName, nil];
-    CGSize txtSize = [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrDict context:nil].size;
-    
-    return txtSize;
-}
-
-// 限制显示行数
-- (CGFloat)validHeightWithFont:(UIFont*)font maxLine:(int)lineCount lineHeight:(CGFloat)lineHeight kern:(CGFloat)kern maxWidth:(CGFloat)maxWidth
-{
-    CGSize size = [self textSizeWithFont:font lineHeight:lineHeight kern:kern maxWidth:maxWidth];
-    CGFloat maxHeight = lineCount*lineHeight;
-    return size.height > maxHeight ? maxHeight : size.height;
-}
-
-// 计算行高（字体，限宽）
-- (CGFloat)heightWithLabelFont:(UIFont *)font withLabelWidth:(CGFloat)width {
-    CGFloat height = 0;
-    
-    if (self.length == 0) {
-        height = 0;
-    } else {
-        
-        // 字体
-        NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:18.f]};
-        if (font) {
-            attribute = @{NSFontAttributeName: font};
-        }
-        
-        // 尺寸
-        CGSize retSize = [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT)
-                                            options:
-                          NSStringDrawingTruncatesLastVisibleLine |
-                          NSStringDrawingUsesLineFragmentOrigin |
-                          NSStringDrawingUsesFontLeading
-                                         attributes:attribute
-                                            context:nil].size;
-        
-        height = retSize.height;
+// 计算限宽行高（字体，宽度）
+- (CGFloat)heightWithLabelFont:(UIFont *)font withLabelWidth:(CGFloat)width enableCeil:(BOOL)enableCeil {
+    CGFloat height = [self sizeWithFont:font kern:0 space:0 linebreakmode:NSLineBreakByWordWrapping limitedlineHeight:0 renderSize:CGSizeMake(width, MAXFLOAT)].height;
+    if (enableCeil) {
+        return ceil(height);
     }
     return height;
 }
 
-// 计算宽度（字体）
-- (CGFloat)widthWithLabelFont:(UIFont *)font {
-    CGFloat retHeight = 0;
-    
+// 计算单行宽度（字体）
+- (CGFloat)singleWidthWithLabelFont:(UIFont *)font enableCeil:(BOOL)enableCeil {
+    CGFloat singleWidth = [self sizeWithFont:font kern:0 space:0 linebreakmode:NSLineBreakByWordWrapping limitedlineHeight:0 renderSize:CGSizeMake(MAXFLOAT, 0)].width;
+    if (enableCeil) {
+        return ceil(singleWidth);
+    }
+    return singleWidth;
+}
+
+// 计算单行行高（字体）
+- (CGFloat)singleHeightWithLabelFont:(UIFont *)font enableCeil:(BOOL)enableCeil {
+    CGFloat singleHeight = [self sizeWithFont:font kern:0 space:0 linebreakmode:NSLineBreakByWordWrapping limitedlineHeight:0 renderSize:CGSizeMake(MAXFLOAT, 0)].height;
+    if (enableCeil) {
+        return ceil(singleHeight);
+    }
+    return  singleHeight;
+}
+
+// 限制显示行数
+- (CGFloat)limitHeight:(UIFont*)font maxLineCount:(int)maxLineCount limitedlineHeight:(CGFloat)limitedlineHeight kern:(CGFloat)kern labelWidth:(CGFloat)labelWidth enableCeil:(BOOL)enableCeil
+{
+    CGSize size = [self sizeWithFont:font kern:kern space:0 linebreakmode:NSLineBreakByWordWrapping limitedlineHeight:limitedlineHeight renderSize:CGSizeMake(labelWidth, MAXFLOAT)];
+    CGFloat maxHeight = maxLineCount * limitedlineHeight;
+    if (enableCeil) {
+        return  size.height > maxHeight ? ceil(maxHeight) : ceil(size.height);
+    }
+    return  size.height > maxHeight ? maxHeight : size.height;
+}
+
+// 计算字体渲染宽高（字体，行间距，字间距，换行模式）
+- (CGSize)sizeWithFont:(UIFont*)font kern:(CGFloat)kern space:(CGFloat)space linebreakmode:(NSLineBreakMode)linebreakmode limitedlineHeight:(CGFloat)limitedlineHeight renderSize:(CGSize)renderSize {
+    CGSize size = CGSizeZero;
     if (self.length == 0) {
-        retHeight = 0;
-    } else {
-        
+        return CGSizeZero;
+    } else if (font == nil || ![font isKindOfClass:[UIFont class]]) {
+        return CGSizeZero;
+    } else{
         // 字体
-        NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:18.f]};
-        if (font) {
-            attribute = @{NSFontAttributeName: font};
+        NSMutableDictionary *attribute = [[NSMutableDictionary alloc] init];
+        [attribute setObject:font forKey:NSFontAttributeName];
+        
+        // 行间距和换行模式
+        NSMutableParagraphStyle *style = nil;
+        if (space > 0 || linebreakmode > 0 || limitedlineHeight > 0) {
+            style = [[NSMutableParagraphStyle alloc] init];
+            if (space > 0) {
+                style.lineSpacing = space;
+            }
+            if (linebreakmode > 0) {
+                style.lineBreakMode = linebreakmode;
+            }
+            if (limitedlineHeight > 0) {
+                style.minimumLineHeight = limitedlineHeight;
+                style.maximumLineHeight = limitedlineHeight;
+            }
+            [attribute setObject:style forKey:NSParagraphStyleAttributeName];
+        }
+        
+        // 字间距
+        if (kern > 0) {
+            [attribute setObject:@(kern) forKey:NSKernAttributeName];
         }
         
         // 尺寸
-        CGSize retSize = [self boundingRectWithSize:CGSizeMake(MAXFLOAT, 0)
-                                            options:
-                          NSStringDrawingTruncatesLastVisibleLine |
-                          NSStringDrawingUsesLineFragmentOrigin |
-                          NSStringDrawingUsesFontLeading
-                                         attributes:attribute
-                                            context:nil].size;
-        
-        retHeight = retSize.width;
+        CGSize size = [self boundingRectWithSize:renderSize
+                                         options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                                      attributes:attribute
+                                         context:nil].size;
+        return size;
     }
-    
-    return retHeight;
+    return CGSizeZero;
 }
-
 
 @end
