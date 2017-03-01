@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
     s.source       = {:git => 'https://github.com/jeffnjut/FJTool.git', :tag => s.version}
     s.source_files = 'FJTool/classes/*.h'
     s.resources    = "FJTool/resources/*.{storyboard,xcassets,xib,png,json}"
+    s.ios.resource_bundle = { 'FJTool' => 'FJTool/resources/*.json' }
     s.dependency   'AFNetworking'
     s.dependency   'JSONModel'
     s.dependency   'SDWebImage'
