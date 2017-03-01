@@ -11,17 +11,19 @@
 
 typedef NS_ENUM(NSInteger, TrimType)
 {
-    TrimType_Null,
-    TrimType_WhiteSpace,
-    TrimType_WhiteSpaneAndNewline
+    TrimType_Default,                  // 默认（去除两端的空格）
+    TrimType_WhiteSpace,               // 去除两端的空格
+    TrimType_WhiteSpaneAndNewline,     // 去除两端的空格和回车
+    TrimType_AllSpace                  // 去除所有的空格
 };
 
-typedef NS_ENUM(NSInteger, TFJudgeType) {
-    TFJudgeType_All,
-    TFJudgeType_OnlyPhone,                      // 只判断 手机
-    TFJudgeType_PhoneAndCode,                   // 只判断 手机&验证码
-    TFJudgeType_PhoneAndPwd                     // 只判断 手机&密码
+typedef NS_ENUM(NSInteger, FJCompareResult) {
+    FJCompareResult_Equal,   // 相等
+    FJCompareResult_Larger,  // 左边比右边大
+    FJCompareResult_Smaller  // 左边比右边小
 };
+
+
 
 @interface NSString (Helper)
 
@@ -49,8 +51,8 @@ typedef NS_ENUM(NSInteger, TFJudgeType) {
 // 去除所有空格，是否为空
 - (BOOL)isEmptyTrimmingAllSpace;
 
-// 截取两端字符串之间的子字符串
-- (NSString *)subStringFromString:(NSString *)fromString toString:(NSString *)toString;
+// 截取两段字符串之间的子字符串
+- (NSString *)substringWithFromSting:(NSString *)fromString toString:(NSString *)toString;
 
 // 是否包含Emoji
 - (BOOL)containsEmoji;
@@ -58,8 +60,8 @@ typedef NS_ENUM(NSInteger, TFJudgeType) {
 // 去除某个字符
 - (NSString*)trimCharacter:(NSString*)character;
 
-// str1是否小于str2
-+ (BOOL)compareLessStr1:(NSString*)str1 thanStr2:(NSString*)str2;
+// 用户比较APP版本大小(类似1.1.1<2.0等)
++ (FJCompareResult)compare:(NSString*)str1 than:(NSString*)str2;
 
 
 /**
@@ -79,16 +81,6 @@ typedef NS_ENUM(NSInteger, TFJudgeType) {
 
 // 两次密码的合法性校验
 - (BOOL)validatePassword:(NSString *)pwd identityToAnotherPassword:(NSString *)anotherPwd;
-
-
-/**
- * Attributed String
- */
-// String转NSMutableAttributedString
-- (NSMutableAttributedString*)attributedStringWithFont:(UIFont*)font lineHeight:(CGFloat)lineHeight kern:(CGFloat)kern color:(UIColor*)color underline:(BOOL)underline;
-
-// String转NSMutableAttributedString(将str中匹配self或者self.capitalizedString的字体高亮显示)
-- (NSMutableAttributedString*)attributedStringWithString:(NSString*)str color:(UIColor*)color highlightedcolor:(UIColor*)highlightedcolor;
 
 
 /**

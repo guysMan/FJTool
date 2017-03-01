@@ -18,12 +18,31 @@
 - (NSString*)trimString:(TrimType)trimType
 {
     NSString *newStr = nil;
-    if (trimType == TrimType_WhiteSpace) {
-        newStr = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    }else if (trimType == TrimType_WhiteSpaneAndNewline) {
-        newStr = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    }else{
-        newStr = self;
+    switch (trimType) {
+        case TrimType_Default:
+        case TrimType_WhiteSpace:
+        {
+            newStr = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        }
+            break;
+            
+        case TrimType_WhiteSpaneAndNewline:
+        {
+            newStr = [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        }
+            break;
+            
+        case TrimType_AllSpace:
+        {
+            newStr = [self stringByReplacingOccurrencesOfString:@" " withString:@""];
+        }
+            break;
+            
+        default:
+        {
+            newStr = self;
+        }
+            break;
     }
     return newStr;
 }
@@ -83,8 +102,8 @@
     return string == nil || string.length == 0;
 }
 
-// 截取两端字符串之间的子字符串
-- (NSString *)subStringFromString:(NSString *)fromString toString:(NSString *)toString {
+// 截取两段字符串之间的子字符串
+- (NSString *)substringWithFromSting:(NSString *)fromString toString:(NSString *)toString {
     
     NSRange startRange = [self rangeOfString:fromString];
     NSRange endRange = [self rangeOfString:toString];
@@ -96,7 +115,6 @@
 - (BOOL)containsEmoji
 {
     __block BOOL returnValue = NO;
-    
     [self enumerateSubstringsInRange:NSMakeRange(0, [self length])
                              options:NSStringEnumerationByComposedCharacterSequences
                           usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
@@ -128,7 +146,6 @@
                                   }
                               }
                           }];
-    
     return returnValue;
 }
 
@@ -147,56 +164,65 @@
     return strr;
 }
 
-// str1是否小于str2
-+ (BOOL)compareLessStr1:(NSString*)str1 thanStr2:(NSString*)str2 {
-    NSArray *arr1 = [str1 componentsSeparatedByString:@"."];
-    NSArray *arr2 = [str2 componentsSeparatedByString:@"."];
+// 用户比较APP版本大小
++ (FJCompareResult)compare:(NSString*)str1 than:(NSString*)str2 {
     
-    if (arr1 == nil || [arr1 count] == 0 ||
-        arr2 == nil || [arr2 count] == 0) {
-        return NO;
-    }
-    
-    int ret1 = 0;
-    int ret2 = 0;
-    if ([arr1 count] == [arr2 count]) {
-        
-        for (int i = 0; i < [arr1 count]; i++) {
-            ret1 += ([arr1[i] intValue] * pow(10, ([arr1 count] - i)));
-            ret2 += ([arr2[i] intValue] * pow(10, ([arr2 count] - i)));
-        }
-        
-        return ret1 < ret2;
-        
-    }else if ([arr1 count] < [arr2 count]) {
-        
-        for (int i = 0; i < [arr1 count]; i++) {
-            ret1 += ([arr1[i] intValue] * pow(10, ([arr1 count] - i)));
-            ret2 += ([arr2[i] intValue] * pow(10, ([arr1 count] - i)));
-        }
-        
-        if (ret1 <= ret2) {
-            return YES;
-        }else{
-            return NO;
-        }
-        
+    if (str1 == nil && str2 == nil) {
+        return FJCompareResult_Equal;
+    }else if (str1 == nil) {
+        return FJCompareResult_Smaller;
+    }else if (str2 == nil) {
+        return FJCompareResult_Larger;
+    }else if ([str1 isEqualToString:str2]){
+        return FJCompareResult_Equal;
     }else{
-        
-        for (int i = 0; i < [arr2 count]; i++) {
-            ret1 += ([arr1[i] intValue] * pow(10, ([arr2 count] - i)));
-            ret2 += ([arr2[i] intValue] * pow(10, ([arr2 count] - i)));
-        }
-        
-        if (ret1 >= ret2) {
-            return NO;
+        NSArray *arr1 = [str1 componentsSeparatedByString:@"."];
+        NSArray *arr2 = [str2 componentsSeparatedByString:@"."];
+        int ret1 = 0;
+        int ret2 = 0;
+        if ([arr1 count] == [arr2 count]) {
+            // 版本格式一致
+            for (int i = 0; i < [arr1 count]; i++) {
+                ret1 += ([arr1[i] intValue] * pow(10, ([arr1 count] - i)));
+                ret2 += ([arr2[i] intValue] * pow(10, ([arr2 count] - i)));
+            }
+            
+            if (ret1 == ret2) {
+                return FJCompareResult_Equal;
+            }else if (ret1 < ret2) {
+                return FJCompareResult_Smaller;
+            }else{
+                return FJCompareResult_Larger;
+            }
+            
+        }else if ([arr1 count] < [arr2 count]) {
+            // 版本格式深度前者小于后者
+            for (int i = 0; i < [arr1 count]; i++) {
+                ret1 += ([arr1[i] intValue] * pow(10, ([arr1 count] - i)));
+                ret2 += ([arr2[i] intValue] * pow(10, ([arr1 count] - i)));
+            }
+            
+            if (ret1 <= ret2) {
+                return FJCompareResult_Smaller;
+            }else{
+                return FJCompareResult_Larger;
+            }
+            
         }else{
-            return YES;
+            // 版本格式深度前者大于后者
+            for (int i = 0; i < [arr2 count]; i++) {
+                ret1 += ([arr1[i] intValue] * pow(10, ([arr2 count] - i)));
+                ret2 += ([arr2[i] intValue] * pow(10, ([arr2 count] - i)));
+            }
+            
+            if (ret1 >= ret2) {
+                return FJCompareResult_Larger;
+            }else{
+                return FJCompareResult_Smaller;
+            }
         }
-        
     }
-    return NO;
-    
+    return FJCompareResult_Equal;
 }
 
 
@@ -246,64 +272,17 @@
 {
     
     NSString *usernameRegEx = @"^(?!((^[0-9]+$)|(^[_]+$)))([a-zA-Z0-9_]{1,20})$";
-    
     NSPredicate *usernameTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", usernameRegEx];
-    
     return [usernameTest evaluateWithObject:self];
 }
 
 // 两次密码的合法性校验
 - (BOOL)validatePassword:(NSString *)pwd identityToAnotherPassword:(NSString *)anotherPwd
 {
+    if (pwd == nil || pwd.length == 0 || anotherPwd == nil || anotherPwd.length == 0) {
+        return NO;
+    }
     return [pwd isEqualToString:anotherPwd];
-}
-
-// String转NSMutableAttributedString
-- (NSMutableAttributedString*)attributedStringWithFont:(UIFont*)font lineHeight:(CGFloat)lineHeight kern:(CGFloat)kern color:(UIColor*)color underline:(BOOL)underline
-{
-    NSRange txtRange = NSMakeRange(0, self.length);
-    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:self];
-    
-    if (lineHeight > 0) {
-        NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-        style.minimumLineHeight = lineHeight;
-        style.maximumLineHeight = lineHeight;
-        style.lineBreakMode = NSLineBreakByTruncatingTail;
-        [attrStr addAttribute:NSParagraphStyleAttributeName value:style range:txtRange];
-    }
-    
-    [attrStr addAttribute:NSKernAttributeName value:@(kern) range:txtRange];
-    if (font) {
-        [attrStr addAttribute:NSFontAttributeName value:font range:txtRange];
-    }
-    if (color) {
-        [attrStr addAttribute:NSForegroundColorAttributeName value:color range:txtRange];
-    }
-    if (underline) {
-        [attrStr addAttribute:NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:txtRange];
-    }
-    
-    return attrStr;
-}
-
-// String转NSMutableAttributedString(将str中匹配self或者self.capitalizedString的字体高亮显示)
-- (NSMutableAttributedString*)attributedStringWithString:(NSString*)str color:(UIColor*)color highlightedcolor:(UIColor*)highlightedcolor
-{
-    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:str];
-    [attrStr addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, str.length)];
-    
-    if ([str containsString:[self capitalizedString]]) {
-        
-        NSRange range = [str rangeOfString:[self capitalizedString]];
-        [attrStr addAttribute:NSForegroundColorAttributeName value:highlightedcolor range:range];
-        
-    } else if ([str containsString:self]) {
-        
-        NSRange range = [str rangeOfString:self];
-        [attrStr addAttribute:NSForegroundColorAttributeName value:highlightedcolor range:range];
-    }
-    
-    return attrStr;
 }
 
 // 计算宽高（字体）
@@ -338,9 +317,7 @@
     style.minimumLineHeight = lineHeight;
     style.maximumLineHeight = lineHeight;
     style.lineBreakMode = NSLineBreakByCharWrapping;
-    
     CGSize maxSize = CGSizeMake(maxWidth, MAXFLOAT);
-    
     NSDictionary *attrDict = [NSDictionary dictionaryWithObjectsAndKeys:font, NSFontAttributeName, style, NSParagraphStyleAttributeName, @(kern), NSKernAttributeName, nil];
     CGSize txtSize = [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attrDict context:nil].size;
     
@@ -380,7 +357,6 @@
         
         height = retSize.height;
     }
-    
     return height;
 }
 
