@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SelectAlbumButton">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相机胶卷" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFY-qf-Eru">
+                    <rect key="frame" x="63" y="11" width="74" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_triangle_down" translatesAutoresizingMaskIntoConstraints="NO" id="08u-2Z-otw">
+                    <rect key="frame" x="145" y="19" width="14" height="7"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="14" id="R1a-sj-0Fr"/>
+                        <constraint firstAttribute="height" constant="7" id="dew-aa-uVN"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="08u-2Z-otw" firstAttribute="centerY" secondItem="VFY-qf-Eru" secondAttribute="centerY" id="21R-jZ-VQk"/>
+                <constraint firstItem="VFY-qf-Eru" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CYi-Bl-UrX"/>
+                <constraint firstItem="08u-2Z-otw" firstAttribute="leading" secondItem="VFY-qf-Eru" secondAttribute="trailing" constant="8" id="kAt-hs-y5Z"/>
+                <constraint firstItem="VFY-qf-Eru" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="rPM-6d-9KY"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="lb_albumname" destination="VFY-qf-Eru" id="xoQ-Rv-5WZ"/>
+            </connections>
+            <point key="canvasLocation" x="21" y="54"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_triangle_down" width="17" height="10"/>
+    </resources>
+</document>

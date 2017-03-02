@@ -325,7 +325,6 @@
 
 // 计算字体渲染宽高（字体，行间距，字间距，换行模式）
 - (CGSize)sizeWithFont:(UIFont*)font kern:(CGFloat)kern space:(CGFloat)space linebreakmode:(NSLineBreakMode)linebreakmode limitedlineHeight:(CGFloat)limitedlineHeight renderSize:(CGSize)renderSize {
-    CGSize size = CGSizeZero;
     if (self.length == 0) {
         return CGSizeZero;
     } else if (font == nil || ![font isKindOfClass:[UIFont class]]) {

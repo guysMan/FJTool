@@ -5,6 +5,7 @@ target "FJTool" do
 pod 'AFNetworking'
 pod 'JSONModel'
 pod 'SDWebImage'
+pod 'Masonry'
 pod 'CocoaSecurity'
 
 end

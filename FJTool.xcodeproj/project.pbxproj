@@ -14,6 +14,7 @@
 		1F00D50B1E52A5F80018791E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5031E52A5F80018791E /* main.m */; };
 		1F00D50C1E52A5F80018791E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F00D5051E52A5F80018791E /* ViewController.m */; };
 		1F154C2A1E666C7E00D94922 /* PodHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F154C291E666C7E00D94922 /* PodHelper.m */; };
+		1F154C2F1E66ED4000D94922 /* FJPhotoLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F154C2D1E66ED4000D94922 /* FJPhotoLibraryViewController.m */; };
 		1F2861BD1E6008D500862E18 /* FJAppRedirect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861791E6008D500862E18 /* FJAppRedirect.m */; };
 		1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617C1E6008D500862E18 /* NSArray+Operation.m */; };
 		1F2861BF1E6008D500862E18 /* NSObject+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617F1E6008D500862E18 /* NSObject+Block.m */; };
@@ -42,6 +43,18 @@
 		1F5D322D1E6593C800ED12EE /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D322C1E6593C800ED12EE /* address.json */; };
 		1F5D32311E659FCB00ED12EE /* FJRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32301E659FCB00ED12EE /* FJRegion.m */; };
 		1F5D32341E65A01F00ED12EE /* RegionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32331E65A01F00ED12EE /* RegionModel.m */; };
+		1FAFB63F1E67B65C00CDB5E6 /* SelectAlbumButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB63E1E67B65C00CDB5E6 /* SelectAlbumButton.m */; };
+		1FAFB6411E67B66700CDB5E6 /* SelectAlbumButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FAFB6401E67B66700CDB5E6 /* SelectAlbumButton.xib */; };
+		1FAFB6441E67C30400CDB5E6 /* FJPhotoMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB6431E67C30400CDB5E6 /* FJPhotoMgr.m */; };
+		1FAFB6471E67CE5E00CDB5E6 /* FJImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB6461E67CE5E00CDB5E6 /* FJImageModel.m */; };
+		1FAFB64A1E67CF6200CDB5E6 /* PHAsset+Select.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB6491E67CF6200CDB5E6 /* PHAsset+Select.m */; };
+		1FAFB64D1E67CF6F00CDB5E6 /* UIImage+Clip.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB64C1E67CF6F00CDB5E6 /* UIImage+Clip.m */; };
+		1FAFB6501E67F7C300CDB5E6 /* FJAlbumListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB64F1E67F7C300CDB5E6 /* FJAlbumListViewController.m */; };
+		1FAFB6531E67F7DA00CDB5E6 /* FJImageCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB6521E67F7DA00CDB5E6 /* FJImageCollectionViewController.m */; };
+		1FAFB6561E67F7FE00CDB5E6 /* AlbumListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB6551E67F7FE00CDB5E6 /* AlbumListTableViewCell.m */; };
+		1FAFB6591E67F81400CDB5E6 /* ImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB6581E67F81400CDB5E6 /* ImageCollectionViewCell.m */; };
+		1FAFB65C1E67F8A800CDB5E6 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB65B1E67F8A800CDB5E6 /* ImageViewController.m */; };
+		1FAFB65F1E67F8B800CDB5E6 /* ImagePreviewtransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAFB65E1E67F8B800CDB5E6 /* ImagePreviewtransition.m */; };
 		265D51C9414C0A90D22356C9 /* Pods_FJTool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8DB311401340B1D99524D5F /* Pods_FJTool.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +71,8 @@
 		1F00D5051E52A5F80018791E /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1F154C281E666C7E00D94922 /* PodHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PodHelper.h; sourceTree = "<group>"; };
 		1F154C291E666C7E00D94922 /* PodHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PodHelper.m; sourceTree = "<group>"; };
+		1F154C2C1E66ED4000D94922 /* FJPhotoLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJPhotoLibraryViewController.h; sourceTree = "<group>"; };
+		1F154C2D1E66ED4000D94922 /* FJPhotoLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJPhotoLibraryViewController.m; sourceTree = "<group>"; };
 		1F2861781E6008D500862E18 /* FJAppRedirect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJAppRedirect.h; sourceTree = "<group>"; };
 		1F2861791E6008D500862E18 /* FJAppRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJAppRedirect.m; sourceTree = "<group>"; };
 		1F28617B1E6008D500862E18 /* NSArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Operation.h"; sourceTree = "<group>"; };
@@ -117,6 +132,29 @@
 		1F5D32301E659FCB00ED12EE /* FJRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJRegion.m; sourceTree = "<group>"; };
 		1F5D32321E65A01F00ED12EE /* RegionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionModel.h; sourceTree = "<group>"; };
 		1F5D32331E65A01F00ED12EE /* RegionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionModel.m; sourceTree = "<group>"; };
+		1FAFB63D1E67B65C00CDB5E6 /* SelectAlbumButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectAlbumButton.h; sourceTree = "<group>"; };
+		1FAFB63E1E67B65C00CDB5E6 /* SelectAlbumButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectAlbumButton.m; sourceTree = "<group>"; };
+		1FAFB6401E67B66700CDB5E6 /* SelectAlbumButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectAlbumButton.xib; sourceTree = "<group>"; };
+		1FAFB6421E67C30400CDB5E6 /* FJPhotoMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJPhotoMgr.h; sourceTree = "<group>"; };
+		1FAFB6431E67C30400CDB5E6 /* FJPhotoMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJPhotoMgr.m; sourceTree = "<group>"; };
+		1FAFB6451E67CE5E00CDB5E6 /* FJImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJImageModel.h; sourceTree = "<group>"; };
+		1FAFB6461E67CE5E00CDB5E6 /* FJImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJImageModel.m; sourceTree = "<group>"; };
+		1FAFB6481E67CF6200CDB5E6 /* PHAsset+Select.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PHAsset+Select.h"; sourceTree = "<group>"; };
+		1FAFB6491E67CF6200CDB5E6 /* PHAsset+Select.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PHAsset+Select.m"; sourceTree = "<group>"; };
+		1FAFB64B1E67CF6F00CDB5E6 /* UIImage+Clip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Clip.h"; sourceTree = "<group>"; };
+		1FAFB64C1E67CF6F00CDB5E6 /* UIImage+Clip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Clip.m"; sourceTree = "<group>"; };
+		1FAFB64E1E67F7C300CDB5E6 /* FJAlbumListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJAlbumListViewController.h; sourceTree = "<group>"; };
+		1FAFB64F1E67F7C300CDB5E6 /* FJAlbumListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJAlbumListViewController.m; sourceTree = "<group>"; };
+		1FAFB6511E67F7DA00CDB5E6 /* FJImageCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJImageCollectionViewController.h; sourceTree = "<group>"; };
+		1FAFB6521E67F7DA00CDB5E6 /* FJImageCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJImageCollectionViewController.m; sourceTree = "<group>"; };
+		1FAFB6541E67F7FE00CDB5E6 /* AlbumListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumListTableViewCell.h; sourceTree = "<group>"; };
+		1FAFB6551E67F7FE00CDB5E6 /* AlbumListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumListTableViewCell.m; sourceTree = "<group>"; };
+		1FAFB6571E67F81400CDB5E6 /* ImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollectionViewCell.h; sourceTree = "<group>"; };
+		1FAFB6581E67F81400CDB5E6 /* ImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollectionViewCell.m; sourceTree = "<group>"; };
+		1FAFB65A1E67F8A800CDB5E6 /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		1FAFB65B1E67F8A800CDB5E6 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		1FAFB65D1E67F8B800CDB5E6 /* ImagePreviewtransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagePreviewtransition.h; sourceTree = "<group>"; };
+		1FAFB65E1E67F8B800CDB5E6 /* ImagePreviewtransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewtransition.m; sourceTree = "<group>"; };
 		6FE46E74C651F6418C7FD9E1 /* Pods-FJTool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.release.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.release.xcconfig"; sourceTree = "<group>"; };
 		D959BCA06DC61C39041F9D20 /* Pods-FJTool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FJTool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FJTool/Pods-FJTool.debug.xcconfig"; sourceTree = "<group>"; };
 		E8DB311401340B1D99524D5F /* Pods_FJTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FJTool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +216,38 @@
 			path = Pod;
 			sourceTree = "<group>";
 		};
+		1F154C2B1E66EC2E00D94922 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				1FAFB6421E67C30400CDB5E6 /* FJPhotoMgr.h */,
+				1FAFB6431E67C30400CDB5E6 /* FJPhotoMgr.m */,
+				1FAFB6481E67CF6200CDB5E6 /* PHAsset+Select.h */,
+				1FAFB6491E67CF6200CDB5E6 /* PHAsset+Select.m */,
+				1FAFB64B1E67CF6F00CDB5E6 /* UIImage+Clip.h */,
+				1FAFB64C1E67CF6F00CDB5E6 /* UIImage+Clip.m */,
+				1FAFB6451E67CE5E00CDB5E6 /* FJImageModel.h */,
+				1FAFB6461E67CE5E00CDB5E6 /* FJImageModel.m */,
+				1F154C2C1E66ED4000D94922 /* FJPhotoLibraryViewController.h */,
+				1F154C2D1E66ED4000D94922 /* FJPhotoLibraryViewController.m */,
+				1FAFB63D1E67B65C00CDB5E6 /* SelectAlbumButton.h */,
+				1FAFB63E1E67B65C00CDB5E6 /* SelectAlbumButton.m */,
+				1FAFB6401E67B66700CDB5E6 /* SelectAlbumButton.xib */,
+				1FAFB64E1E67F7C300CDB5E6 /* FJAlbumListViewController.h */,
+				1FAFB64F1E67F7C300CDB5E6 /* FJAlbumListViewController.m */,
+				1FAFB6511E67F7DA00CDB5E6 /* FJImageCollectionViewController.h */,
+				1FAFB6521E67F7DA00CDB5E6 /* FJImageCollectionViewController.m */,
+				1FAFB6541E67F7FE00CDB5E6 /* AlbumListTableViewCell.h */,
+				1FAFB6551E67F7FE00CDB5E6 /* AlbumListTableViewCell.m */,
+				1FAFB6571E67F81400CDB5E6 /* ImageCollectionViewCell.h */,
+				1FAFB6581E67F81400CDB5E6 /* ImageCollectionViewCell.m */,
+				1FAFB65A1E67F8A800CDB5E6 /* ImageViewController.h */,
+				1FAFB65B1E67F8A800CDB5E6 /* ImageViewController.m */,
+				1FAFB65D1E67F8B800CDB5E6 /* ImagePreviewtransition.h */,
+				1FAFB65E1E67F8B800CDB5E6 /* ImagePreviewtransition.m */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		1F2861751E6008D500862E18 /* FJTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +265,7 @@
 				1F28617A1E6008D500862E18 /* Array */,
 				1F28617D1E6008D500862E18 /* Block */,
 				1F2861801E6008D500862E18 /* Cache */,
+				1F154C2B1E66EC2E00D94922 /* Camera */,
 				1F2861831E6008D500862E18 /* Color */,
 				1F2861881E6008D500862E18 /* Data */,
 				1F28618B1E6008D500862E18 /* Date */,
@@ -494,6 +565,7 @@
 				1F00D5091E52A5F80018791E /* Main.storyboard in Resources */,
 				1F5D322D1E6593C800ED12EE /* address.json in Resources */,
 				1F00D5071E52A5F80018791E /* Assets.xcassets in Resources */,
+				1FAFB6411E67B66700CDB5E6 /* SelectAlbumButton.xib in Resources */,
 				1F00D5081E52A5F80018791E /* LaunchScreen.storyboard in Resources */,
 				1F5D31FF1E6557E700ED12EE /* images.xcassets in Resources */,
 			);
@@ -556,15 +628,21 @@
 			files = (
 				1F2861C51E6008D500862E18 /* NSDate+Helper.m in Sources */,
 				1F2861CF1E6008D500862E18 /* FJTimer.m in Sources */,
+				1FAFB65C1E67F8A800CDB5E6 /* ImageViewController.m in Sources */,
 				1F00D50C1E52A5F80018791E /* ViewController.m in Sources */,
+				1FAFB6441E67C30400CDB5E6 /* FJPhotoMgr.m in Sources */,
 				1F2861BD1E6008D500862E18 /* FJAppRedirect.m in Sources */,
 				1F2861CD1E6008D500862E18 /* FJStorage.m in Sources */,
+				1F154C2F1E66ED4000D94922 /* FJPhotoLibraryViewController.m in Sources */,
 				1F2861D21E6008D500862E18 /* UIView+Geometry.m in Sources */,
+				1FAFB65F1E67F8B800CDB5E6 /* ImagePreviewtransition.m in Sources */,
 				1F2861C11E6008D500862E18 /* UIColor+Equal.m in Sources */,
+				1FAFB64D1E67CF6F00CDB5E6 /* UIImage+Clip.m in Sources */,
 				1F2861C61E6008D500862E18 /* UIFont+Utility.m in Sources */,
 				1F2861C91E6008D500862E18 /* UIImage+Compress.m in Sources */,
 				1F5D32311E659FCB00ED12EE /* FJRegion.m in Sources */,
 				1F2861C71E6008D500862E18 /* FJImage.m in Sources */,
+				1FAFB6531E67F7DA00CDB5E6 /* FJImageCollectionViewController.m in Sources */,
 				1F00D50B1E52A5F80018791E /* main.m in Sources */,
 				1F2861D11E6008D500862E18 /* FJUUID.m in Sources */,
 				1F2861C21E6008D500862E18 /* UIColor+Hex.m in Sources */,
@@ -572,6 +650,7 @@
 				1F2861D01E6008D500862E18 /* NSString+Translator.m in Sources */,
 				1F5D32341E65A01F00ED12EE /* RegionModel.m in Sources */,
 				1F00D5061E52A5F80018791E /* AppDelegate.m in Sources */,
+				1FAFB6591E67F81400CDB5E6 /* ImageCollectionViewCell.m in Sources */,
 				1F2861C31E6008D500862E18 /* NSData+Helper.m in Sources */,
 				1F2861C01E6008D500862E18 /* FJCache.m in Sources */,
 				1F2861D31E6008D500862E18 /* UIView+Layer.m in Sources */,
@@ -579,11 +658,16 @@
 				1F2861CB1E6008D500862E18 /* UIImageView+Loading.m in Sources */,
 				1F2861C81E6008D500862E18 /* UIImage+Color.m in Sources */,
 				1F2861CC1E6008D500862E18 /* FJNetworkMgr.m in Sources */,
+				1FAFB64A1E67CF6200CDB5E6 /* PHAsset+Select.m in Sources */,
 				1F5D32021E65619700ED12EE /* NSString+UpaiYun.m in Sources */,
+				1FAFB6501E67F7C300CDB5E6 /* FJAlbumListViewController.m in Sources */,
+				1FAFB63F1E67B65C00CDB5E6 /* SelectAlbumButton.m in Sources */,
 				1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */,
 				1F2861BF1E6008D500862E18 /* NSObject+Block.m in Sources */,
+				1FAFB6561E67F7FE00CDB5E6 /* AlbumListTableViewCell.m in Sources */,
 				1F2861CA1E6008D500862E18 /* UIImage+Text.m in Sources */,
 				1F2861CE1E6008D500862E18 /* NSString+Helper.m in Sources */,
+				1FAFB6471E67CE5E00CDB5E6 /* FJImageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,16 @@
 
 #import "ViewController.h"
 #import "FJTimer.h"
+#import "FJPhotoLibraryViewController.h"
+#import "FJAlbumListViewController.h"
+#import "ImageViewController.h"
+#import "FJImageModel.h"
+#import "FJPhotoMgr.h"
 
-@interface ViewController ()
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+
+@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *imageDataArray;
 
 @property (nonatomic, strong) FJTimer *fjTimer;
 @property (nonatomic, weak) IBOutlet UILabel *lb_countdonw;
@@ -24,6 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // 相机
+    [self createUI];
     
     __weak typeof(self) weakSelf = self;
     
@@ -55,6 +66,99 @@
 
 - (void)tapResume {
     [self.fjTimer resume];
+}
+
+- (IBAction)clear:(id)sender {
+    [self.imageDataArray removeAllObjects];
+    [self.collectionView reloadData];
+}
+
+- (IBAction)presentAlbum:(id)sender {
+    FJAlbumListViewController *albumListVC = [[FJAlbumListViewController alloc] init];
+    albumListVC.maxSelectCount = 9;
+    albumListVC.isAscend = YES;
+    albumListVC.rightTitle = @"确定";
+    
+    __weak ViewController *weakSelf = self;
+    
+    albumListVC.okClickComplete = ^(NSArray<FJImageModel *> *images){
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            
+            [images enumerateObjectsUsingBlock:^(FJImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (obj.asset) {
+                    [FJPhotoMgr getImageDataWithAsset:obj.asset complete:^(UIImage *image,UIImage*HDImage) {
+                        if (image) {
+                            [weakSelf.imageDataArray addObject:image];
+                        }
+                    }];
+                    
+                }else{
+                    [weakSelf.imageDataArray addObject:obj.thumbImage];
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf.collectionView reloadData];
+                });
+                
+            }];
+        });
+    };
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumListVC];
+    
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+#pragma mark - collectionView delegate &datasource
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return self.imageDataArray.count;
+}
+
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.imageDataArray[indexPath.row]];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    cell.backgroundView = imageView;
+    return cell;
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    ImageViewController *imageVC = [[ImageViewController alloc] init];
+    imageVC.clickedView = (UIImageView*)cell.backgroundView;
+    [self presentViewController:imageVC animated:YES completion:nil];
+}
+
+- (void)createUI{
+    
+    self.collectionView = ({
+        UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+        layout.minimumLineSpacing = 0;
+        layout.minimumInteritemSpacing = 0;
+        layout.itemSize =CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width);
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];
+        collectionView.pagingEnabled = YES;
+        collectionView.backgroundColor = [UIColor whiteColor];
+        collectionView.dataSource = self;
+        collectionView.delegate = self;
+        [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+        [self.view addSubview:collectionView];
+        collectionView;
+    });
+}
+
+- (NSMutableArray*)imageDataArray
+{
+    if (!_imageDataArray ) {
+        _imageDataArray = [NSMutableArray array];
+    }
+    return _imageDataArray;
 }
 
 

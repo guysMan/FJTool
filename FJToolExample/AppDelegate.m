@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "FJRegion.h"
+#import "FJPhotoMgr.h"
 
 @interface AppDelegate ()
 
@@ -18,10 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    RegionModel *region = [FJRegion domesticDistricts];
-    NSLog(@"%@",region);
-    
+    [FJPhotoMgr getAlbumListWithAscend:YES complete:^(NSArray<PHFetchResult *> *albumList) {
+        NSLog(@"%@",albumList);
+    }];
     return YES;
 }
 

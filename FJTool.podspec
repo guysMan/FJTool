@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
     s.dependency   'AFNetworking'
     s.dependency   'JSONModel'
     s.dependency   'SDWebImage'
+    s.dependency   'Masonry'
     s.dependency   'CocoaSecurity'
     s.requires_arc = true
     s.subspec 'Appstore' do |ss|
