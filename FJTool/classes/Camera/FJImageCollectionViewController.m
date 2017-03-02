@@ -11,6 +11,7 @@
 #import "FJPhotoMgr.h"
 #import "ImageCollectionViewCell.h"
 #import "PHAsset+Select.h"
+#import "PodHelper.h"
 
 static NSString * const kCellIdentifier = @"ImageCollectionViewCellIdentifier";
 static NSInteger  const kItemsOfRow = 3;
@@ -123,7 +124,13 @@ static CGFloat    const kItemsSpace = 2.0;
 {
     ImageCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCellIdentifier forIndexPath:indexPath];
     if (indexPath.row == self.photoIndex) {
-        cell.imageView.image  = [UIImage imageNamed:@"ch_camera_photo"];
+        
+        UIImage *ch_camera_photo = [UIImage imageNamed:@"ch_camera_photo"];
+        if (ch_camera_photo == nil) {
+            // fix cocoapods
+            [PodHelper getPodImage:@"ch_camera_photo" class:[self class]];
+        }
+        cell.imageView.image  = ch_camera_photo;
         cell.selectImageView.hidden = YES;
         cell.indexLabel.hidden = YES;
     }else{

@@ -21,14 +21,14 @@ typedef NS_ENUM(NSInteger, PlaceholderImageType)
     PlaceholderImageType_Loading_W_IDCard,
 };
 
-#define PLACEHOLDER_IMG_AVATAR             [UIImage imageNamed:@"placeholder_avatar"]
-#define PLACEHOLDER_IMG_LOGO_LARGE         [UIImage imageNamed:@"placeholder_logo_large"]
-#define PLACEHOLDER_IMG_LOGO_MIDDLE        [UIImage imageNamed:@"placeholder_logo_middle"]
-#define PLACEHOLDER_IMG_LOGO_TINY          [UIImage imageNamed:@"placeholder_logo_tiny"]
-#define PLACEHOLDER_IMG_LOADING_WO_TXT     [UIImage imageNamed:@"placeholder_loading_wo_txt"]
-#define PLACEHOLDER_IMG_LOADING_W_TXT      [UIImage imageNamed:@"placeholder_loading_w_txt"]
-#define PLACEHOLDER_IMG_LOADING_W_IDCARD   [UIImage imageNamed:@"placeholder_loading_w_idcard"]
-#define PLACEHOLDER_IMG_FAILURE            [UIImage imageNamed:@"placeholder_failure"]
+#define PLACEHOLDER_IMG_AVATAR             [UIImage imageNamed:@"placeholder_avatar"] ? [UIImage imageNamed:@"placeholder_avatar"] : [PodHelper getPodImage:@"placeholder_avatar" class:[self class]]
+#define PLACEHOLDER_IMG_LOGO_LARGE         [UIImage imageNamed:@"placeholder_logo_large"] ? [UIImage imageNamed:@"placeholder_logo_large"] : [PodHelper getPodImage:@"placeholder_logo_large" class:[self class]]
+#define PLACEHOLDER_IMG_LOGO_MIDDLE        [UIImage imageNamed:@"placeholder_logo_middle"] ? [UIImage imageNamed:@"placeholder_logo_middle"] : [PodHelper getPodImage:@"placeholder_logo_middle" class:[self class]]
+#define PLACEHOLDER_IMG_LOGO_TINY          [UIImage imageNamed:@"placeholder_logo_tiny"] ? [UIImage imageNamed:@"placeholder_logo_tiny"] : [PodHelper getPodImage:@"placeholder_logo_tiny" class:[self class]]
+#define PLACEHOLDER_IMG_LOADING_WO_TXT     [UIImage imageNamed:@"placeholder_loading_wo_txt"] ? [UIImage imageNamed:@"placeholder_loading_wo_txt"] : [PodHelper getPodImage:@"placeholder_loading_wo_txt" class:[self class]]
+#define PLACEHOLDER_IMG_LOADING_W_TXT      [UIImage imageNamed:@"placeholder_loading_w_txt"] ? [UIImage imageNamed:@"placeholder_loading_w_txt"] : [PodHelper getPodImage:@"placeholder_loading_w_txt" class:[self class]]
+#define PLACEHOLDER_IMG_LOADING_W_IDCARD   [UIImage imageNamed:@"placeholder_loading_w_idcard"] ? [UIImage imageNamed:@"placeholder_loading_w_idcard"] : [PodHelper getPodImage:@"placeholder_loading_w_idcard" class:[self class]]
+#define PLACEHOLDER_IMG_FAILURE            [UIImage imageNamed:@"placeholder_failure"] ? [UIImage imageNamed:@"placeholder_failure"] : [PodHelper getPodImage:@"placeholder_failure" class:[self class]]
 
 @interface UIImageView (Loading)
 

@@ -14,6 +14,7 @@
 #import "NSString+UpaiYun.h"
 #import "NSString+Helper.h"
 #import "NSArray+Operation.h"
+#import "PodHelper.h"
 
 #define DEFAULT_BACKGROUND_COLOR [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0]
 #define ANIMATION_FADEIN (1.0)

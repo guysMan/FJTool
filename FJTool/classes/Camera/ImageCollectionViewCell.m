@@ -10,6 +10,7 @@
 #import <Masonry/Masonry.h>
 #import "PHAsset+Select.h"
 #import "FJImageModel.h"
+#import "PodHelper.h"
 
 #define  ITEMWIDTH 2 * ([UIScreen mainScreen].bounds.size.width - 4)/3.0
 
@@ -38,7 +39,11 @@
     // 选中的背景
     self.selectImageView = [[UIImageView alloc] init];
     self.selectImageView.backgroundColor = [UIColor clearColor];
-    self.selectImageView.image = [UIImage imageNamed:@"ch_selectbg_photo"];
+    UIImage *ch_selectbg_photo = [UIImage imageNamed:@"ch_selectbg_photo"];
+    if (ch_selectbg_photo == nil) {
+        ch_selectbg_photo = [PodHelper getPodImage:@"ch_selectbg_photo" class:[self class]];
+    }
+    self.selectImageView.image = ch_selectbg_photo;
     [self.imageView addSubview: self.selectImageView];
     [ self.selectImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);

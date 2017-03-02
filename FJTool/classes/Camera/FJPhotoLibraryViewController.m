@@ -11,6 +11,7 @@
 #import "MacroColor.h"
 #import "NSObject+Block.h"
 #import "SelectAlbumButton.h"
+#import "PodHelper.h"
 
 #define NavigationBar_BackgroundColor
 #define Back_Image
@@ -27,6 +28,10 @@
         self.navigationBarTintColor = [UIColor whiteColor];
         self.statusBarHidden = YES;
         self.backImage = [UIImage imageNamed:@"nav_icon_back_grey"];
+        if (self.backImage == nil) {
+            // fix cocoapod
+            self.backImage = [PodHelper getPodImage:@"nav_icon_back_grey" class:[self class]];
+        }
         self.backSize = CGSizeMake(24.0, 24.0);
         self.nextText = @"下一步";
         self.nextFont = [UIFont systemFontOfSize:14.0];
