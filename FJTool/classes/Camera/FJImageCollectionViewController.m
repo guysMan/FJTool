@@ -128,7 +128,7 @@ static CGFloat    const kItemsSpace = 2.0;
         UIImage *ch_camera_photo = [UIImage imageNamed:@"ch_camera_photo"];
         if (ch_camera_photo == nil) {
             // fix cocoapods
-            [PodHelper getPodImage:@"ch_camera_photo" class:[self class]];
+            ch_camera_photo = [PodHelper getPodImage:@"ch_camera_photo" class:[self class]];
         }
         cell.imageView.image  = ch_camera_photo;
         cell.selectImageView.hidden = YES;

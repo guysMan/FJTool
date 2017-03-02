@@ -7,6 +7,7 @@
 //
 
 #import "PodHelper.h"
+#import "Macro.h"
 
 @implementation PodHelper
 
@@ -21,6 +22,23 @@
 + (UIImage*)getPodImage:(NSString*)name class:(Class)class
 {
     UIImage *image = [[UIImage imageWithContentsOfFile:[[self getPodBundle:class] pathForResource:name ofType:@"png"]] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+    
+    if (image == nil) {
+        NSString *resourceName = nil;
+        if ([[UIScreen mainScreen] bounds].size.width == 414) {
+            
+            // 3倍图
+            resourceName = [NSString stringWithFormat:@"%@@3x",name];
+        }else{
+            
+            // 2倍图
+            resourceName = [NSString stringWithFormat:@"%@@2x",name];
+        }
+        
+        image = [[UIImage imageWithContentsOfFile:[[self getPodBundle:class] pathForResource:resourceName ofType:@"png"]] imageWithRenderingMode:UIImageRenderingModeAutomatic];
+        
+    }
+    
     return image;
 }
 
