@@ -75,4 +75,7 @@ Pod::Spec.new do |s|
     s.subspec 'Pod' do |ss|
       ss.source_files = 'FJTool/classes/Pod/*.{h,m}'
     end
+    s.subspec 'Camera' do |ss|
+      ss.source_files = 'FJTool/classes/Camera/*.{h,m}'
+    end
 end
