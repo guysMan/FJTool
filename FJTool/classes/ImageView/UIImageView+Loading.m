@@ -65,11 +65,10 @@ static NSMutableArray *errorUrls;
         if (error) {
             
             [weakSelf updateErrorUrl:imageURL];
-            
             [weakSelf sd_setImageWithURL:imageURL completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 if (error) {
                     [weakSelf setContentMode:UIViewContentModeCenter];
-                    weakSelf.image = PLACEHOLDER_IMG_FAILURE;
+                    weakSelf.image = PLACEHOLDER_IMG_FAILURE_WEAK;
                 }else{
                     [weakSelf setImage:image];
                     weakSelf.backgroundColor = [UIColor clearColor];

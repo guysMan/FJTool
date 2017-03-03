@@ -29,6 +29,9 @@
             
             // 3倍图
             resourceName = [NSString stringWithFormat:@"%@@3x",name];
+            if (image == nil) {
+                resourceName = [NSString stringWithFormat:@"%@@2x",name];
+            }
         }else{
             
             // 2倍图

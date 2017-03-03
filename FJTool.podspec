@@ -14,6 +14,10 @@ Pod::Spec.new do |s|
     s.dependency   'SDWebImage'
     s.dependency   'Masonry'
     s.dependency   'CocoaSecurity'
+    s.dependency   'CRToast'
+    s.dependency   'Toast'
+    s.dependency   'SVProgressHUD'
+    s.dependency   'SCAvatarBrowser'
     s.requires_arc = true
     s.subspec 'Appstore' do |ss|
       ss.source_files = 'FJTool/classes/Appstore/*.{h,m}'
@@ -77,5 +81,8 @@ Pod::Spec.new do |s|
     end
     s.subspec 'Camera' do |ss|
       ss.source_files = 'FJTool/classes/Camera/*.{h,m}'
+    end
+    s.subspec 'CommonUI' do |ss|
+      ss.source_files = 'FJTool/classes/CommonUI/*.{h,m}'
     end
 end
