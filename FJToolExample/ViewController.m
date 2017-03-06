@@ -13,6 +13,16 @@
 #import "ImageViewController.h"
 #import "FJImageModel.h"
 #import "FJPhotoMgr.h"
+#import "FJDropSheet.h"
+#import "SolidLine.h"
+#import "HorizontalDotLine.h"
+#import "VerticalDotLine.h"
+#import "UIView+SVProgress.h"
+#import "FJProgressView.h"
+#import "NSObject+CRToast.h"
+#import "UIView+PromptToast.h"
+#import "TestViewController.h"
+#import "UIView+DropSheet.h"
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -105,6 +115,38 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:albumListVC];
     
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (IBAction)customeTap:(id)sender {
+    // [self.view toast:@"Title" message:@"Message"];
+    // [self.view toast:nil message:@"Message"];
+    // [self CRToastTitle:@"Title" subTitle:@"Message"];
+    
+    /*
+    FJProgressView *progressView = [[FJProgressView alloc] initWithFrame:CGRectMake(100, 100, 200, 10.0) backgroundColor:[UIColor whiteColor] progressTintColor:[UIColor blueColor] borderTintColor:[UIColor blackColor] borderStrokeWidth:@1.0];
+    [self.view addSubview:progressView];
+    [progressView setProgress:0.88 animated:YES];
+    */
+    
+    /*
+    [self.view startLoadingAnimation];
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf.view stopLoadingAnimation];
+    });
+    */
+    
+    [self.view dropSheet:@"This is a demo" tapBlock:^{
+        NSLog(@"tapBlock");
+    } cancelBlock:^{
+        NSLog(@"cancelBlock");
+    }];
+    
+}
+
+- (IBAction)customTapLetf:(id)sender {
+    TestViewController *testVC = [[TestViewController alloc] init];
+    [self.navigationController pushViewController:testVC animated:YES];
 }
 
 #pragma mark - collectionView delegate &datasource

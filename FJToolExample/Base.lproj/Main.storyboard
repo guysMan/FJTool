@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,21 +40,35 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="HNo-FL-1e9">
-                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="Nf4-7e-e8o">
-                            <connections>
-                                <action selector="clear:" destination="BYZ-38-t0r" id="S7u-uX-AKg"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="q9M-Sk-T0g">
-                            <connections>
-                                <action selector="presentAlbum:" destination="BYZ-38-t0r" id="so7-dT-A28"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="trash" id="Nf4-7e-e8o">
+                                <connections>
+                                    <action selector="clear:" destination="BYZ-38-t0r" id="S7u-uX-AKg"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="KV7-ZV-rEc">
+                                <connections>
+                                    <action selector="customTapLetf:" destination="BYZ-38-t0r" id="xDM-06-pSD"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="q9M-Sk-T0g">
+                                <connections>
+                                    <action selector="presentAlbum:" destination="BYZ-38-t0r" id="so7-dT-A28"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="uGS-Bc-Y9z">
+                                <connections>
+                                    <action selector="customeTap:" destination="BYZ-38-t0r" id="YNU-2f-jvo"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-572" y="-16"/>
+            <point key="canvasLocation" x="-572" y="-16.641679160419791"/>
         </scene>
     </scenes>
 </document>

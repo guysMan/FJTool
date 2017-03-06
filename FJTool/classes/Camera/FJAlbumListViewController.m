@@ -11,6 +11,7 @@
 #import "FJPhotoMgr.h"
 #import "FJImageCollectionViewController.h"
 #import "AlbumListTableViewCell.h"
+#import "FJImageModel.h"
 
 @interface FJAlbumListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic)  UITableView *tableView;

@@ -9,10 +9,14 @@
 #import "FJProgressView.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define Progress_Background_Color  [UIColor whiteColor]
+#define Progress_TintColor         [UIColor blackColor]
+#define Border_TintColor           [UIColor blackColor]
+#define BorderStrokeWidth          @1
+
 static const CGFloat kBorderWidth = 0.0f;
 
-
-@interface HTProgressLayer : CALayer
+@interface ProgressLayer : CALayer
 @property (nonatomic, strong) UIColor* progressTintColor;
 @property (nonatomic, strong) UIColor* borderTintColor;
 @property (nonatomic, strong) UIColor* progressBackgroundColor;
@@ -21,7 +25,7 @@ static const CGFloat kBorderWidth = 0.0f;
 
 @end
 
-@implementation HTProgressLayer
+@implementation ProgressLayer
 
 @dynamic progressTintColor;
 @dynamic borderTintColor;
@@ -100,20 +104,38 @@ static const CGFloat kBorderWidth = 0.0f;
 
 @end
 
+@interface FJProgressView()
+
+@property (nonatomic) CGFloat progress;
+
+@property (nonatomic, strong) UIColor* progressBackgroundColor;
+@property (nonatomic, strong) UIColor* progressTintColor;
+@property (nonatomic, strong) UIColor* borderTintColor;
+@property (nonatomic, strong) NSNumber *borderStrokeWidth;
+
+@end
+
 @implementation FJProgressView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor progressTintColor:(UIColor*)progressTintColor borderTintColor:(UIColor*)borderTintColor borderStrokeWidth:(NSNumber*)borderStrokeWidth
 {
     if (self = [super initWithFrame:frame]) {
         [self initialize];
+        [self setProgressBackgroundColor:backgroundColor];
+        [self setProgressTintColor:progressTintColor];
+        [self setBorderTintColor:borderTintColor];
+        [self setBorderStrokeWidth:borderStrokeWidth];
     }
     return self;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-    if (self = [super initWithCoder:aDecoder]) {
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self == [super initWithCoder:aDecoder]) {
         [self initialize];
+        [self setProgressBackgroundColor:Progress_Background_Color];
+        [self setProgressTintColor:Progress_TintColor];
+        [self setBorderTintColor:Border_TintColor];
+        [self setBorderStrokeWidth:BorderStrokeWidth];
     }
     return self;
 }
@@ -130,12 +152,12 @@ static const CGFloat kBorderWidth = 0.0f;
 
 + (Class)layerClass
 {
-    return [HTProgressLayer class];
+    return [ProgressLayer class];
 }
 
-- (HTProgressLayer *)progressLayer
+- (ProgressLayer *)progressLayer
 {
-    return (HTProgressLayer *)self.layer;
+    return (ProgressLayer *)self.layer;
 }
 
 
@@ -204,12 +226,12 @@ static const CGFloat kBorderWidth = 0.0f;
     [self.progressLayer setNeedsDisplay];
 }
 
-- (void)setKWidth:(NSNumber *)kWidth {
-    self.progressLayer.kWidth = kWidth;
+- (NSNumber *)borderStrokeWidth {
+    return self.progressLayer.kWidth;
 }
 
-- (NSNumber *)kWidth {
-    return self.progressLayer.kWidth;
+- (void)setBorderStrokeWidth:(NSNumber *)borderStrokeWidth {
+    self.progressLayer.kWidth = borderStrokeWidth;
 }
 
 @end

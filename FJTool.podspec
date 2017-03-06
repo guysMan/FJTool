@@ -83,6 +83,6 @@ Pod::Spec.new do |s|
       ss.source_files = 'FJTool/classes/Camera/*.{h,m}'
     end
     s.subspec 'CommonUI' do |ss|
-      ss.source_files = 'FJTool/classes/CommonUI/*.{h,m}'
+      ss.source_files = 'FJTool/classes/CommonUI/**/*.{h,m}'
     end
 end

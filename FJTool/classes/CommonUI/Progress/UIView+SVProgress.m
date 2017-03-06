@@ -9,8 +9,8 @@
 #import "UIView+SVProgress.h"
 
 #define Text_Font        [UIFont systemFontOfSize:14.0]
-#define Foreground_Color [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1.0]
-#define Background_Color [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1.0]
+#define Foreground_Color [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0]
+#define Background_Color [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8]
 #define ThickNess        (2.0)
 #define Default_Message @"正在加载..."
 
@@ -32,18 +32,16 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
-        [SVProgressHUD setFont:textFont];
-        [SVProgressHUD setForegroundColor:foregroundColor];
         [SVProgressHUD setBackgroundColor:backgroundColor];
+        [SVProgressHUD setForegroundColor:foregroundColor];
+        [SVProgressHUD setFont:textFont];
         [SVProgressHUD setRingThickness:ringThickness];
     });
     
-    @synchronized (self) {
-        if (message == nil || message.length == 0) {
-            [SVProgressHUD show];
-        }else {
-            [SVProgressHUD showWithStatus:message];
-        }
+    if (message == nil || message.length == 0) {
+        [SVProgressHUD show];
+    }else {
+        [SVProgressHUD showWithStatus:message];
     }
 }
 

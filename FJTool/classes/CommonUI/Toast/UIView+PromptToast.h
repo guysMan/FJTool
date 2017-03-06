@@ -23,6 +23,6 @@
 - (void)toast:(NSString*)title message:(NSString*)message duration:(CGFloat)duration overWindow:(BOOL)overWindow;
 
 // Toast[Basic]
-- (void)toast:(NSString *)title titleColor:(UIColor*)titleColor titleFont:(UIFont*)titleFont message:(NSString *)message messageColor:(UIColor*)messageColor messageFont:(UIFont*)messageFont positon:(id)position duration:(CGFloat)duration overWindow:(BOOL)overWindow;
+- (void)toast:(NSString *)title titleColor:(UIColor*)titleColor titleFont:(UIFont*)titleFont titleAlignment:(NSTextAlignment)titleAlignment message:(NSString *)message messageColor:(UIColor*)messageColor messageFont:(UIFont*)messageFont messageAlignment:(NSTextAlignment)messageAlignment positon:(id)position duration:(CGFloat)duration image:(UIImage*)image cornerRadius:(CGFloat)cornerRadius queue:(BOOL)queue tapDismiss:(BOOL)tapDismiss overWindow:(BOOL)overWindow;
 
 @end

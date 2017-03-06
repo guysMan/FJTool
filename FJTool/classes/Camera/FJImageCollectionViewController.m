@@ -12,6 +12,7 @@
 #import "ImageCollectionViewCell.h"
 #import "PHAsset+Select.h"
 #import "PodHelper.h"
+#import "FJImageModel.h"
 
 static NSString * const kCellIdentifier = @"ImageCollectionViewCellIdentifier";
 static NSInteger  const kItemsOfRow = 3;

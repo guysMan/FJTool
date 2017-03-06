@@ -10,12 +10,25 @@
 
 @interface FJProgressView : UIView
 
-@property (nonatomic, strong) UIColor* progressTintColor;
-@property (nonatomic, strong) UIColor* borderTintColor;
-@property (nonatomic, strong) UIColor* progressBackgroundColor;
-@property (nonatomic) CGFloat progress;
-@property (nonatomic, strong) NSNumber *kWidth;
+// Initialize
+- (id)initWithFrame:(CGRect)frame backgroundColor:(UIColor*)backgroundColor progressTintColor:(UIColor*)progressTintColor borderTintColor:(UIColor*)borderTintColor borderStrokeWidth:(NSNumber*)borderStrokeWidth;
 
+// UI - Progress Tint Color
+- (void)setProgressTintColor:(UIColor *)progressTintColor;
+
+// UI - Border Tint Color
+- (void)setBorderTintColor:(UIColor *)borderTintColor;
+
+// UI- Progress Background Color
+- (void)setProgressBackgroundColor:(UIColor *)backgroundColor;
+
+// UI - Border Width
+- (void)setBorderStrokeWidth:(NSNumber *)borderStrokeWidth;
+
+// UI - Progress
+- (void)setProgress:(CGFloat)progress;
+
+// UI - Progress[Animated]
 - (void)setProgress:(CGFloat)progress animated:(BOOL)animated;
 
 @end
