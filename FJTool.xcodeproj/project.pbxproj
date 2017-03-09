@@ -42,6 +42,7 @@
 		1F5D322D1E6593C800ED12EE /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D322C1E6593C800ED12EE /* address.json */; };
 		1F5D32311E659FCB00ED12EE /* FJRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32301E659FCB00ED12EE /* FJRegion.m */; };
 		1F5D32341E65A01F00ED12EE /* RegionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32331E65A01F00ED12EE /* RegionModel.m */; };
+		1F9212761E715BAB00D5AA60 /* FJContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9212751E715BAB00D5AA60 /* FJContacts.m */; };
 		1FAA0CC51E6970FE000DEACD /* UIView+SVProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA0CBF1E6970FE000DEACD /* UIView+SVProgress.m */; };
 		1FAA0CC61E6970FE000DEACD /* NSObject+CRToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA0CC21E6970FE000DEACD /* NSObject+CRToast.m */; };
 		1FAA0CC71E6970FE000DEACD /* UIView+PromptToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA0CC41E6970FE000DEACD /* UIView+PromptToast.m */; };
@@ -169,6 +170,8 @@
 		1F5D32301E659FCB00ED12EE /* FJRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJRegion.m; sourceTree = "<group>"; };
 		1F5D32321E65A01F00ED12EE /* RegionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionModel.h; sourceTree = "<group>"; };
 		1F5D32331E65A01F00ED12EE /* RegionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionModel.m; sourceTree = "<group>"; };
+		1F9212741E715BAB00D5AA60 /* FJContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJContacts.h; sourceTree = "<group>"; };
+		1F9212751E715BAB00D5AA60 /* FJContacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJContacts.m; sourceTree = "<group>"; };
 		1FAA0CBE1E6970FE000DEACD /* UIView+SVProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SVProgress.h"; sourceTree = "<group>"; };
 		1FAA0CBF1E6970FE000DEACD /* UIView+SVProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SVProgress.m"; sourceTree = "<group>"; };
 		1FAA0CC11E6970FE000DEACD /* NSObject+CRToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+CRToast.h"; sourceTree = "<group>"; };
@@ -357,6 +360,7 @@
 				1F154C2B1E66EC2E00D94922 /* Camera */,
 				1F2861831E6008D500862E18 /* Color */,
 				1F2CBFE81E6822E200952D5E /* CommonUI */,
+				1F9212731E715B9300D5AA60 /* Contacts */,
 				1F2861881E6008D500862E18 /* Data */,
 				1F28618B1E6008D500862E18 /* Date */,
 				1F2861911E6008D500862E18 /* Font */,
@@ -613,6 +617,15 @@
 			path = Region;
 			sourceTree = "<group>";
 		};
+		1F9212731E715B9300D5AA60 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				1F9212741E715BAB00D5AA60 /* FJContacts.h */,
+				1F9212751E715BAB00D5AA60 /* FJContacts.m */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
 		1FAA0CBD1E6970FE000DEACD /* Progress */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +730,7 @@
 				TargetAttributes = {
 					1F00D4DE1E52A4870018791E = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 9YHHLB2CQ7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -877,6 +891,7 @@
 				1F2861CC1E6008D500862E18 /* FJNetworkMgr.m in Sources */,
 				1FAA0CD31E697257000DEACD /* FJDropSheet.m in Sources */,
 				1FAFB64A1E67CF6200CDB5E6 /* PHAsset+Select.m in Sources */,
+				1F9212761E715BAB00D5AA60 /* FJContacts.m in Sources */,
 				1FAA0CC71E6970FE000DEACD /* UIView+PromptToast.m in Sources */,
 				1F5D32021E65619700ED12EE /* NSString+UpaiYun.m in Sources */,
 				1FAFB6501E67F7C300CDB5E6 /* FJAlbumListViewController.m in Sources */,
@@ -1008,6 +1023,7 @@
 			baseConfigurationReference = D959BCA06DC61C39041F9D20 /* Pods-FJTool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9YHHLB2CQ7;
 				INFOPLIST_FILE = FJToolExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jeff.FJTool;
@@ -1020,6 +1036,7 @@
 			baseConfigurationReference = 6FE46E74C651F6418C7FD9E1 /* Pods-FJTool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9YHHLB2CQ7;
 				INFOPLIST_FILE = FJToolExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Jeff.FJTool;

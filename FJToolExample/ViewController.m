@@ -23,6 +23,7 @@
 #import "UIView+PromptToast.h"
 #import "TestViewController.h"
 #import "UIView+DropSheet.h"
+#import "FJContacts.h"
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -142,6 +143,11 @@
         NSLog(@"cancelBlock");
     }];
     
+    NSLog(@"hasContactsAccessRight:%d",[FJContacts hasContactsAccessRight]);
+    
+    [FJContacts getContacts:^(NSMutableArray *contacts) {
+        NSLog(@"%@", contacts);
+    }];
 }
 
 - (IBAction)customTapLetf:(id)sender {
