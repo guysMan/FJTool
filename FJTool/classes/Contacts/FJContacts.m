@@ -8,50 +8,129 @@
 
 #import "FJContacts.h"
 #import "FJContactModel.h"
+#import <UIKit/UIKit.h>
 
 @implementation FJContacts
 
-// 是否第一次启动通讯录
-+ (BOOL)isNotDetermined {
-#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_0
-    ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
-    if (status == kABAuthorizationStatusNotDetermined)
-        return YES;
-    else
-        return NO;
-#else
-    CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
-    if (status == CNAuthorizationStatusNotDetermined)
-        return YES;
-    else
-        return NO;
-#endif
+// 通讯录权限状态
++ (ContactAuthorizationStatus)getContactAuthorizationStatus {
+    if ([[UIDevice currentDevice].systemVersion floatValue] < 9.0) {
+        return [self getContactAuthorizationStatusWAddressBook];
+    }else{
+        return [self getContactAuthorizationStatusWContacts];
+    }
 }
 
-// 是否有权限
-+ (BOOL)hasContactsAccessRight {
++ (ContactAuthorizationStatus)getContactAuthorizationStatusWAddressBook {
+    ContactAuthorizationStatus contactStatus = ContactAuthorizationStatusNotDetermined;
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_0
     ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
-    if (status == kABAuthorizationStatusAuthorized)
-        return YES;
-    else
-        return NO;
-#else
-    CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
-    if (status == CNAuthorizationStatusAuthorized)
-        return YES;
-    else
-        return NO;
+    switch (status) {
+        case kABAuthorizationStatusDenied:
+            contactStatus = ContactAuthorizationStatusDenied;
+            break;
+        case kABAuthorizationStatusAuthorized:
+            contactStatus = ContactAuthorizationStatusAuthorized;
+            break;
+        case kABAuthorizationStatusRestricted:
+            contactStatus = ContactAuthorizationStatusRestricted;
+            break;
+        case kABAuthorizationStatusNotDetermined:
+            contactStatus = ContactAuthorizationStatusNotDetermined;
+            break;
+    }
 #endif
+    return contactStatus;
 }
 
++ (ContactAuthorizationStatus)getContactAuthorizationStatusWContacts {
+    ContactAuthorizationStatus contactStatus = ContactAuthorizationStatusNotDetermined;
+#if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
+    CNAuthorizationStatus status = [CNContactStore authorizationStatusForEntityType:CNEntityTypeContacts];
+    switch (status) {
+        case CNAuthorizationStatusDenied:
+            contactStatus = ContactAuthorizationStatusDenied;
+            break;
+        case CNAuthorizationStatusAuthorized:
+            contactStatus = ContactAuthorizationStatusAuthorized;
+            break;
+        case CNAuthorizationStatusRestricted:
+            contactStatus = ContactAuthorizationStatusRestricted;
+            break;
+        case CNAuthorizationStatusNotDetermined:
+            contactStatus = ContactAuthorizationStatusNotDetermined;
+            break;
+    }
+#endif
+    return contactStatus;
+}
+
+
+// 请求通讯录权限
++ (BOOL)requestPrivacyRight {
+    
+    if ([[UIDevice currentDevice].systemVersion floatValue] < 9.0) {
+        return [self requestPrivacyRightWAddressBook];
+    }else{
+        return [self requestPrivacyRightWContacts];
+    }
+}
+
++ (BOOL)requestPrivacyRightWAddressBook {
+    __block BOOL accessGranted = NO;
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_0
+    CFErrorRef *error = nil;
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, error);
+    if (ABAddressBookRequestAccessWithCompletion != NULL)
+    {
+        dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+        ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+            accessGranted = granted;
+            dispatch_semaphore_signal(sema);
+        });
+        dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    } else {
+        accessGranted = YES;
+    }
+#endif
+    return accessGranted;
+}
+
+
++ (BOOL)requestPrivacyRightWContacts {
+    __block BOOL accessGranted = NO;
+#if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    [[CNContactStore new] requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        accessGranted = granted;
+        dispatch_semaphore_signal(sema);
+    }];
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+#endif
+    return accessGranted;
+}
 
 // 获取用户通讯录
-+ (void)getContacts:(void(^)(id contact))callback {
++ (void)getContacts:(void(^)(FJContactList *contact))callback {
+    if ([[UIDevice currentDevice].systemVersion floatValue] < 9.0) {
+        [self getContactsWAddressBook:^(id contact) {
+            callback == nil ? : callback(contact);
+        }];
+    }else{
+        [self getContactsWContacts:^(FJContactList *contact) {
+            callback == nil ? : callback(contact);
+        }];
+    }
+}
+
++ (void)getContactsWAddressBook:(void(^)(FJContactList *contact))callback {
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_0
     // 1.获取授权状态
     // 2.如果是已经授权,才能获取联系人
-    if (![self hasContactsAccessRight] && ![self isNotDetermined]) return;
+    if ([self getContactAuthorizationStatus] != ContactAuthorizationStatusAuthorized) {
+        callback == nil ? : callback(nil);
+        return;
+    };
     
     // 3.创建通信录对象
     ABAddressBookRef addressBook = ABAddressBookCreate();
@@ -135,9 +214,18 @@
     CFRelease(peopleArray);
     callback == nil ? : callback(result);
 #else
+    callback == nil ? : callback(nil);
+#endif
+}
+
++ (void)getContactsWContacts:(void(^)(FJContactList *contact))callback {
+#if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
     // 1.获取授权状态
     // 2.判断授权状态,如果不是已经授权,则直接返回
-    if (![self hasContactsAccessRight] && ![self isNotDetermined]) return;
+    if ([self getContactAuthorizationStatus] != ContactAuthorizationStatusAuthorized) {
+        callback == nil ? : callback(nil);
+        return;
+    };
     
     // 3.创建通信录对象
     CNContactStore *contactStore = [[CNContactStore alloc] init];
@@ -153,12 +241,12 @@
     result.contactList = (NSMutableArray<FJContactModel> *)[[NSMutableArray alloc] init];
     
     /* 线程等待
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-    dispatch_semaphore_signal(semaphore);
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-    dispatch_release(semaphore);
-    semaphore = nil;
-    */
+     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+     dispatch_semaphore_signal(semaphore);
+     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+     dispatch_release(semaphore);
+     semaphore = nil;
+     */
     // 5.遍历所有的联系人
     //    [contactStore enumerateContactsWithFetchRequest:request error:nil usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
     //    }];
@@ -217,6 +305,8 @@
         [result.contactList addObject:onePerson];
     }
     callback == nil ? : callback(result);
+#else
+    callback == nil ? : callback(nil);
 #endif
 }
 

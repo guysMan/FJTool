@@ -143,7 +143,7 @@
         NSLog(@"cancelBlock");
     }];
     
-    NSLog(@"hasContactsAccessRight:%d",[FJContacts hasContactsAccessRight]);
+    NSLog(@"hasContactsAccessRight:%ld",(long)[FJContacts getContactAuthorizationStatus]);
     
     [FJContacts getContacts:^(id contact) {
         NSLog(@"%@", contact);
