@@ -85,4 +85,7 @@ Pod::Spec.new do |s|
     s.subspec 'CommonUI' do |ss|
       ss.source_files = 'FJTool/classes/CommonUI/**/*.{h,m}'
     end
+    s.subspec 'Contacts' do |ss|
+      ss.source_files = 'FJTool/classes/Contacts/**/*.{h,m}'
+    end
 end

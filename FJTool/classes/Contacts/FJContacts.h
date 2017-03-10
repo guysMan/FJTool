@@ -19,6 +19,6 @@
 + (BOOL)hasContactsAccessRight;
 
 // 获取用户通讯录
-+ (void)getContacts:(void(^)(NSMutableArray * contacts))callback;
++ (void)getContacts:(void(^)(id contact))callback;
 
 @end

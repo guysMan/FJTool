@@ -35,6 +35,9 @@
 #import <FJTool/FJProgressView.h>
 #import <FJTool/NSObject+CRToast.h>
 #import <FJTool/UIView+PromptToast.h>
+// Contacts
+#import <FJTool/FJContacts.h>
+#import <FJTool/FJContactModel.h>
 // Data
 #import <FJTool/NSData+Helper.h>
 // Date

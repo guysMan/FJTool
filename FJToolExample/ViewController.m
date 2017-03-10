@@ -145,8 +145,8 @@
     
     NSLog(@"hasContactsAccessRight:%d",[FJContacts hasContactsAccessRight]);
     
-    [FJContacts getContacts:^(NSMutableArray *contacts) {
-        NSLog(@"%@", contacts);
+    [FJContacts getContacts:^(id contact) {
+        NSLog(@"%@", contact);
     }];
 }
 

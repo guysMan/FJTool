@@ -60,10 +60,10 @@
     NSURL * url = [NSURL URLWithString:appURL];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_10_0
-        [[UIApplication sharedApplication] openURL:url];
-#else
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_10_0
         [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+#else
+        [[UIApplication sharedApplication] openURL:url];
 #endif
         if (sucess) {
             sucess();
@@ -76,10 +76,10 @@
         url = [NSURL URLWithString:APPSTORE_DEFAULT_URL];
         if ([[UIApplication sharedApplication] canOpenURL:url]) {
             
-#if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_10_0
-            [[UIApplication sharedApplication] openURL:url];
-#else
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED) && __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_10_0
             [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+#else
+            [[UIApplication sharedApplication] openURL:url];
 #endif
             
             if (sucess) {
