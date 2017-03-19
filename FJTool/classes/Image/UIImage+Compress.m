@@ -66,4 +66,29 @@
     return newImage;
 }
 
+// 判断图片是JPG还是PNG
++ (NSPUIImageType)NSPUIImageTypeFromData:(NSData *)imageData
+{
+    if (imageData.length > 4) {
+        const unsigned char * bytes = [imageData bytes];
+        
+        if (bytes[0] == 0xff &&
+            bytes[1] == 0xd8 &&
+            bytes[2] == 0xff)
+        {
+            return NSPUIImageType_JPEG;
+        }
+        
+        if (bytes[0] == 0x89 &&
+            bytes[1] == 0x50 &&
+            bytes[2] == 0x4e &&
+            bytes[3] == 0x47)
+        {
+            return NSPUIImageType_PNG;
+        }
+    }
+    
+    return NSPUIImageType_Unknown;
+}
+
 @end
