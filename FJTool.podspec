@@ -11,129 +11,129 @@ Pod::Spec.new do |s|
     s.resources    = "FJTool/resources/*.{storyboard,xcassets,xib,png,json}"
     s.requires_arc = true
     
-    s.subspec 'Appstore' do |Appstore|
-      Appstore.source_files = 'FJTool/classes/Appstore/*.{h,m}'
-      Appstore.public_header_files = 'FJTool/classes/Appstore/**/*.h'
+    s.subspec 'Appstore' do |appstore|
+      appstore.source_files = 'FJTool/classes/Appstore/*.{h,m}'
+      appstore.public_header_files = 'FJTool/classes/Appstore/**/*.h'
     end
 
-    s.subspec 'Array' do |Array|
-      ss.source_files = 'FJTool/classes/Array/*.{h,m}'
-      Array.public_header_files = 'FJTool/classes/Array/**/*.h'
+    s.subspec 'Array' do |array|
+      array.source_files = 'FJTool/classes/Array/*.{h,m}'
+      array.public_header_files = 'FJTool/classes/Array/**/*.h'
     end
     
-    s.subspec 'Block' do |Block|
-      Block.source_files = 'FJTool/classes/Block/*.{h,m}'
-      Block.public_header_files = 'FJTool/classes/Block/**/*.h'
+    s.subspec 'Block' do |block|
+      block.source_files = 'FJTool/classes/Block/*.{h,m}'
+      block.public_header_files = 'FJTool/classes/Block/**/*.h'
     end
     
-    s.subspec 'Camera' do |Camera|
-      Camera.source_files = 'FJTool/classes/Camera/*.{h,m}'
-      Camera.public_header_files = 'FJTool/classes/Camera/**/*.h'
-      Camera.dependency   'Masonry'
+    s.subspec 'Camera' do |camera|
+      camera.source_files = 'FJTool/classes/Camera/*.{h,m}'
+      camera.public_header_files = 'FJTool/classes/Camera/**/*.h'
+      camera.dependency   'Masonry'
     end
     
-    s.subspec 'CommonUI' do |CommonUI|
-      CommonUI.source_files = 'FJTool/classes/CommonUI/**/*.{h,m}'
-      CommonUI.public_header_files = 'FJTool/classes/CommonUI/**/*.h'
-      CommonUI.dependency   'CRToast'
-      CommonUI.dependency   'Toast'
-      CommonUI.dependency   'SVProgressHUD'
-      CommonUI.dependency   'SCAvatarBrowser'
+    s.subspec 'CommonUI' do |commonUI|
+      commonUI.source_files = 'FJTool/classes/CommonUI/**/*.{h,m}'
+      commonUI.public_header_files = 'FJTool/classes/CommonUI/**/*.h'
+      commonUI.dependency   'CRToast'
+      commonUI.dependency   'Toast'
+      commonUI.dependency   'SVProgressHUD'
+      commonUI.dependency   'SCAvatarBrowser'
     end
 
-    s.subspec 'Contacts' do |Contacts|
-      Contacts.source_files = 'FJTool/classes/Contacts/**/*.{h,m}'
-      Contacts.public_header_files = 'FJTool/classes/Contacts/**/*.h'
+    s.subspec 'Contacts' do |contacts|
+      contacts.source_files = 'FJTool/classes/Contacts/**/*.{h,m}'
+      contacts.public_header_files = 'FJTool/classes/Contacts/**/*.h'
     end
 
-    s.subspec 'Color' do |Color|
-      Color.source_files = 'FJTool/classes/Color/*.{h,m}'
-      Color.public_header_files = 'FJTool/classes/Color/**/*.h'
+    s.subspec 'Color' do |color|
+      color.source_files = 'FJTool/classes/Color/*.{h,m}'
+      color.public_header_files = 'FJTool/classes/Color/**/*.h'
     end
 
-    s.subspec 'Cache' do |Cache|
-      Cache.source_files = 'FJTool/classes/Cache/*.{h,m}'
-      Cache.public_header_files = 'FJTool/classes/Cache/**/*.h'
+    s.subspec 'Cache' do |cache|
+      cache.source_files = 'FJTool/classes/Cache/*.{h,m}'
+      cache.public_header_files = 'FJTool/classes/Cache/**/*.h'
     end
 
-    s.subspec 'Data' do |Data|
-      Data.source_files = 'FJTool/classes/Data/*.{h,m}'
-      Data.public_header_files = 'FJTool/classes/Data/**/*.h'
+    s.subspec 'Data' do |data|
+      data.source_files = 'FJTool/classes/Data/*.{h,m}'
+      data.public_header_files = 'FJTool/classes/Data/**/*.h'
     end
 
-    s.subspec 'Date' do |Date|
-      Date.source_files = 'FJTool/classes/Date/*.{h,m}'
-      Date.public_header_files = 'FJTool/classes/Date/**/*.h'
+    s.subspec 'Date' do |date|
+      date.source_files = 'FJTool/classes/Date/*.{h,m}'
+      date.public_header_files = 'FJTool/classes/Date/**/*.h'
     end
 
-    s.subspec 'Font' do |Font|
-      Font.source_files = 'FJTool/classes/Font/*.{h,m}'
-      Font.public_header_files = 'FJTool/classes/Font/**/*.h'
+    s.subspec 'Font' do |font|
+      font.source_files = 'FJTool/classes/Font/*.{h,m}'
+      font.public_header_files = 'FJTool/classes/Font/**/*.h'
     end
 
-    s.subspec 'Image' do |Image|
-      Image.source_files = 'FJTool/classes/Image/*.{h,m}'
-      Image.public_header_files = 'FJTool/classes/Image/**/*.h'
-      Image.dependency   'SDWebImage'
+    s.subspec 'Image' do |image|
+      image.source_files = 'FJTool/classes/Image/*.{h,m}'
+      image.public_header_files = 'FJTool/classes/Image/**/*.h'
+      image.dependency   'SDWebImage'
     end
 
-    s.subspec 'ImageView' do |ImageView|
-      ImageView.source_files = 'FJTool/classes/ImageView/*.{h,m}'
-      ImageView.public_header_files = 'FJTool/classes/ImageView/**/*.h'
-      ImageView.dependency   'CocoaSecurity'
+    s.subspec 'ImageView' do |imageView|
+      imageView.source_files = 'FJTool/classes/ImageView/*.{h,m}'
+      imageView.public_header_files = 'FJTool/classes/ImageView/**/*.h'
+      imageView.dependency   'CocoaSecurity'
     end
 
-    s.subspec 'Macro' do |Macro|
-      Macro.source_files = 'FJTool/classes/Macro/*.{h,m}'
-      Macro.public_header_files = 'FJTool/classes/Macro/**/*.h'
+    s.subspec 'Macro' do |macro|
+      macro.source_files = 'FJTool/classes/Macro/*.{h,m}'
+      macro.public_header_files = 'FJTool/classes/Macro/**/*.h'
     end
 
-    s.subspec 'Network' do |Network|
-      Network.source_files = 'FJTool/classes/Network/*.{h,m}'
-      Network.public_header_files = 'FJTool/classes/Network/**/*.h'
-      Network.dependency   'AFNetworking'
+    s.subspec 'Network' do |network|
+      network.source_files = 'FJTool/classes/Network/*.{h,m}'
+      network.public_header_files = 'FJTool/classes/Network/**/*.h'
+      network.dependency   'AFNetworking'
     end
 
-    s.subspec 'Pod' do |Pod|
-      Pod.source_files = 'FJTool/classes/Pod/*.{h,m}'
-      Pod.public_header_files = 'FJTool/classes/Pod/**/*.h'
+    s.subspec 'Pod' do |pod|
+      pod.source_files = 'FJTool/classes/Pod/*.{h,m}'
+      pod.public_header_files = 'FJTool/classes/Pod/**/*.h'
     end
 
-    s.subspec 'Region' do |Region|
-      Region.source_files = 'FJTool/classes/Region/*.{h,m}'
-      Region.public_header_files = 'FJTool/classes/Region/**/*.h'
-      Region.dependency   'JSONModel'
+    s.subspec 'Region' do |region|
+      region.source_files = 'FJTool/classes/Region/*.{h,m}'
+      region.public_header_files = 'FJTool/classes/Region/**/*.h'
+      region.dependency   'JSONModel'
     end
 
-    s.subspec 'Storage' do |Storage|
-      Storage.source_files = 'FJTool/classes/Storage/*.{h,m}'
-      Storage.public_header_files = 'FJTool/classes/Storage/**/*.h'
-      Storage.dependency   'JSONModel'
+    s.subspec 'Storage' do |storage|
+      storage.source_files = 'FJTool/classes/Storage/*.{h,m}'
+      storage.public_header_files = 'FJTool/classes/Storage/**/*.h'
+      storage.dependency   'JSONModel'
     end
 
-    s.subspec 'String' do |String|
-      String.source_files = 'FJTool/classes/String/*.{h,m}'
-      String.public_header_files = 'FJTool/classes/String/**/*.h'
+    s.subspec 'String' do |string|
+      string.source_files = 'FJTool/classes/String/*.{h,m}'
+      string.public_header_files = 'FJTool/classes/String/**/*.h'
     end
 
-    s.subspec 'Translator' do |Translator|
-      Translator.source_files = 'FJTool/classes/Translator/*.{h,m}'
-      Translator.public_header_files = 'FJTool/classes/Translator/**/*.h'
+    s.subspec 'Translator' do |translator|
+      translator.source_files = 'FJTool/classes/Translator/*.{h,m}'
+      translator.public_header_files = 'FJTool/classes/Translator/**/*.h'
     end
 
-    s.subspec 'Timer' do |Timer|
-      Timer.source_files = 'FJTool/classes/Timer/*.{h,m}'
-      Timer.public_header_files = 'FJTool/classes/Timer/**/*.h'
+    s.subspec 'Timer' do |timer|
+      timer.source_files = 'FJTool/classes/Timer/*.{h,m}'
+      timer.public_header_files = 'FJTool/classes/Timer/**/*.h'
     end
 
-    s.subspec 'UUID' do |UUID|
-      UUID.source_files = 'FJTool/classes/UUID/*.{h,m}'
-      UUID.public_header_files = 'FJTool/classes/UUID/**/*.h'
+    s.subspec 'UUID' do |uuid|
+      uuid.source_files = 'FJTool/classes/UUID/*.{h,m}'
+      uuid.public_header_files = 'FJTool/classes/UUID/**/*.h'
     end
 
-    s.subspec 'View' do |View|
-      View.source_files = 'FJTool/classes/View/*.{h,m}'
-      View.public_header_files = 'FJTool/classes/View/**/*.h'
+    s.subspec 'View' do |view|
+      view.source_files = 'FJTool/classes/View/*.{h,m}'
+      view.public_header_files = 'FJTool/classes/View/**/*.h'
     end
     
 end
