@@ -11,10 +11,7 @@ Pod::Spec.new do |s|
     s.resources    = "FJTool/resources/*.{storyboard,xcassets,xib,png,json}"
     s.requires_arc = true
     
-    s.subspec 'Appstore' do |ss|
-      ss.source_files = 'FJTool/classes/Appstore/*.{h,m}'
-      ss.public_header_files = 'FJTool/classes/Appstore/**/*.h'
-    end
+
 
     s.subspec 'Array' do |ss|
       ss.source_files = 'FJTool/classes/Array/*.{h,m}'
