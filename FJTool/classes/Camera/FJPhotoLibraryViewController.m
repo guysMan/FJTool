@@ -9,7 +9,7 @@
 #import "FJPhotoLibraryViewController.h"
 #import "Macro.h"
 #import "MacroColor.h"
-#import "NSObject+Block.h"
+#import "NSObject+NotifyBlock.h"
 #import "SelectAlbumButton.h"
 #import "PodHelper.h"
 

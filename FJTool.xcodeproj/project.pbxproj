@@ -17,7 +17,7 @@
 		1F154C2F1E66ED4000D94922 /* FJPhotoLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F154C2D1E66ED4000D94922 /* FJPhotoLibraryViewController.m */; };
 		1F2861BD1E6008D500862E18 /* FJAppRedirect.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861791E6008D500862E18 /* FJAppRedirect.m */; };
 		1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617C1E6008D500862E18 /* NSArray+Operation.m */; };
-		1F2861BF1E6008D500862E18 /* NSObject+Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617F1E6008D500862E18 /* NSObject+Block.m */; };
+		1F2861BF1E6008D500862E18 /* NSObject+NotifyBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F28617F1E6008D500862E18 /* NSObject+NotifyBlock.m */; };
 		1F2861C01E6008D500862E18 /* FJCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861821E6008D500862E18 /* FJCache.m */; };
 		1F2861C11E6008D500862E18 /* UIColor+Equal.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861851E6008D500862E18 /* UIColor+Equal.m */; };
 		1F2861C21E6008D500862E18 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861871E6008D500862E18 /* UIColor+Hex.m */; };
@@ -117,8 +117,8 @@
 		1F2861791E6008D500862E18 /* FJAppRedirect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJAppRedirect.m; sourceTree = "<group>"; };
 		1F28617B1E6008D500862E18 /* NSArray+Operation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Operation.h"; sourceTree = "<group>"; };
 		1F28617C1E6008D500862E18 /* NSArray+Operation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Operation.m"; sourceTree = "<group>"; };
-		1F28617E1E6008D500862E18 /* NSObject+Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Block.h"; sourceTree = "<group>"; };
-		1F28617F1E6008D500862E18 /* NSObject+Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Block.m"; sourceTree = "<group>"; };
+		1F28617E1E6008D500862E18 /* NSObject+NotifyBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NotifyBlock.h"; sourceTree = "<group>"; };
+		1F28617F1E6008D500862E18 /* NSObject+NotifyBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NotifyBlock.m"; sourceTree = "<group>"; };
 		1F2861811E6008D500862E18 /* FJCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJCache.h; sourceTree = "<group>"; };
 		1F2861821E6008D500862E18 /* FJCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJCache.m; sourceTree = "<group>"; };
 		1F2861841E6008D500862E18 /* UIColor+Equal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Equal.h"; sourceTree = "<group>"; };
@@ -404,8 +404,8 @@
 		1F28617D1E6008D500862E18 /* Block */ = {
 			isa = PBXGroup;
 			children = (
-				1F28617E1E6008D500862E18 /* NSObject+Block.h */,
-				1F28617F1E6008D500862E18 /* NSObject+Block.m */,
+				1F28617E1E6008D500862E18 /* NSObject+NotifyBlock.h */,
+				1F28617F1E6008D500862E18 /* NSObject+NotifyBlock.m */,
 			);
 			path = Block;
 			sourceTree = "<group>";
@@ -904,7 +904,7 @@
 				1FAFB63F1E67B65C00CDB5E6 /* SelectAlbumButton.m in Sources */,
 				1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */,
 				1F9212791E72614600D5AA60 /* FJContactModel.m in Sources */,
-				1F2861BF1E6008D500862E18 /* NSObject+Block.m in Sources */,
+				1F2861BF1E6008D500862E18 /* NSObject+NotifyBlock.m in Sources */,
 				1FAFB6561E67F7FE00CDB5E6 /* AlbumListTableViewCell.m in Sources */,
 				1F2861CA1E6008D500862E18 /* UIImage+Text.m in Sources */,
 				1F2861CE1E6008D500862E18 /* NSString+Helper.m in Sources */,

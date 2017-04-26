@@ -1,5 +1,5 @@
 //
-//  NSObject+Block.h
+//  NSObject+NotifyBlock.h
 //  FJTool
 //
 //  Created by Jeff on 2017/2/14.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSObject (Block)
+@interface NSObject (NotifyBlock)
 
 // 添加通知（Block不带参）
 - (void)addNotification:(NSString*)name notifyBlock:(void(^)(void))notifyBlock;

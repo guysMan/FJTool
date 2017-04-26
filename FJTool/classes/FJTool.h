@@ -14,7 +14,7 @@
 // Array
 #import <FJTool/NSArray+Operation.h>
 // Block
-#import <FJTool/NSObject+Block.h>
+#import <FJTool/NSObject+NotifyBlock.h>
 // Cache
 #import <FJTool/FJCache.h>
 // Camera

@@ -1,15 +1,15 @@
 //
-//  NSObject+Block.m
+//  NSObject+NotifyBlock.m
 //  FJTool
 //
 //  Created by Jeff on 2017/2/14.
 //  Copyright © 2017年 Jeff. All rights reserved.
 //
 
-#import "NSObject+Block.h"
+#import "NSObject+NotifyBlock.h"
 #import <objc/runtime.h>
 
-@implementation NSObject (Block)
+@implementation NSObject (NotifyBlock)
 
 
 - (void)setNoParamaterBlock:(void(^)(void))notifyBlock name:(NSString*)name {
