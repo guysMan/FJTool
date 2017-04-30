@@ -51,7 +51,7 @@
 #import <FJTool/UIImage+Text.h>
 #import <FJTool/FJImage.h>
 // ImageView
-#import <FJTool/UIImageView+Loading.h>
+// #import <FJTool/UIImageView+Loading.h>
 // Macro
 #import <FJTool/Macro.h>
 #import <FJTool/MacroColor.h>
