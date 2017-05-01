@@ -65,10 +65,9 @@ Pod::Spec.new do |s|
       ss.dependency   'SDWebImage'
     end
 
-    #s.subspec 'ImageView' do |ss|
-    #  ss.source_files = 'FJTool/classes/ImageView/*.{h,m}'
-    #  ss.dependency   'CocoaSecurity'
-    #end
+    s.subspec 'ImageView' do |ss|
+      ss.dependency   'CocoaSecurity'
+    end
 
     s.subspec 'Macro' do |ss|
       ss.source_files = 'FJTool/classes/Macro/*.{h,m}'
