@@ -11,6 +11,6 @@
 @interface NSData (Helper)
 
 // NSData转NSString（DeviceToken）
-+ (NSString*)toDeviceTokenString;
+- (NSString*)toDeviceTokenString;
 
 @end
