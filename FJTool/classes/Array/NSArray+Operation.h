@@ -23,7 +23,7 @@
 - (NSArray *)arrayByMergingObjectsFromArray:(NSArray *)array;
 - (NSArray *)objectsInCommonWithArray:(NSArray *)array;
 - (NSArray *)uniqueObjects;
-- (instancetype)objectAtSafeIndex:(NSInteger)index;
+- (id)objectAtSafeIndex:(NSInteger)index;
 - (BOOL)hasObject;
 
 @end
@@ -51,7 +51,7 @@
 - (NSArray *)arrayByMergingObjectsFromArray:(NSArray *)array;
 - (NSArray *)objectsInCommonWithArray:(NSArray *)array;
 - (NSArray *)uniqueObjects;
-- (instancetype)objectAtSafeIndex:(NSInteger)index;
+- (id)objectAtSafeIndex:(NSInteger)index;
 - (BOOL)hasObject;
 
 @end

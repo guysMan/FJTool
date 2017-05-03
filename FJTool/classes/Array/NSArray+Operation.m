@@ -126,7 +126,7 @@
     return [[NSOrderedSet orderedSetWithArray:(NSArray *)self] array];
 }
 
-- (instancetype)common_objectAtSafeIndex:(NSInteger)index {
+- (id)common_objectAtSafeIndex:(NSInteger)index {
     if ((NSArray *)self == nil || [(NSArray *)self count] == 0 || [(NSArray *)self count] <= index) {
         return nil;
     }else{
@@ -197,7 +197,7 @@
     return [self common_uniqueObjects];
 }
 
-- (instancetype)objectAtSafeIndex:(NSInteger)index {
+- (id)objectAtSafeIndex:(NSInteger)index {
     return [self common_objectAtSafeIndex:index];
 }
 
@@ -297,7 +297,7 @@
     return [self common_uniqueObjects];
 }
 
-- (instancetype)objectAtSafeIndex:(NSInteger)index {
+- (id)objectAtSafeIndex:(NSInteger)index {
     return [self common_objectAtSafeIndex:index];
 }
 
