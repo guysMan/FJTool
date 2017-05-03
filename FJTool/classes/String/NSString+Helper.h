@@ -63,6 +63,15 @@ typedef NS_ENUM(NSInteger, FJCompareResult) {
 // 获取字符串Byte数（汉字2byte，英文1byte）
 - (NSUInteger)bytesLenght;
 
+// 首字母是否是英文字母
+- (BOOL)isLetter;
+
+// 首字母是否小写
+- (BOOL)isLowerCaseLetter;
+
+// 首字母是否大写
+- (BOOL)isUpperCaseLetter;
+
 // 用户比较APP版本大小(类似1.1.1<2.0等)
 + (FJCompareResult)compare:(NSString*)str1 than:(NSString*)str2;
 

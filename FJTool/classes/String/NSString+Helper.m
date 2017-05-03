@@ -178,6 +178,30 @@
     return lenght;
 }
 
+// 首字母是否是英文字母
+- (BOOL)isLetter {
+    if ([self isLowerCaseLetter] || [self isUpperCaseLetter]) {
+        return YES;
+    }
+    return NO;
+}
+
+// 首字母是否小写
+- (BOOL)isLowerCaseLetter {
+    if ([self characterAtIndex:0] >= 'a' && [self characterAtIndex:0] <= 'z') {
+        return YES;
+    }
+    return NO;
+}
+
+// 首字母是否大写
+- (BOOL)isUpperCaseLetter {
+    if ([self characterAtIndex:0] >= 'A' && [self characterAtIndex:0] <= 'Z') {
+        return YES;
+    }
+    return NO;
+}
+
 // 用户比较APP版本大小
 + (FJCompareResult)compare:(NSString*)str1 than:(NSString*)str2 {
     
