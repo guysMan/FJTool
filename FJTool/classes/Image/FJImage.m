@@ -146,4 +146,53 @@
     return [UIImage imageWithCGImage:imageRef];
 }
 
+// 压缩图片
++ (NSData*)compressImage:(UIImage *)image lessThan:(NSUInteger)mbyte {
+    
+    if (image == nil) {
+        return nil;
+    }
+    
+    NSData *imgData = UIImageJPEGRepresentation(image, 1);
+    if (mbyte == 0) {
+        return imgData;
+    }
+    
+    CGFloat compressedRate = 0.0;
+    NSUInteger mbytes = 1024 * 1024;
+    
+    if (imgData.length >= 30 * mbytes) {
+        compressedRate = 0.05 * mbyte;
+        
+    }else if (imgData.length >= 20 * mbytes) {
+        compressedRate = 0.2 * mbyte;
+        
+    }else if (imgData.length >= 10 * mbytes) {
+        compressedRate = 0.4 * mbyte;
+        
+    }else if (imgData.length >= 5 * mbytes) {
+        compressedRate = 0.5 * mbyte;
+        
+    }else if (imgData.length >= 4 * mbytes) {
+        compressedRate = 0.6 * mbyte;
+        
+    }else if (imgData.length >= 3 * mbytes) {
+        compressedRate = 0.7 * mbyte;
+        
+    }else if (imgData.length >= 2 * mbytes) {
+        compressedRate = 0.9 * mbyte;
+        
+    }else if (imgData.length > 1 * mbytes) {
+        compressedRate = 0.99 * mbyte;
+        
+    }else {
+        
+        compressedRate = 1.0;
+        
+    }
+    
+    NSData *compressedData = UIImageJPEGRepresentation(image, compressedRate);
+    return compressedData;
+}
+
 @end

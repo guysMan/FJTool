@@ -38,4 +38,7 @@
 // Convert to UIImage
 + (UIImage*)convertToUIImageFrom:(CGImageRef)imageRef;
 
+// 压缩图片
++ (NSData*)compressImage:(UIImage *)image lessThan:(NSUInteger)mbyte;
+
 @end
