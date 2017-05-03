@@ -249,13 +249,28 @@
 }
 
 - (void)removeObjectAtSafeIndex:(NSInteger)index {
-    if (![self isKindOfClass:[NSMutableArray class]]) {
+
+    if (index < 0 || index >= self.count) {
+        return;
+    }
+    [self removeObjectAtIndex:index];
+}
+
+- (void)insertSafeObject:(id)anObject atIndex:(NSInteger)index {
+    if (anObject == nil) {
         return;
     }
     if (index < 0 || index >= self.count) {
         return;
     }
-    [self removeObjectAtIndex:index];
+    [self insertObject:anObject atIndex:index];
+}
+
+- (void)addSafeObject:(id)anObject {
+    if (anObject == nil) {
+        return;
+    }
+    [self addObject:anObject];
 }
 
 // Mutable Array (Common)

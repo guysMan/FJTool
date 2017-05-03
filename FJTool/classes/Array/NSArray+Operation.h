@@ -38,6 +38,8 @@
 - (void)removeDuplicateObjects;
 - (void)subArrayTop:(NSInteger)top;
 - (void)removeObjectAtSafeIndex:(NSInteger)index;
+- (void)insertSafeObject:(id)anObject atIndex:(NSInteger)index;
+- (void)addSafeObject:(id)anObject;
 
 // Mutable Array
 - (NSArray *)arrayByRemovingObject:(id)object;
