@@ -8,7 +8,206 @@
 
 #import "NSArray+Operation.h"
 
+@implementation NSObject (Operation)
+
+- (NSArray *)common_arrayByRemovingObject:(id)object {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    NSMutableArray *copy = [NSMutableArray arrayWithArray:(NSArray *)self];
+    [copy removeObject:object];
+    return copy;
+}
+
+- (NSArray *)common_arrayByRemovingObjectAtIndex:(NSUInteger)index {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    NSMutableArray *copy = [NSMutableArray arrayWithArray:(NSArray *)self];
+    [copy removeObjectAtIndex:index];
+    return copy;
+}
+
+- (NSArray *)common_arrayByRemovingLastObject {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    if ([(NSArray *)self count]) {
+        NSMutableArray *copy = [NSMutableArray arrayWithArray:(NSArray *)self];
+        [copy removeObjectAtIndex:[(NSArray *)self count] - 1];
+        return copy;
+    }
+    return [NSArray arrayWithArray:(NSArray *)self];
+}
+
+- (NSArray *)common_arrayByRemovingFirstObject {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    if ([(NSArray *)self count]) {
+        NSMutableArray *copy = [NSMutableArray arrayWithArray:(NSArray *)self];
+        [copy removeObjectAtIndex:0];
+        return copy;
+    }
+    return [NSArray arrayWithArray:(NSArray *)self];
+}
+
+- (NSArray *)common_arrayByInsertingObject:(id)object atIndex:(NSUInteger)index {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    NSMutableArray *copy = [NSMutableArray arrayWithArray:(NSArray *)self];
+    [copy insertObject:object atIndex:index];
+    return copy;
+}
+
+- (NSArray *)common_arrayByReplacingObjectAtIndex:(NSUInteger)index withObject:(id)object {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    NSMutableArray *copy = [NSMutableArray arrayWithArray:(NSArray *)self];
+    copy[index] = object;
+    return copy;
+}
+
+- (NSArray *)common_shuffledArray {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    NSMutableArray *copy = [NSMutableArray arrayWithArray:(NSArray *)self];
+    [copy shuffle];
+    return copy;
+}
+
+- (NSArray *)common_mappedArrayUsingBlock:(id (^)(id object))block {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    if (block) {
+        NSMutableArray *array = [NSMutableArray arrayWithCapacity:[(NSArray *)self count]];
+        for (id object in (NSArray *)self) {
+            id replacement = block(object);
+            if (replacement) [array addObject:replacement];
+        }
+        return array;
+    }
+    return [NSArray arrayWithArray:(NSArray *)self];
+}
+
+- (NSArray *)common_reversedArray {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    return [[(NSArray *)self reverseObjectEnumerator] allObjects];
+}
+
+- (NSArray *)common_arrayByMergingObjectsFromArray:(NSArray *)array {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    NSMutableArray *copy = [NSMutableArray arrayWithArray:(NSArray *)self];
+    [copy mergeObjectsFromArray:array];
+    return copy;
+}
+
+- (NSArray *)common_objectsInCommonWithArray:(NSArray *)array {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSetWithArray:(NSArray *)self];
+    [set intersectSet:[NSSet setWithArray:array]];
+    return [set array];
+}
+
+- (NSArray *)common_uniqueObjects {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return nil;
+    }
+    return [[NSOrderedSet orderedSetWithArray:(NSArray *)self] array];
+}
+
+- (instancetype)common_objectAtSafeIndex:(NSInteger)index {
+    if ((NSArray *)self == nil || [(NSArray *)self count] == 0 || [(NSArray *)self count] <= index) {
+        return nil;
+    }else{
+        return [(NSArray *)self objectAtIndex:index];
+    }
+}
+
+- (BOOL)common_hasObject {
+    if (![self isKindOfClass:[NSArray class]]) {
+        return NO;
+    }
+    if ((NSArray *)self == nil || [(NSArray *)self count] == 0) {
+        return NO;
+    }
+    return YES;
+}
+
+@end
+
 @implementation NSArray (Operation)
+
+// Non-mutable Array (Common)
+- (NSArray *)arrayByRemovingObject:(id)object {
+    return [self common_arrayByRemovingObject:object];
+}
+
+- (NSArray *)arrayByRemovingObjectAtIndex:(NSUInteger)index {
+    return [self common_arrayByRemovingObjectAtIndex:index];
+}
+
+- (NSArray *)arrayByRemovingLastObject {
+    return [self common_arrayByRemovingLastObject];
+}
+
+- (NSArray *)arrayByRemovingFirstObject {
+    return [self common_arrayByRemovingFirstObject];
+}
+
+- (NSArray *)arrayByInsertingObject:(id)object atIndex:(NSUInteger)index {
+    return [self common_arrayByInsertingObject:object atIndex:index];
+}
+
+- (NSArray *)arrayByReplacingObjectAtIndex:(NSUInteger)index withObject:(id)object {
+    return [self common_arrayByReplacingObjectAtIndex:index withObject:object];
+}
+
+- (NSArray *)shuffledArray {
+    return [self common_shuffledArray];
+}
+
+- (NSArray *)mappedArrayUsingBlock:(id (^)(id object))block {
+    return [self common_mappedArrayUsingBlock:block];
+}
+
+- (NSArray *)reversedArray {
+    return [self common_reversedArray];
+}
+
+- (NSArray *)arrayByMergingObjectsFromArray:(NSArray *)array {
+    return [self common_arrayByMergingObjectsFromArray:array];
+}
+
+- (NSArray *)objectsInCommonWithArray:(NSArray *)array {
+    return [self common_objectsInCommonWithArray:array];
+}
+
+- (NSArray *)uniqueObjects {
+    return [self common_uniqueObjects];
+}
+
+- (instancetype)objectAtSafeIndex:(NSInteger)index {
+    return [self common_objectAtSafeIndex:index];
+}
+
+- (BOOL)hasObject {
+    return [self common_hasObject];
+}
+
+@end
+
+@implementation NSMutableArray (Operation)
 
 // Mutable Array
 - (void)removeFirstObject {
@@ -49,101 +248,63 @@
     }
 }
 
-// Mutable & non-mutable Array
+// Mutable Array (Common)
 - (NSArray *)arrayByRemovingObject:(id)object {
-    NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
-    [copy removeObject:object];
-    return copy;
+    return [self common_arrayByRemovingObject:object];
 }
 
 - (NSArray *)arrayByRemovingObjectAtIndex:(NSUInteger)index {
-    NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
-    [copy removeObjectAtIndex:index];
-    return copy;
+    return [self common_arrayByRemovingObjectAtIndex:index];
 }
 
 - (NSArray *)arrayByRemovingLastObject {
-    if ([self count]) {
-        NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
-        [copy removeObjectAtIndex:[self count] - 1];
-        return copy;
-    }
-    return [NSArray arrayWithArray:self];
+    return [self common_arrayByRemovingLastObject];
 }
 
 - (NSArray *)arrayByRemovingFirstObject {
-    if ([self count]) {
-        NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
-        [copy removeObjectAtIndex:0];
-        return copy;
-    }
-    return [NSArray arrayWithArray:self];
+    return [self common_arrayByRemovingFirstObject];
 }
 
 - (NSArray *)arrayByInsertingObject:(id)object atIndex:(NSUInteger)index {
-    NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
-    [copy insertObject:object atIndex:index];
-    return copy;
+    return [self common_arrayByInsertingObject:object atIndex:index];
 }
 
 - (NSArray *)arrayByReplacingObjectAtIndex:(NSUInteger)index withObject:(id)object {
-    NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
-    copy[index] = object;
-    return copy;
+    return [self common_arrayByReplacingObjectAtIndex:index withObject:object];
 }
 
 - (NSArray *)shuffledArray {
-    NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
-    [copy shuffle];
-    return copy;
+    return [self common_shuffledArray];
 }
 
 - (NSArray *)mappedArrayUsingBlock:(id (^)(id object))block {
-    if (block) {
-        NSMutableArray *array = [NSMutableArray arrayWithCapacity:[self count]];
-        for (id object in self) {
-            id replacement = block(object);
-            if (replacement) [array addObject:replacement];
-        }
-        return array;
-    }
-    return [NSArray arrayWithArray:self];
+    return [self common_mappedArrayUsingBlock:block];
 }
 
 - (NSArray *)reversedArray {
-    return [[self reverseObjectEnumerator] allObjects];
+    return [self common_reversedArray];
 }
 
 - (NSArray *)arrayByMergingObjectsFromArray:(NSArray *)array {
-    NSMutableArray *copy = [NSMutableArray arrayWithArray:self];
-    [copy mergeObjectsFromArray:array];
-    return copy;
+    return [self common_arrayByMergingObjectsFromArray:array];
 }
 
 - (NSArray *)objectsInCommonWithArray:(NSArray *)array {
-    NSMutableOrderedSet *set = [NSMutableOrderedSet orderedSetWithArray:self];
-    [set intersectSet:[NSSet setWithArray:array]];
-    return [set array];
+    return [self common_objectsInCommonWithArray:array];
 }
 
 - (NSArray *)uniqueObjects {
-    return [[NSOrderedSet orderedSetWithArray:self] array];
+    return [self common_uniqueObjects];
 }
 
-- (instancetype)objectAtIndexSafe:(NSInteger)index {
-    
-    if (self == nil || [self count] == 0 || [self count] <= index) {
-        return nil;
-    }else{
-        return [self objectAtIndex:index];
-    }
+- (instancetype)objectAtSafeIndex:(NSInteger)index {
+    return [self common_objectAtSafeIndex:index];
 }
 
 - (BOOL)hasObject {
-    if (self == nil || [self count] == 0) {
-        return NO;
-    }
-    return YES;
+    return [self common_hasObject];
 }
 
 @end
+
+
