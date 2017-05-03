@@ -164,6 +164,20 @@
     return strr;
 }
 
+// 获取字符串Byte数（汉字2byte，英文1byte）
+- (NSUInteger)bytesLenght {
+    int lenght = 0;
+    for(int i=0; i< [self length]; i++){
+        int c = [self characterAtIndex:i];
+        if( c > 0x4e00 && c < 0x9fff) { // 中文
+            lenght += 2;
+        }else {
+            lenght += 1;
+        }
+    }
+    return lenght;
+}
+
 // 用户比较APP版本大小
 + (FJCompareResult)compare:(NSString*)str1 than:(NSString*)str2 {
     
