@@ -117,4 +117,7 @@ typedef NS_ENUM(NSInteger, DFNoon)
 // 是否date是N天以前
 +(BOOL)ifDatePassed:(NSDate*)date by:(int)days;
 
+// 微信显示时间戳的方式
++ (NSString*)wechatStyle:(long long)timestampSec;
+
 @end

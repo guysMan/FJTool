@@ -485,4 +485,38 @@
     return NO;
 }
 
+// 微信显示时间戳的方式
++ (NSString*)wechatStyle:(long long)timestampSec {
+    
+    long long now = [FJDate timestampSecNow];
+    NSTimeInterval result = now - timestampSec;
+    
+    int day;
+    int hour;
+    int minute;
+    NSString *postTime = [FJDate formattedTime:timestampSec format:@"yyyy-MM-dd HH:mm"];
+    
+    day = result / 86400;
+    if ( day >= 7 ) {
+        // 2015-08-25 18:00
+        postTime = [FJDate formattedTime:timestampSec format:@"yyyy-MM-dd HH:mm"];
+    }else if ( day >= 2){
+        // 大于48小时 小于7天
+        postTime = [NSString stringWithFormat:@"%d天前",(int)day];
+    }else if ( day >= 1){
+        // 昨天
+        postTime =@"昨天";
+    }else {
+        // 今天
+        hour = (result - ((int)day * 86400))/ 3600;
+        if (hour>=1) {// 一小时前
+            postTime = [NSString stringWithFormat:@"%d小时前",(int)hour];
+        }else {// 一小时以内
+            minute = (result - ((int)day*86400) - ((int)hour*3600))/60;
+            postTime = [NSString stringWithFormat:@"%d分钟前",(int)minute];
+        }
+    }
+    return postTime;
+}
+
 @end
