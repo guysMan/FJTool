@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
 
     s.subspec 'Array' do |ss|
       ss.source_files = 'FJTool/classes/Array/*.{h,m}'
+      ss.dependency   'JSONModel'
     end
     
     s.subspec 'Block' do |ss|

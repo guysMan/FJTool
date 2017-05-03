@@ -37,6 +37,7 @@
 		1F2861D11E6008D500862E18 /* FJUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861B71E6008D500862E18 /* FJUUID.m */; };
 		1F2861D21E6008D500862E18 /* UIView+Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861BA1E6008D500862E18 /* UIView+Geometry.m */; };
 		1F2861D31E6008D500862E18 /* UIView+Layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F2861BC1E6008D500862E18 /* UIView+Layer.m */; };
+		1F3B5AB41EB9AEED005FDE8B /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B5AB31EB9AEED005FDE8B /* NSArray+JSONModel.m */; };
 		1F5D322D1E6593C800ED12EE /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D322C1E6593C800ED12EE /* address.json */; };
 		1F5D32311E659FCB00ED12EE /* FJRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32301E659FCB00ED12EE /* FJRegion.m */; };
 		1F5D32341E65A01F00ED12EE /* RegionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32331E65A01F00ED12EE /* RegionModel.m */; };
@@ -144,6 +145,8 @@
 		1F2861BA1E6008D500862E18 /* UIView+Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Geometry.m"; sourceTree = "<group>"; };
 		1F2861BB1E6008D500862E18 /* UIView+Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Layer.h"; sourceTree = "<group>"; };
 		1F2861BC1E6008D500862E18 /* UIView+Layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Layer.m"; sourceTree = "<group>"; };
+		1F3B5AB21EB9AEED005FDE8B /* NSArray+JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		1F3B5AB31EB9AEED005FDE8B /* NSArray+JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JSONModel.m"; sourceTree = "<group>"; };
 		1F5D322C1E6593C800ED12EE /* address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = address.json; sourceTree = "<group>"; };
 		1F5D322F1E659FCB00ED12EE /* FJRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJRegion.h; sourceTree = "<group>"; };
 		1F5D32301E659FCB00ED12EE /* FJRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJRegion.m; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 			children = (
 				1F28617B1E6008D500862E18 /* NSArray+Operation.h */,
 				1F28617C1E6008D500862E18 /* NSArray+Operation.m */,
+				1F3B5AB21EB9AEED005FDE8B /* NSArray+JSONModel.h */,
+				1F3B5AB31EB9AEED005FDE8B /* NSArray+JSONModel.m */,
 			);
 			path = Array;
 			sourceTree = "<group>";
@@ -807,6 +812,7 @@
 				1F2861C31E6008D500862E18 /* NSData+Helper.m in Sources */,
 				1F2861C01E6008D500862E18 /* FJCache.m in Sources */,
 				1FAA0CC61E6970FE000DEACD /* NSObject+CRToast.m in Sources */,
+				1F3B5AB41EB9AEED005FDE8B /* NSArray+JSONModel.m in Sources */,
 				1F2861D31E6008D500862E18 /* UIView+Layer.m in Sources */,
 				1F154C2A1E666C7E00D94922 /* PodHelper.m in Sources */,
 				1F2861C81E6008D500862E18 /* UIImage+Color.m in Sources */,
