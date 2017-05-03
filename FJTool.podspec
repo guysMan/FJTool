@@ -64,6 +64,7 @@ Pod::Spec.new do |s|
     s.subspec 'Image' do |ss|
       ss.source_files = 'FJTool/classes/Image/*.{h,m}'
       ss.dependency   'SDWebImage'
+      ss.dependency   'UIImage+FixOrientation'
     end
 
     s.subspec 'ImageView' do |ss|
