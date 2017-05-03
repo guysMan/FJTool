@@ -87,6 +87,7 @@ Pod::Spec.new do |s|
     s.subspec 'Region' do |ss|
       ss.source_files = 'FJTool/classes/Region/*.{h,m}'
       ss.dependency   'JSONModel'
+      ss.resources    = "FJTool/resources/address.json"
     end
 
     s.subspec 'Storage' do |ss|
