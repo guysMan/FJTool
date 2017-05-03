@@ -37,6 +37,7 @@
 - (void)mergeObjectsFromArray:(NSArray *)array;
 - (void)removeDuplicateObjects;
 - (void)subArrayTop:(NSInteger)top;
+- (void)removeObjectAtSafeIndex:(NSInteger)index;
 
 // Mutable Array
 - (NSArray *)arrayByRemovingObject:(id)object;

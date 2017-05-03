@@ -248,6 +248,16 @@
     }
 }
 
+- (void)removeObjectAtSafeIndex:(NSInteger)index {
+    if (![self isKindOfClass:[NSMutableArray class]]) {
+        return;
+    }
+    if (index < 0 || index >= self.count) {
+        return;
+    }
+    [self removeObjectAtIndex:index];
+}
+
 // Mutable Array (Common)
 - (NSArray *)arrayByRemovingObject:(id)object {
     return [self common_arrayByRemovingObject:object];
