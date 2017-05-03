@@ -66,7 +66,6 @@ Pod::Spec.new do |s|
     end
 
     s.subspec 'ImageView' do |ss|
-      ss.source_files = 'FJTool/classes/ImageView/*.{h,m}'
       ss.dependency   'CocoaSecurity'
     end
 
