@@ -13,7 +13,7 @@
 #import <FJTool/FJAppRedirect.h>
 // Array
 #import <FJTool/NSArray+Operation.h>
-#import <NSArray+JSONModel.h>
+#import <FJTool/NSArray+JSONModel.h>
 // Block
 #import <FJTool/NSObject+NotifyBlock.h>
 // Cache
