@@ -93,10 +93,10 @@
 {
     if(!image)
         return CGRectZero;
-    CGFloat x;
-    CGFloat y;
-    CGFloat width;
-    CGFloat height;
+    CGFloat x = 0.0;
+    CGFloat y = 0.0;
+    CGFloat width = 0.0;
+    CGFloat height = 0.0;
     
     CGSize   screenSize = [UIScreen mainScreen].bounds.size;
     CGFloat  screenScale = screenSize.width / screenSize.height;

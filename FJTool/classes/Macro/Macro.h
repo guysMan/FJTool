@@ -16,7 +16,7 @@
  */
 #if NS_BLOCKS_AVAILABLE
 
-#define MF_BLOCK_CALL_NO_P(b) (b == nil ?: b())
+#define MF_BLOCK_CALL_NO_P(b) (b == nil ? : b())
 #define MF_BLOCK_CALL(b, p) (b == nil ? : b(p) )
 #define MF_BLOCK_CALL_2_P(b, p1, p2) (b == nil ? : b(p1, p2))
 #define MF_BLOCK_CALL_3_P(b, p1, p2 , p3) (b == nil ? : b(p1, p2, p3))

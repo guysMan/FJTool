@@ -235,7 +235,7 @@
     NSArray *keys = @[CNContactGivenNameKey, CNContactFamilyNameKey, CNContactMiddleNameKey, CNContactPhoneNumbersKey, CNContactOrganizationNameKey, CNContactEmailAddressesKey];
     
     // 4.2.创建CNContactFetchRequest对象
-    CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
+    // CNContactFetchRequest *request = [[CNContactFetchRequest alloc] initWithKeysToFetch:keys];
     
     FJContactList *result = [[FJContactList alloc] init];
     result.contactList = (NSMutableArray<FJContactModel> *)[[NSMutableArray alloc] init];

@@ -127,7 +127,7 @@
             
         case FJAppRedirectName_SinaWeibo:
         {
-            scheme = @"weibo:";
+            scheme = @"sinaweibo:";
             break;
         }
     }
