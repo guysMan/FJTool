@@ -11,8 +11,8 @@
 /**
  * 网络状态发生变化
  **/
-#define NOTIFY_NETWORK_AVAILABLE                 @"NOTIFY_NETWORK_AVAILABLE"
-#define NOTIFY_NETWORK_UNAVAILABLE               @"NOTIFY_NETWORK_UNAVAILABLE"
+#define FJ_NOTIFY_NETWORK_AVAILABLE                 @"FJ_NOTIFY_NETWORK_AVAILABLE"
+#define FJ_NOTIFY_NETWORK_UNAVAILABLE               @"FJ_NOTIFY_NETWORK_UNAVAILABLE"
 
 typedef NS_ENUM(NSInteger, FJNetworkStatus){
     FJNetworkStatus_Unknown,

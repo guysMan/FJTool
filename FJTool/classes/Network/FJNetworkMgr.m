@@ -86,25 +86,25 @@ static bool isFirstAccess = YES;
             case AFNetworkReachabilityStatusUnknown:
                 // Unknown
                 _networkStatus = FJNetworkStatus_Unknown;
-                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_NETWORK_UNAVAILABLE object:nil userInfo:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:FJ_NOTIFY_NETWORK_UNAVAILABLE object:nil userInfo:@{@"name":@"unknown"}];
                 break;
                 
             case AFNetworkReachabilityStatusNotReachable:
                 // Disconnect
                 _networkStatus = FJNetworkStatus_Disconnect;
-                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_NETWORK_UNAVAILABLE object:nil userInfo:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:FJ_NOTIFY_NETWORK_UNAVAILABLE object:nil userInfo:@{@"name":@"notreachable"}];
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWiFi:
                 // WIFI
                 _networkStatus = FJNetworkStatus_WiFi;
-                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_NETWORK_AVAILABLE object:nil userInfo:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:FJ_NOTIFY_NETWORK_AVAILABLE object:nil userInfo:@{@"name":@"wifi"}];
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWWAN:
                 // Services Network
                 _networkStatus = FJNetworkStatus_Services;
-                [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFY_NETWORK_AVAILABLE object:nil userInfo:nil];
+                [[NSNotificationCenter defaultCenter] postNotificationName:FJ_NOTIFY_NETWORK_AVAILABLE object:nil userInfo:@{@"name":@"wwan"}];
                 break;
             default:
                 break;
