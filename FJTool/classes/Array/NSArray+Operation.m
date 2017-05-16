@@ -257,10 +257,10 @@
 }
 
 - (void)insertSafeObject:(id)anObject atIndex:(NSInteger)index {
-    if (anObject == nil) {
+    if (anObject == nil || ![anObject isKindOfClass:[NSObject class]]) {
         return;
     }
-    if (index < 0 || index >= self.count) {
+    if (index < 0 || index > self.count) {
         return;
     }
     [self insertObject:anObject atIndex:index];
