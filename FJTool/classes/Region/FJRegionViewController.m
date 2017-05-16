@@ -38,10 +38,11 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar setHidden:NO];
+    self.navigationController.navigationBarHidden = NO;
+    
+    [super viewDidLoad];
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 40.0, 20.0)];
     [btn setTitle:@"返回" forState:UIControlStateNormal];
