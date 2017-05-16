@@ -63,8 +63,9 @@
 // Podhelper
 #import <FJTool/PodHelper.h>
 // Region
-#import <FJTool/RegionModel.h>
+#import <FJTool/FJRegionModel.h>
 #import <FJTool/FJRegion.h>
+#import <FJTool/FJRegionViewController.h>
 // Storage
 #import <FJTool/FJStorage.h>
 // String

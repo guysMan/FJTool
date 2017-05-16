@@ -24,6 +24,7 @@
 #import "TestViewController.h"
 #import "UIView+DropSheet.h"
 #import "FJContacts.h"
+#import "FJRegionViewController.h"
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -137,6 +138,16 @@
     });
     */
     
+    FJRegionViewController *regionViewController = [[FJRegionViewController alloc] init];
+    regionViewController.selectCountryBlock = ^(NSString *regionCode, NSString *regionName) {
+        NSLog(@"Code : %@, Name : %@", regionCode, regionName);
+    };
+    //UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:regionViewController];
+    //[self presentViewController:nav animated:YES completion:nil];
+    [self.navigationController pushViewController:regionViewController animated:YES];
+    
+    return;
+    
     [self.view dropSheet:@"This is a demo" tapBlock:^{
         NSLog(@"tapBlock");
     } cancelBlock:^{
@@ -207,6 +218,11 @@
         _imageDataArray = [NSMutableArray array];
     }
     return _imageDataArray;
+}
+
+
+- (IBAction)tapRegion:(id)sender {
+
 }
 
 

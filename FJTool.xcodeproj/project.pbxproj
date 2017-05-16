@@ -40,7 +40,7 @@
 		1F3B5AB41EB9AEED005FDE8B /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B5AB31EB9AEED005FDE8B /* NSArray+JSONModel.m */; };
 		1F5D322D1E6593C800ED12EE /* address.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F5D322C1E6593C800ED12EE /* address.json */; };
 		1F5D32311E659FCB00ED12EE /* FJRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32301E659FCB00ED12EE /* FJRegion.m */; };
-		1F5D32341E65A01F00ED12EE /* RegionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32331E65A01F00ED12EE /* RegionModel.m */; };
+		1F5D32341E65A01F00ED12EE /* FJRegionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5D32331E65A01F00ED12EE /* FJRegionModel.m */; };
 		1F9212761E715BAB00D5AA60 /* FJContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9212751E715BAB00D5AA60 /* FJContacts.m */; };
 		1F9212791E72614600D5AA60 /* FJContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F9212781E72614600D5AA60 /* FJContactModel.m */; };
 		1FAA0CC51E6970FE000DEACD /* UIView+SVProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FAA0CBF1E6970FE000DEACD /* UIView+SVProgress.m */; };
@@ -75,6 +75,11 @@
 		1FAFB6881E6810A800CDB5E6 /* nav_icon_back_grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FAFB6741E6810A800CDB5E6 /* nav_icon_back_grey@2x.png */; };
 		1FAFB68D1E6810A800CDB5E6 /* icon_triangle_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FAFB6791E6810A800CDB5E6 /* icon_triangle_down@3x.png */; };
 		1FAFB6901E6810A800CDB5E6 /* icon_triangle_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FAFB67C1E6810A800CDB5E6 /* icon_triangle_down@2x.png */; };
+		1FBFCB981ECAD81C005AAF2B /* FJRegionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFCB971ECAD81C005AAF2B /* FJRegionViewController.m */; };
+		1FBFCB9C1ECADEA3005AAF2B /* CountryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFCB9A1ECADEA3005AAF2B /* CountryTableViewCell.m */; };
+		1FBFCB9D1ECADEA3005AAF2B /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBFCB9B1ECADEA3005AAF2B /* CountryTableViewCell.xib */; };
+		1FBFCBA01ECAF50B005AAF2B /* CountryHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FBFCB9F1ECAF50B005AAF2B /* CountryHeaderView.m */; };
+		1FBFCBA21ECAF514005AAF2B /* CountryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBFCBA11ECAF514005AAF2B /* CountryHeaderView.xib */; };
 		1FED148B1E6D43B800CDF91C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED14891E6D43B800CDF91C /* TestViewController.m */; };
 		1FED148C1E6D43B800CDF91C /* TestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FED148A1E6D43B800CDF91C /* TestViewController.xib */; };
 		1FED148F1E6D478600CDF91C /* UIView+DropSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FED148E1E6D478600CDF91C /* UIView+DropSheet.m */; };
@@ -150,8 +155,8 @@
 		1F5D322C1E6593C800ED12EE /* address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = address.json; sourceTree = "<group>"; };
 		1F5D322F1E659FCB00ED12EE /* FJRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJRegion.h; sourceTree = "<group>"; };
 		1F5D32301E659FCB00ED12EE /* FJRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJRegion.m; sourceTree = "<group>"; };
-		1F5D32321E65A01F00ED12EE /* RegionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegionModel.h; sourceTree = "<group>"; };
-		1F5D32331E65A01F00ED12EE /* RegionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegionModel.m; sourceTree = "<group>"; };
+		1F5D32321E65A01F00ED12EE /* FJRegionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJRegionModel.h; sourceTree = "<group>"; };
+		1F5D32331E65A01F00ED12EE /* FJRegionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJRegionModel.m; sourceTree = "<group>"; };
 		1F9212741E715BAB00D5AA60 /* FJContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJContacts.h; sourceTree = "<group>"; };
 		1F9212751E715BAB00D5AA60 /* FJContacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJContacts.m; sourceTree = "<group>"; };
 		1F9212771E72614600D5AA60 /* FJContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJContactModel.h; sourceTree = "<group>"; };
@@ -207,6 +212,14 @@
 		1FAFB6741E6810A800CDB5E6 /* nav_icon_back_grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_icon_back_grey@2x.png"; sourceTree = "<group>"; };
 		1FAFB6791E6810A800CDB5E6 /* icon_triangle_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_triangle_down@3x.png"; sourceTree = "<group>"; };
 		1FAFB67C1E6810A800CDB5E6 /* icon_triangle_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_triangle_down@2x.png"; sourceTree = "<group>"; };
+		1FBFCB961ECAD81C005AAF2B /* FJRegionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FJRegionViewController.h; sourceTree = "<group>"; };
+		1FBFCB971ECAD81C005AAF2B /* FJRegionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FJRegionViewController.m; sourceTree = "<group>"; };
+		1FBFCB991ECADEA3005AAF2B /* CountryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryTableViewCell.h; sourceTree = "<group>"; };
+		1FBFCB9A1ECADEA3005AAF2B /* CountryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryTableViewCell.m; sourceTree = "<group>"; };
+		1FBFCB9B1ECADEA3005AAF2B /* CountryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
+		1FBFCB9E1ECAF50B005AAF2B /* CountryHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountryHeaderView.h; sourceTree = "<group>"; };
+		1FBFCB9F1ECAF50B005AAF2B /* CountryHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountryHeaderView.m; sourceTree = "<group>"; };
+		1FBFCBA11ECAF514005AAF2B /* CountryHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryHeaderView.xib; sourceTree = "<group>"; };
 		1FED14881E6D43B800CDF91C /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		1FED14891E6D43B800CDF91C /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		1FED148A1E6D43B800CDF91C /* TestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestViewController.xib; sourceTree = "<group>"; };
@@ -553,8 +566,16 @@
 			children = (
 				1F5D322F1E659FCB00ED12EE /* FJRegion.h */,
 				1F5D32301E659FCB00ED12EE /* FJRegion.m */,
-				1F5D32321E65A01F00ED12EE /* RegionModel.h */,
-				1F5D32331E65A01F00ED12EE /* RegionModel.m */,
+				1F5D32321E65A01F00ED12EE /* FJRegionModel.h */,
+				1F5D32331E65A01F00ED12EE /* FJRegionModel.m */,
+				1FBFCB961ECAD81C005AAF2B /* FJRegionViewController.h */,
+				1FBFCB971ECAD81C005AAF2B /* FJRegionViewController.m */,
+				1FBFCB991ECADEA3005AAF2B /* CountryTableViewCell.h */,
+				1FBFCB9A1ECADEA3005AAF2B /* CountryTableViewCell.m */,
+				1FBFCB9B1ECADEA3005AAF2B /* CountryTableViewCell.xib */,
+				1FBFCB9E1ECAF50B005AAF2B /* CountryHeaderView.h */,
+				1FBFCB9F1ECAF50B005AAF2B /* CountryHeaderView.m */,
+				1FBFCBA11ECAF514005AAF2B /* CountryHeaderView.xib */,
 			);
 			path = Region;
 			sourceTree = "<group>";
@@ -716,6 +737,8 @@
 				1FAFB6901E6810A800CDB5E6 /* icon_triangle_down@2x.png in Resources */,
 				1F00D5071E52A5F80018791E /* Assets.xcassets in Resources */,
 				1FAFB66C1E680E4500CDB5E6 /* ch_camera_photo@2x.png in Resources */,
+				1FBFCBA21ECAF514005AAF2B /* CountryHeaderView.xib in Resources */,
+				1FBFCB9D1ECADEA3005AAF2B /* CountryTableViewCell.xib in Resources */,
 				1FAFB6411E67B66700CDB5E6 /* SelectAlbumButton.xib in Resources */,
 				1FAFB66E1E680E4500CDB5E6 /* ch_selectbg_photo@3x.png in Resources */,
 				1F00D5081E52A5F80018791E /* LaunchScreen.storyboard in Resources */,
@@ -753,7 +776,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		CA673085FBF90407F79836BF /* [CP] Embed Pods Frameworks */ = {
@@ -792,6 +815,7 @@
 				1F2861D21E6008D500862E18 /* UIView+Geometry.m in Sources */,
 				1FAFB65F1E67F8B800CDB5E6 /* ImagePreviewtransition.m in Sources */,
 				1FED148B1E6D43B800CDF91C /* TestViewController.m in Sources */,
+				1FBFCB981ECAD81C005AAF2B /* FJRegionViewController.m in Sources */,
 				1F2861C11E6008D500862E18 /* UIColor+Equal.m in Sources */,
 				1FAA0CE11E697715000DEACD /* FJProgressView.m in Sources */,
 				1FAA0CD71E697511000DEACD /* SolidLine.m in Sources */,
@@ -806,7 +830,8 @@
 				1F2861C21E6008D500862E18 /* UIColor+Hex.m in Sources */,
 				1F2861C41E6008D500862E18 /* FJDate.m in Sources */,
 				1F2861D01E6008D500862E18 /* NSString+Translator.m in Sources */,
-				1F5D32341E65A01F00ED12EE /* RegionModel.m in Sources */,
+				1F5D32341E65A01F00ED12EE /* FJRegionModel.m in Sources */,
+				1FBFCBA01ECAF50B005AAF2B /* CountryHeaderView.m in Sources */,
 				1F00D5061E52A5F80018791E /* AppDelegate.m in Sources */,
 				1FAFB6591E67F81400CDB5E6 /* ImageCollectionViewCell.m in Sources */,
 				1F2861C31E6008D500862E18 /* NSData+Helper.m in Sources */,
@@ -826,6 +851,7 @@
 				1FAFB63F1E67B65C00CDB5E6 /* SelectAlbumButton.m in Sources */,
 				1F2861BE1E6008D500862E18 /* NSArray+Operation.m in Sources */,
 				1F9212791E72614600D5AA60 /* FJContactModel.m in Sources */,
+				1FBFCB9C1ECADEA3005AAF2B /* CountryTableViewCell.m in Sources */,
 				1F2861BF1E6008D500862E18 /* NSObject+NotifyBlock.m in Sources */,
 				1FAFB6561E67F7FE00CDB5E6 /* AlbumListTableViewCell.m in Sources */,
 				1F2861CA1E6008D500862E18 /* UIImage+Text.m in Sources */,

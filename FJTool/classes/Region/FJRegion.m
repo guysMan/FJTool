@@ -7,7 +7,7 @@
 //
 
 #import "FJRegion.h"
-#import "RegionModel.h"
+#import "FJRegionModel.h"
 #import "PodHelper.h"
 
 @implementation FJRegion
@@ -128,7 +128,7 @@
 }
 
 // 国内省市区对象
-+ (RegionModel*)domesticDistricts {
++ (FJRegionModel*)domesticDistricts {
     
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"address" ofType:@"json"];
     if (filePath == nil) {
@@ -141,7 +141,7 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&err];
     err == nil ? : NSLog(@"%@", err);
     NSError *jerror;
-    RegionModel *addressModel = [[RegionModel alloc] initWithDictionary:dict error:&jerror];
+    FJRegionModel *addressModel = [[FJRegionModel alloc] initWithDictionary:dict error:&jerror];
     jerror == nil ? : NSLog(@"%@", jerror);
     return addressModel;
 }

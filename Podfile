@@ -3,6 +3,7 @@ use_frameworks!
 target "FJTool" do
 
 pod 'AFNetworking'
+pod 'BlocksKit'
 pod 'JSONModel'
 pod 'SDWebImage'
 pod 'Masonry'

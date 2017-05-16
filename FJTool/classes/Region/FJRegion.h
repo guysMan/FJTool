@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class RegionModel;
+@class FJRegionModel;
 
 @interface FJRegion : NSObject
 
@@ -34,6 +34,6 @@
 + (NSArray*)hotCountryCodes_Alpha;
 
 // 国内省市区对象
-+ (RegionModel*)domesticDistricts;
++ (FJRegionModel*)domesticDistricts;
 
 @end

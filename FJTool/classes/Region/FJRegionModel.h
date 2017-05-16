@@ -1,5 +1,5 @@
 //
-//  RegionModel.h
+//  FJRegionModel.h
 //  FJTool
 //
 //  Created by Jeff on 2017/2/28.
@@ -9,35 +9,35 @@
 #import <Foundation/Foundation.h>
 #import <JSONModel/JSONModel.h>
 
-@protocol ProvinceModel;
-@protocol CityModel;
+@protocol FJProvinceModel;
+@protocol FJCityModel;
 
-@interface RegionModel : JSONModel
+@interface FJRegionModel : JSONModel
 
-@property (nonatomic, strong) NSMutableArray<ProvinceModel, Optional> *provinces;   // 省份[直辖市]集合
+@property (nonatomic, strong) NSMutableArray<FJProvinceModel, Optional> *provinces;   // 省份[直辖市]集合
 
 @end
 
 
-@interface ProvinceModel : JSONModel
+@interface FJProvinceModel : JSONModel
 
 @property (nonatomic, copy)   NSString<Optional> *name;                     // 省份[直辖市]名称
-@property (nonatomic, strong) NSMutableArray<CityModel, Optional> *list;    // 省份[直辖市]下属地区
+@property (nonatomic, strong) NSMutableArray<FJCityModel, Optional> *list;    // 省份[直辖市]下属地区
 
 @end
 
-@protocol ProvinceModel
+@protocol FJProvinceModel
 
 @end
 
 
-@interface CityModel : JSONModel
+@interface FJCityModel : JSONModel
 
 @property (nonatomic, copy)   NSString<Optional> *name;        // 城市[地区]名称
 @property (nonatomic, strong) NSMutableArray<Optional> *list;  // 城市[地区]下属地区
 
 @end
 
-@protocol CityModel
+@protocol FJCityModel
 
 @end
