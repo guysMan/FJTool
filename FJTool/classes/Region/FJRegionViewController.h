@@ -14,6 +14,8 @@
 @property (nonatomic, assign) BOOL    isHot;
 @property (nonatomic, strong) UIFont  *regionTextFont;
 @property (nonatomic, strong) UIColor *regionTextColor;
+@property (nonatomic, strong) UIFont  *regionCodeFont;
+@property (nonatomic, strong) UIColor *regionCodeColor;
 @property (nonatomic, strong) UIFont  *sectionHeaderTextFont;
 @property (nonatomic, strong) UIColor *sectionHeaderTextColor;
 @property (nonatomic, strong) UIColor *sectionHeaderBackgroundColor;

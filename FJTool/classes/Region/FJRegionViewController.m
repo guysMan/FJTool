@@ -9,8 +9,6 @@
 #import "FJRegionViewController.h"
 #import "FJRegion.h"
 #import "FJRegionModel.h"
-#import "CountryTableViewCell.h"
-#import "CountryHeaderView.h"
 #import <BlocksKit/BlocksKit+UIKit.h>
 #import <Masonry/Masonry.h>
 
@@ -163,23 +161,32 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    static NSString * cellid = @"CountryTableViewCellID";
-    if (tableView == self.tableView) {
-        CountryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
-        if (cell == nil) {
-            [tableView registerNib:[UINib nibWithNibName:@"CountryTableViewCell" bundle:nil] forCellReuseIdentifier:cellid];
-            cell = [tableView dequeueReusableCellWithIdentifier:cellid];
-        }
+    static NSString * cellID = @"CountryTableViewCellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (cell == nil) {
         
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        UILabel *lb_regionCode = [[UILabel alloc] init];
+        [cell addSubview:lb_regionCode];
+        __weak typeof(cell) weakCell = cell;
+        [lb_regionCode mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(weakCell.mas_centerY);
+            make.right.equalTo(weakCell).offset(-20.0);
+        }];
+        lb_regionCode.backgroundColor = [UIColor clearColor];
+        lb_regionCode.font = self.regionCodeFont != nil ? self.regionCodeFont : [UIFont systemFontOfSize:12.0];
+        lb_regionCode.textColor = self.regionCodeColor != nil ? self.regionCodeColor : [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];
         cell.textLabel.backgroundColor = [UIColor clearColor];
         cell.textLabel.font = self.regionTextFont != nil ? self.regionTextFont : [UIFont systemFontOfSize:14.0];
         cell.textLabel.textColor = self.regionTextColor != nil ? self.regionTextColor : [UIColor colorWithRed:0.4 green:0.4 blue:0.4 alpha:1.0];
-        
+    }
+    if (tableView == self.tableView) {
         if (self.isHot) {
             NSString *countryName = [self.nameDataSource objectAtIndex:indexPath.row];
             cell.textLabel.text = countryName;
             NSString *code = [self.codeDataSource objectAtIndex:indexPath.row];
-            cell.detailLabel.text = [NSString stringWithFormat:@"+%@",code];
+            UILabel *lb_regionCode = [cell.subviews lastObject];
+            lb_regionCode.text = [NSString stringWithFormat:@"+%@",code];
         }else{
             NSString *countryName = [[self.nameDataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
             cell.textLabel.text = countryName;
@@ -188,20 +195,17 @@
                 index += [(NSArray*)[self.nameDataSource objectAtIndex:i] count];
             }
             index += indexPath.row;
-            cell.detailLabel.text = [NSString stringWithFormat:@"%@%@",@"+",[self.codeDataSource objectAtIndex:index]];
+            UILabel *lb_regionCode = [cell.subviews lastObject];
+            lb_regionCode.text = [NSString stringWithFormat:@"%@%@",@"+",[self.codeDataSource objectAtIndex:index]];
         }
         
         return cell;
     }else{
-        CountryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellid];
-        if (cell == nil) {
-            [tableView registerNib:[UINib nibWithNibName:@"CountryTableViewCell" bundle:nil] forCellReuseIdentifier:cellid];
-            cell = [tableView dequeueReusableCellWithIdentifier:cellid];
-        }
         NSString *countryName = [self.searchResult objectAtIndex:indexPath.row];
         cell.textLabel.text = countryName;
         cell.textLabel.backgroundColor = [UIColor clearColor];
-        cell.detailLabel.text = [NSString stringWithFormat:@"%@%@",@"+",self.searchDetailResult[indexPath.row]];
+        UILabel *lb_regionCode = [cell.subviews lastObject];
+        lb_regionCode.text = [NSString stringWithFormat:@"%@%@",@"+",self.searchDetailResult[indexPath.row]];
         return cell;
     }
 }
@@ -214,36 +218,34 @@
     if (self.isHot) {
         return nil;
     }else{
-        /*
-        UIView *customV = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 24)];
-        customV.backgroundColor = self.sectionHeaderBackgroundColor != nil ? self.sectionHeaderBackgroundColor : [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0];
-        UILabel *headerLb = [[UILabel alloc] initWithFrame:CGRectMake(10, 4, 200, 16)];
-        headerLb.textColor = self.sectionHeaderTextColor != nil ? self.sectionHeaderTextColor : [UIColor blackColor];
-        headerLb.font = self.sectionHeaderTextFont != nil ? self.sectionHeaderTextFont : [UIFont systemFontOfSize:12.0];
-        if (section == 0) {
-            headerLb.text = @"热门国家";
-        }else {
-            
-            headerLb.text = [self.sectionDataSource objectAtIndex:section];
-        }
-        [customV addSubview:headerLb];
-        */
         
-        CountryHeaderView *headerView = (CountryHeaderView *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:@"CountryHeaderView"];
-        if (headerView == nil) {
-            id nib = [UINib nibWithNibName:@"CountryHeaderView" bundle:[NSBundle bundleForClass:[self class]]];
-            [tableView registerNib:nib forHeaderFooterViewReuseIdentifier:@"CountryHeaderView"];
-            headerView = (CountryHeaderView *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:@"CountryHeaderView"];
+        static NSString * headerViewID = @"CountryHeaderViewID";
+        UITableViewHeaderFooterView *customHeaderView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewID];
+        if (customHeaderView == nil) {
+            
+            customHeaderView = [[UITableViewHeaderFooterView alloc] initWithReuseIdentifier:headerViewID];
+            customHeaderView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 24);
+            UIView *backgroudnView = [[UIView alloc] initWithFrame:customHeaderView.bounds];
+            backgroudnView.backgroundColor = self.sectionHeaderBackgroundColor != nil ? self.sectionHeaderBackgroundColor : [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0];
+            [customHeaderView addSubview:backgroudnView];
+            
+            UILabel *lb_header = [[UILabel alloc] init];
+            __weak typeof(customHeaderView) weakCustomHeaderView = customHeaderView;
+            [customHeaderView addSubview:lb_header];
+            [lb_header mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerY.equalTo(weakCustomHeaderView.mas_centerY);
+                make.left.equalTo(weakCustomHeaderView).offset(10.0);
+            }];
+            lb_header.textColor = self.sectionHeaderTextColor != nil ? self.sectionHeaderTextColor : [UIColor blackColor];
+            lb_header.font = self.sectionHeaderTextFont != nil ? self.sectionHeaderTextFont : [UIFont systemFontOfSize:12.0];
+            if (section == 0) {
+                lb_header.text = @"热门国家";
+            }else {
+                lb_header.text = [self.sectionDataSource objectAtIndex:section];
+            }
+            [customHeaderView addSubview:lb_header];
         }
-        headerView.lb_back.backgroundColor = self.sectionHeaderBackgroundColor != nil ? self.sectionHeaderBackgroundColor : [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:1.0];
-        headerView.lb_header.textColor = self.sectionHeaderTextColor != nil ? self.sectionHeaderTextColor : [UIColor blackColor];
-        headerView.lb_header.font = self.sectionHeaderTextFont != nil ? self.sectionHeaderTextFont : [UIFont systemFontOfSize:12.0];
-        if (section == 0) {
-            headerView.lb_header.text = @"热门国家";
-        }else {
-            headerView.lb_header.text = [self.sectionDataSource objectAtIndex:section];
-        }
-        return headerView;
+        return customHeaderView;
     }
 }
 
