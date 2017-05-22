@@ -61,13 +61,15 @@
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         
 #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+        }else{
+            [[UIApplication sharedApplication] openURL:url];
+        }
 #else
         [[UIApplication sharedApplication] openURL:url];
 #endif
-        if (sucess) {
-            sucess();
-        }
+        sucess == nil ? : sucess();
         
     }
     else {
@@ -77,19 +79,21 @@
         if ([[UIApplication sharedApplication] canOpenURL:url]) {
             
 #if defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-            [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+            if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+                [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+            }else{
+                [[UIApplication sharedApplication] openURL:url];
+            }
 #else
             [[UIApplication sharedApplication] openURL:url];
 #endif
             
-            if (sucess) {
-                sucess();
-            }
+            sucess == nil ? : sucess();
             
         }else{
-            if (failure) {
-                failure();
-            }
+            
+            failure == nil ? : failure();
+        
         }
     }
 }
